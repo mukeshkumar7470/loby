@@ -13,9 +13,11 @@ const Color textErrorColor = Color(0xFFFF0000);
 
 
 const Color backgroundColor = Color(0xFFFFFFFF);
+const Color loginCardBackgroundColor = Color(0xFF292929);
 const Color scaffoldBackgroundColor = Color(0xffffffff);
 const Color iconColor = Color(0xFF000000);
 const Color borderColor = Color(0xFFC8C8C8);
+const Color whiteColor = Color(0xFFFFFFFF);
 const Color sellerServicesBorderColor = Color(0xFFC8C8C8);
 const Color selectedTab = primaryColor;
 const Color unselectedTab = Colors.black54;

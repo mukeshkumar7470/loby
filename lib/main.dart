@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loby/presentation/screens/auth/sign_in_screen.dart';
+import 'package:loby/presentation/screens/auth/sign_in/sign_in_screen.dart';
 
 import 'core/theme/theme.dart';
 
