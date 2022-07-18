@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+
+  <g id="Mask_Group_38" data-name="Mask Group 38" clip-path="url(#clip-path)">
+    <g id="_4781814_clock_hour_minute_second_time_icon" data-name="4781814_clock_hour_minute_second_time_icon">
+      <g id="Layer_2" data-name="Layer 2" transform="translate(2.25 2.25)">
+        <path id="Path_129" data-name="Path 129" d="M12,21.75A9.75,9.75,0,1,1,21.75,12,9.75,9.75,0,0,1,12,21.75Zm0-18A8.25,8.25,0,1,0,20.25,12,8.25,8.25,0,0,0,12,3.75Z" transform="translate(-2.25 -2.25)"/>
+        <path id="Path_130" data-name="Path 130" d="M16.125,16.875a.75.75,0,0,1-.532-.218l-4.125-4.125A.75.75,0,0,1,11.25,12V6a.75.75,0,0,1,1.5,0v5.693l3.907,3.9a.75.75,0,0,1-.532,1.282Z" transform="translate(-2.25 -2.25)"/>
+      </g>
+      <g id="frame">
+        <rect id="Rectangle_97" data-name="Rectangle 97" width="24" height="24" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
