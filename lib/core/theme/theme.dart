@@ -20,8 +20,9 @@ class ApplicationTheme {
         fontSize: SizerUtil.deviceType == DeviceType.web ? 5.0.sp : 16.sp,
         fontWeight: FontWeight.w800,
         color: primaryTextColor,
+        fontFamily: 'Roboto',
       ),
-      /*headline1: TextStyle(
+      headline1: TextStyle(
         fontSize: SizerUtil.deviceType == DeviceType.web ? 4.5.sp : 13.sp,
         fontWeight: FontWeight.w500,
         color: primaryTextColor,
@@ -60,7 +61,7 @@ class ApplicationTheme {
       subtitle1: const TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
-        color: textLightColor,
+        color: textInputTitleColor,
       ),
       subtitle2: const TextStyle(
         fontSize: 10,
@@ -81,7 +82,7 @@ class ApplicationTheme {
         fontSize: 14,
         fontWeight: FontWeight.w600,
         color: primaryTextColor,
-      ),*/
+      ),
     ),
   );
 }

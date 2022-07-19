@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 
 // Colors used through out the application
 
-const Color primaryColor = Color(0xFF00B598);
-const Color primaryDarkColor = Color(0xFF02723B);
+const Color primaryColor = Color(0xFF00FF62);
+const Color primaryDarkColor = Color(0xFF178D56);
+const Color secondaryColor = Color(0xFF3F8CFF);
+const Color secondaryDarkColor = Color(0xFF006FC2);
 MaterialColor primarySwatchColor = MaterialColor(0xFF00B598, color);
 const Color primaryTextColor = Color(0xFF000000);
 const Color secondaryTextColor = Color(0xFF000000);
 const Color bodyTextColor = Color(0xFF000000);
 const Color textLightColor = Color(0xFF535353);
+const Color textWhiteColor = Color(0xFFFFFFFF);
+const Color textInputTitleColor = Color(0xFF808191);
 const Color textErrorColor = Color(0xFFFF0000);
+const Color createProfileButtonColor = Color(0xFF6C5DD3);
 
 
 const Color backgroundColor = Color(0xFFFFFFFF);
@@ -17,6 +22,7 @@ const Color loginCardBackgroundColor = Color(0xFF292929);
 const Color scaffoldBackgroundColor = Color(0xffffffff);
 const Color iconColor = Color(0xFF000000);
 const Color borderColor = Color(0xFFC8C8C8);
+const Color textFieldColor = Color(0x1AE4E4E4);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color sellerServicesBorderColor = Color(0xFFC8C8C8);
 const Color selectedTab = primaryColor;
@@ -28,7 +34,7 @@ const Color quoteTileCallButton = Color(0xFF009B0F);
 const Color tabIndicatorColor = Color(0xFFEBEBEB);
 const Color inputBorderColor = Color(0xFFD8D8D8);
 const Color darkBackgroundColor = Color(0xFF175158);
-const Color dividerColor = Color(0xFFD8D8D8);
+const Color dividerColor = Color(0x1AF0F3F6);
 const Color footerColor = Color(0x80e6fff8);
 const Color bottomNavDivider = Color(0x33000000);
 

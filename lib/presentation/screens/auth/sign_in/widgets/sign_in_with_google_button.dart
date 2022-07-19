@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/theme/colors.dart';
+import '../../../main/main_screen.dart';
 
 class SignInWithGoogle extends StatefulWidget {
   const SignInWithGoogle({Key? key}) : super(key: key);
@@ -28,7 +29,9 @@ class _SignInWithGoogleState extends State<SignInWithGoogle> {
               ),
             backgroundColor: MaterialStateProperty.all<Color>(quoteTileCallButton),
           ),
-          onPressed: () => null),
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => MainScreen()));
+          }),
     );
   }
 }

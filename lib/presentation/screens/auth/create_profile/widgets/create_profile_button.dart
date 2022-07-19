@@ -1,38 +1,40 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/theme/colors.dart';
-import '../../sign_up/sign_up_bottom_sheet.dart';
+import '../create_profile_bottom_sheet.dart';
 
-class CreateNewAccount extends StatefulWidget {
-  const CreateNewAccount({Key? key}) : super(key: key);
+class CreateProfileButton extends StatefulWidget {
+  const CreateProfileButton({Key? key}) : super(key: key);
 
   @override
-  State<CreateNewAccount> createState() => _CreateNewAccountState();
+  State<CreateProfileButton> createState() => _CreateProfileButtonState();
 }
 
-class _CreateNewAccountState extends State<CreateNewAccount> {
+class _CreateProfileButtonState extends State<CreateProfileButton> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text("Create Profile",
+                style: TextStyle(fontSize: 14, color: textWhiteColor)),
+          ),
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),
             )),
-            backgroundColor: MaterialStateProperty.all<Color>(whiteColor),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(createProfileButtonColor),
           ),
           onPressed: () {
+            Navigator.pop(context);
             _showDialog(context, textTheme);
             //  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));
-          },
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text("Create new Account",
-                style: TextStyle(fontSize: 14, color: primaryTextColor)),
-          )),
+          }),
     );
   }
 
@@ -57,7 +59,7 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(24)),
                   ),
-                  child: SignUpCardList(scrollController),
+                  child: CreateProfileCard(scrollController),
                 )),
               ],
             );

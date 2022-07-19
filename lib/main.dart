@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Loby',
+     // theme: ApplicationTheme.getAppThemeData(),
       home:  SignInScreen(),
     );
   }

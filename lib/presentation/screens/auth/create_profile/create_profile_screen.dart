@@ -1,18 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:loby/presentation/screens/auth/create_profile/widgets/create_profile_card.dart';
 import 'package:loby/presentation/screens/auth/sign_up/widgets/sign_up_card.dart';
 
 import '../../../widgets/background_image.dart';
 
 
-class SignUpScreen extends StatefulWidget {
-  SignUpScreen({Key? key}) : super(key: key);
+class CreateProfileScreen extends StatefulWidget {
+  CreateProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<CreateProfileScreen> createState() => _CreateProfileScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _CreateProfileScreenState extends State<CreateProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: SignUpCard(),
+                child: CreateProfileCard(),
               ),
             ],
           ),
