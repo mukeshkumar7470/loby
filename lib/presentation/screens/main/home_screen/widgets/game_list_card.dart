@@ -38,7 +38,8 @@ class GameCard extends StatelessWidget {
               ),//CircleAvatar//SizedBox
               Expanded(
                 child: Text(
-                  'Bettelground Mobile India',
+                  'Bettelground Mobile',
+                  textAlign: TextAlign.center,
                   style: textTheme.subtitle1
                       ?.copyWith(fontSize: 14, color: textWhiteColor), //Textstyle
                 ),

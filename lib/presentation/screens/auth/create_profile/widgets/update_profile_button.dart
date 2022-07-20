@@ -27,6 +27,7 @@ class _UpdateProfileButtonState extends State<UpdateProfileButton> {
                 MaterialStateProperty.all<Color>(createProfileButtonColor),
           ),
           onPressed: () {
+            Navigator.pop(context);
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => const MainScreen()));
           },

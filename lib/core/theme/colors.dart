@@ -32,7 +32,7 @@ const Color defaultBottomNavItemColor = Color(0xFF000000);
 const Color backgroundColor = Color(0xFF242731);
 const Color backgroundColor2 = Color(0xFF1F2128);
 const Color backgroundColor3 = Color(0xFF242731);
-const Color btnBackgroundColor3 = Color(0xFFFFFFFF);
+const Color btnWhiteColor = Color(0xFFFFFFFF);
 
 const Color loginCardBackgroundColor = Color(0xFF292929);
 const Color scaffoldBackgroundColor = Color(0xffffffff);
@@ -63,14 +63,14 @@ const Color switchDisableColor = Color(0xFFFD0000);
 
 Map<int, Color> color =
 {
-  50:const Color.fromRGBO(136,14,79, .1),
-  100:const Color.fromRGBO(136,14,79, .2),
-  200:const Color.fromRGBO(136,14,79, .3),
-  300:const Color.fromRGBO(136,14,79, .4),
-  400:const Color.fromRGBO(136,14,79, .5),
-  500:const Color.fromRGBO(136,14,79, .6),
-  600:const Color.fromRGBO(136,14,79, .7),
-  700:const Color.fromRGBO(136,14,79, .8),
-  800:const Color.fromRGBO(136,14,79, .9),
-  900:const Color.fromRGBO(136,14,79, 1),
+  50:const Color.fromRGBO(49, 225, 139, .1),
+  100:const Color.fromRGBO(49, 225, 139, .2),
+  200:const Color.fromRGBO(49, 225, 139, .3),
+  300:const Color.fromRGBO(49, 225, 139, .4),
+  400:const Color.fromRGBO(49, 225, 139, .5),
+  500:const Color.fromRGBO(49, 225, 139, .6),
+  600:const Color.fromRGBO(49, 225, 139, .7),
+  700:const Color.fromRGBO(49, 225, 139, .8),
+  800:const Color.fromRGBO(49, 225, 139, .9),
+  900:const Color.fromRGBO(49, 225, 139, 1),
 };
