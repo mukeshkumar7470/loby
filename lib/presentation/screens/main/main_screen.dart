@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:loby/presentation/screens/main/profile_screen/profile_screen.dart';
 
+import '../../../core/theme/colors.dart';
 import '../../widgets/bottom_nav_bar.dart';
 import 'home_screen/home_screen.dart';
 
@@ -11,113 +14,126 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int pageIndex = 0;
-  final pages = [
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-  ];
+  int _currentIndex = 0;
+
+  final _inactiveColor = defaultBottomNavItemColor;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffC4DFCB),
-      body: pages[pageIndex],
-      bottomNavigationBar: buildMyNavBar(context),
+      backgroundColor: backgroundColor2,
+        body: getBody(),
+        bottomNavigationBar: _buildBottomBar()
     );
   }
 
-  Container buildMyNavBar(BuildContext context) {
-    return Container(
-      height: 60,
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+  Widget _buildBottomBar(){
+    return CustomAnimatedBottomBar(
+      containerHeight: 70,
+      backgroundColor: primaryColor1,
+      selectedIndex: _currentIndex,
+      showElevation: true,
+      itemCornerRadius: 18,
+      curve: Curves.easeIn,
+      onItemSelected: (index) => setState(() => _currentIndex = index),
+      items: <BottomNavyBarItem>[
+        BottomNavyBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            child: SvgPicture.asset(
+              'assets/icons/home_icon.svg',
+              color: iconColor,
+            ),
+          ),
+          title: Text('Home'),
+          activeColor: defaultBottomNavItemColor,
+          inactiveColor: _inactiveColor,
+          textAlign: TextAlign.center,
         ),
+        BottomNavyBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            child: SvgPicture.asset(
+              'assets/icons/create_icon.svg',
+              color: iconColor,
+            ),
+          ),
+          title: Text('Create'),
+          activeColor: defaultBottomNavItemColor,
+          inactiveColor: _inactiveColor,
+          textAlign: TextAlign.center,
+        ),
+        BottomNavyBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            child: SvgPicture.asset(
+              'assets/icons/chat_icon.svg',
+              color: iconColor,
+            ),
+          ),
+          title: Text(
+            'Chat',
+          ),
+          activeColor: defaultBottomNavItemColor,
+          inactiveColor: _inactiveColor,
+          textAlign: TextAlign.center,
+        ),
+        BottomNavyBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            child: SvgPicture.asset(
+              'assets/icons/notification_icon.svg',
+              color: iconColor,
+            ),
+          ),
+          title: Text('Notification'),
+          activeColor: defaultBottomNavItemColor,
+          inactiveColor: _inactiveColor,
+          textAlign: TextAlign.center,
+        ),
+        BottomNavyBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            child: SvgPicture.asset(
+              'assets/icons/profile_icon.svg',
+              color: iconColor,
+            ),
+          ),
+          title: Text('Profile'),
+          activeColor: defaultBottomNavItemColor,
+          inactiveColor: _inactiveColor,
+          textAlign: TextAlign.center,
+        ),
+      ],
+    );
+  }
+
+
+  Widget getBody() {
+    List<Widget> pages = [
+      Container(
+        alignment: Alignment.center,
+        child: HomeScreen(),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 0;
-              });
-            },
-            icon: pageIndex == 0
-                ? const Icon(
-              Icons.home_filled,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.home_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 1;
-              });
-            },
-            icon: pageIndex == 1
-                ? const Icon(
-              Icons.work_rounded,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.work_outline_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 2;
-              });
-            },
-            icon: pageIndex == 2
-                ? const Icon(
-              Icons.widgets_rounded,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.widgets_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 3;
-              });
-            },
-            icon: pageIndex == 3
-                ? const Icon(
-              Icons.person,
-              color: Colors.white,
-              size: 35,
-            )
-                : const Icon(
-              Icons.person_outline,
-              color: Colors.white,
-              size: 35,
-            ),
-          ),
-        ],
+      Container(
+        alignment: Alignment.center,
+        child: Text("Users",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
       ),
+      Container(
+        alignment: Alignment.center,
+        child: Text("Messages",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+      ),
+      Container(
+        alignment: Alignment.center,
+        child: Text("Messages",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+      ),
+      Container(
+        alignment: Alignment.center,
+        child:const ProfileScreen(),
+      ),
+    ];
+    return IndexedStack(
+      index: _currentIndex,
+      children: pages,
     );
   }
 }

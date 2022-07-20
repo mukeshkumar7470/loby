@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class BodyPaddingWidget extends StatelessWidget {
   final Widget child;
 
-  const BodyPaddingWidget({required Key key, required this.child}) : super(key: key);
+  const BodyPaddingWidget({required this.child});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../../core/theme/colors.dart';
 import '../../sign_up/sign_up_bottom_sheet.dart';
@@ -20,7 +21,7 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(2.h),
             )),
             backgroundColor: MaterialStateProperty.all<Color>(whiteColor),
           ),
@@ -28,9 +29,9 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
             _showDialog(context, textTheme);
             //  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));
           },
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text("Create new Account",
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text("Create New Account",
                 style: TextStyle(fontSize: 14, color: primaryTextColor)),
           )),
     );

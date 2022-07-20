@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
-import 'widgets/login_card.dart';
 import '../../../widgets/background_image.dart';
+import 'widgets/login_card.dart';
 
 class SignInScreen extends StatefulWidget {
-  SignInScreen({Key? key}) : super(key: key);
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -22,16 +22,14 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget body() {
     return Stack(
       children: [
-        BackgroundImage(),
+        const BackgroundImage(),
         Align(
           alignment: Alignment.center,
-          child: Container(
-            child: SizedBox(
-              height: 64.0,
-              child: Image.asset(
-                "assets/icons/app_icon.png",
-                fit: BoxFit.contain,
-              ),
+          child: SizedBox(
+            height: 10.h,
+            child: Image.asset(
+              "assets/icons/app_icon.png",
+              fit: BoxFit.contain,
             ),
           ),
         ),
@@ -39,7 +37,7 @@ class _SignInScreenState extends State<SignInScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
+          children: const <Widget>[
             Align(
               alignment: Alignment.bottomCenter,
               child: LoginCard(),

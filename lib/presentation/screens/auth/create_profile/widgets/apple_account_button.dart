@@ -17,7 +17,7 @@ class _AppleAccountButtonState extends State<AppleAccountButton> {
       child: ElevatedButton(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text("Google Account",
+            child: Text("Apple Account",
                 style: TextStyle(fontSize: 14, color: textWhiteColor)),
           ),
           style: ButtonStyle(

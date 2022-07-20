@@ -6,7 +6,7 @@ enum RequestType { get, post, delete }
 class Helpers {
 
   static validateEmail(String value) {
-    if (value.isEmpty || value == null) {
+    if (value.isEmpty) {
       return "field required";
     }
     String p =
@@ -21,14 +21,14 @@ class Helpers {
   }
 
   static validateField(String value) {
-    if (value == null || value.isEmpty) {
+    if (value.isEmpty) {
       return "field required";
     }
     return null;
   }
 
   static validatePhone(String value) {
-    if (value.isEmpty || value == null) {
+    if (value.isEmpty) {
       return "field required";
     } else if (value.length < 10) {
       return 'invalid mobile no';

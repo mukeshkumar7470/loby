@@ -2,8 +2,18 @@ import 'package:flutter/material.dart';
 
 // Colors used through out the application
 
-const Color primaryColor = Color(0xFF00FF62);
-const Color primaryDarkColor = Color(0xFF178D56);
+const Color primaryColor1 = Color(0xFF00FF62);
+const Color primaryColor2 = Color(0xFFEE7C5E);
+const Color primaryColor3 = Color(0xFFFAC663);
+const Color primaryColor4 = Color(0xFF33A9FF);
+
+const Color primaryDarkColor1 = Color(0xFF178D56);
+const Color primaryDarkColor2 = Color(0xFFD82F0E);
+const Color primaryDarkColor3 = Color(0xFFE29509);
+const Color primaryDarkColor4 = Color(0xFF006FC2);
+
+
+
 const Color secondaryColor = Color(0xFF3F8CFF);
 const Color secondaryDarkColor = Color(0xFF006FC2);
 MaterialColor primarySwatchColor = MaterialColor(0xFF00B598, color);
@@ -15,17 +25,24 @@ const Color textWhiteColor = Color(0xFFFFFFFF);
 const Color textInputTitleColor = Color(0xFF808191);
 const Color textErrorColor = Color(0xFFFF0000);
 const Color createProfileButtonColor = Color(0xFF6C5DD3);
+const Color activeBottomNavItemColor = Color(0xFFFFFFFF);
+const Color defaultBottomNavItemColor = Color(0xFF000000);
 
 
-const Color backgroundColor = Color(0xFFFFFFFF);
+const Color backgroundColor = Color(0xFF242731);
+const Color backgroundColor2 = Color(0xFF1F2128);
+const Color backgroundColor3 = Color(0xFF242731);
+const Color btnBackgroundColor3 = Color(0xFFFFFFFF);
+
 const Color loginCardBackgroundColor = Color(0xFF292929);
 const Color scaffoldBackgroundColor = Color(0xffffffff);
 const Color iconColor = Color(0xFF000000);
+const Color iconWhiteColor = Color(0xFFFFFFFF);
 const Color borderColor = Color(0xFFC8C8C8);
 const Color textFieldColor = Color(0x1AE4E4E4);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color sellerServicesBorderColor = Color(0xFFC8C8C8);
-const Color selectedTab = primaryColor;
+const Color selectedTab = primaryColor1;
 const Color unselectedTab = Colors.black54;
 const Color badgeColor = Color(0xFFFF0000);
 const Color profileDropDown = Color(0xFFFF0000);

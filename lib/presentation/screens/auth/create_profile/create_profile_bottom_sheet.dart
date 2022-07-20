@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:loby/presentation/screens/auth/create_profile/widgets/update_profile_button.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 
 class CreateProfileCard extends StatelessWidget {
   final ScrollController controller;
 
-  const CreateProfileCard(this.controller);
+   const CreateProfileCard(this.controller);
 
   @override
   Widget build(BuildContext context) {
@@ -16,41 +17,39 @@ class CreateProfileCard extends StatelessWidget {
         // assign controller here
         itemCount: 1,
         itemBuilder: (_, index) => Padding(
-              padding: const EdgeInsets.all(32.0),
+              padding: EdgeInsets.all(4.h),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Container(
-                        child: Text('Your Profile',
-                            style: textTheme.headlineLarge?.copyWith(
-                                fontSize: 18, color: textWhiteColor)),
-                      ),
+                      Text('Your Profile',
+                          style: textTheme.headlineLarge?.copyWith(
+                              fontSize: 18, color: textWhiteColor)),
                       IconButton(
-                        icon: Icon(Icons.close, color: whiteColor),
+                        icon: const Icon(Icons.close, color: whiteColor),
                         onPressed: () => Navigator.of(context).pop(null),
                       ),
                     ],
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 64.00,
+                    height: 2.h,
                   ),
                   _buildRow(),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
-                  Divider(
+                  const Divider(
                     thickness: 1.2,
                     color: dividerColor,
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Full Name',
                         style: textTheme.subtitle1?.copyWith(
@@ -58,14 +57,14 @@ class CreateProfileCard extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildFullNameField(textTheme),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Display Name',
                         style: textTheme.subtitle1?.copyWith(
@@ -73,14 +72,14 @@ class CreateProfileCard extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildDisplayNameField(textTheme),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Country',
                         style: textTheme.subtitle1?.copyWith(
@@ -88,65 +87,63 @@ class CreateProfileCard extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildCountryField(textTheme),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('City',
                         style: textTheme.subtitle1?.copyWith(
                             fontSize: 14, color: textInputTitleColor)),
                   ),
-                  const SizedBox(
+                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildCityField(textTheme),
-                  const SizedBox(
+                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Date of Birth',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
+                        style: textTheme.subtitle1),
                   ),
-                  const SizedBox(
+                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildDOBField(textTheme),
-                  const SizedBox(
+                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Bio',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
+                        style: textTheme.subtitle1),
                   ),
-                  const SizedBox(
+                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildBioNameField(textTheme),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
                     child: UpdateProfileButton(),
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
                 ],
               ),
@@ -154,61 +151,61 @@ class CreateProfileCard extends StatelessWidget {
   }
 
   Widget _buildRow() {
-    return Container(
-      child: Row(
-        children: <Widget>[
-          const CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage("assets/icons/app_icon.png"),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                          )),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(primaryColor),
-                        ),
-                        onPressed: () => null,
-                        child: const Padding(
-                          padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
-                          child: Text("Upload New",
-                              style: TextStyle(
-                                  fontSize: 14, color: primaryTextColor)),
+    return Row(
+      children: <Widget>[
+        const CircleAvatar(
+          radius: 40,
+          backgroundImage: AssetImage("assets/icons/app_icon.png"),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  ElevatedButton(
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
                         )),
-                    ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                          )),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(textFieldColor),
-                        ),
-                        onPressed: () => null,
-                        child: const Padding(
-                          padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
-                          child: Text("Upload New",
-                              style: TextStyle(
-                                  fontSize: 14, color: textWhiteColor)),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(primaryColor1),
+                      ),
+                      onPressed: () => null,
+                      child: const Padding(
+                        padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                        child: Text("Upload New",
+                            style: TextStyle(
+                                fontSize: 14, color: primaryTextColor)),
+                      )),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
                         )),
-                  ],
-                ),
-              ],
-            ),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(textFieldColor),
+                      ),
+                      onPressed: () {
+                        debugPrint('clicked');
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                        child: Text("Upload New",
+                            style: TextStyle(
+                                fontSize: 14, color: textWhiteColor)),
+                      )),
+                ],
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -216,10 +213,10 @@ class CreateProfileCard extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             child: TextFormField(
                 style: textTheme.subtitle1
                     ?.copyWith(fontSize: 14, color: whiteColor),
@@ -228,17 +225,20 @@ class CreateProfileCard extends StatelessWidget {
                   hintStyle: textTheme.subtitle1
                       ?.copyWith(fontSize: 14, color: textInputTitleColor),
                   hintText: 'Ex: Jhon Singh',
-                ))));
+                )
+            )
+        )
+    );
   }
 
   _buildDisplayNameField(TextTheme textTheme) {
     return Container(
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             child: TextFormField(
                 style: textTheme.subtitle1
                     ?.copyWith(fontSize: 14, color: whiteColor),
@@ -254,10 +254,10 @@ class CreateProfileCard extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             child: TextFormField(
                 style: textTheme.subtitle1
                     ?.copyWith(fontSize: 14, color: whiteColor),
@@ -273,10 +273,10 @@ class CreateProfileCard extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             child: TextFormField(
                 style: textTheme.subtitle1
                     ?.copyWith(fontSize: 14, color: whiteColor),
@@ -292,10 +292,10 @@ class CreateProfileCard extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             child: TextFormField(
                 style: textTheme.subtitle1
                     ?.copyWith(fontSize: 14, color: whiteColor),
@@ -312,10 +312,10 @@ class CreateProfileCard extends StatelessWidget {
         height: 100,
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             child: TextFormField(
                 style: textTheme.subtitle1
                     ?.copyWith(fontSize: 14, color: whiteColor),

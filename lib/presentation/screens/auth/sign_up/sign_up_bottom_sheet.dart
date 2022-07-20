@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../create_profile/widgets/apple_account_button.dart';
@@ -18,19 +19,19 @@ class SignUpCardList extends StatelessWidget {
         // assign controller here
         itemCount: 1,
         itemBuilder: (_, index) => Padding(
-              padding: const EdgeInsets.all(32.0),
+              padding: EdgeInsets.all(4.h),
               child: Column(
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 1.h,
                   ),
                   Text('Sign up',
                       style: textTheme.headlineLarge
                           ?.copyWith(fontSize: 32, color: textWhiteColor)),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 4.h,
                   ),
                   Container(
                     width: double.infinity,
@@ -40,12 +41,12 @@ class SignUpCardList extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildFullNameField(textTheme),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
                   Container(
                     width: double.infinity,
@@ -55,12 +56,12 @@ class SignUpCardList extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildEmailField(textTheme),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
                   Container(
                     width: double.infinity,
@@ -68,22 +69,22 @@ class SignUpCardList extends StatelessWidget {
                         style: textTheme.subtitle1?.copyWith(
                             fontSize: 14, color: textInputTitleColor)),
                   ),
-                  SizedBox(
+                   SizedBox(
                     width: double.infinity,
-                    height: 16.00,
+                    height: 2.h,
                   ),
                   _buildPasswordField(textTheme),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
                     child: CreateProfileButton(),
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
                   Container(
                     child: Text('Sign up using Google or Apple',
@@ -92,17 +93,17 @@ class SignUpCardList extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
-                  ),
-                  GoogleAccountButton(),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
                   ),
                   AppleAccountButton(),
                   SizedBox(
                     width: double.infinity,
-                    height: 31.00,
+                    height: 4.h,
+                  ),
+                  GoogleAccountButton(),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 4.h,
                   ),
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../../core/theme/colors.dart';
 import '../create_profile_bottom_sheet.dart';
@@ -18,7 +19,7 @@ class _CreateProfileButtonState extends State<CreateProfileButton> {
       width: double.infinity,
       child: ElevatedButton(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(2.h),
             child: Text("Create Profile",
                 style: TextStyle(fontSize: 14, color: textWhiteColor)),
           ),

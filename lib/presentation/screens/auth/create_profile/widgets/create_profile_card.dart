@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/theme/colors.dart';
 import 'create_profile_button.dart';
 
@@ -14,16 +13,15 @@ class _CreateProfileCardState extends State<CreateProfileCard> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    Size size = MediaQuery.of(context).size;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: loginCardBackgroundColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(40.0),
             topRight: Radius.circular(40.0),
           )),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(31.5, 16.00, 31.5, 16.00),
+        padding: const EdgeInsets.fromLTRB(31.5, 16.00, 31.5, 16.00),
         child: Container(
           width: double.infinity,
           child: Column(
@@ -31,11 +29,9 @@ class _CreateProfileCardState extends State<CreateProfileCard> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Container(
-                    child: Text('Your Profile',
-                        style: textTheme.headlineLarge
-                            ?.copyWith(fontSize: 18, color: textWhiteColor)),
-                  ),
+                  Text('Your Profile',
+                      style: textTheme.headlineLarge
+                          ?.copyWith(fontSize: 18, color: textWhiteColor)),
                   IconButton(
                     icon: Icon(Icons.close, color: whiteColor),
                     onPressed: () => Navigator.of(context).pop(null),
@@ -43,15 +39,15 @@ class _CreateProfileCardState extends State<CreateProfileCard> {
                 ],
               ),
               _buildRow(),
-              SizedBox(
+              const SizedBox(
                 width: double.infinity,
                 height: 16.00,
               ),
-              Divider(
+              const Divider(
                 thickness: 1.2,
                 color: dividerColor,
               ),
-              SizedBox(
+              const SizedBox(
                 width: double.infinity,
                 height: 16.00,
               ),
@@ -146,63 +142,61 @@ class _CreateProfileCardState extends State<CreateProfileCard> {
   }
 
   Widget _buildRow() {
-    return Container(
-      child: Row(
-        children: <Widget>[
-          const CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage("assets/icons/app_icon.png"),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                          )),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(primaryColor),
-                        ),
-                        onPressed: () => null,
-                        child: const Padding(
-                          padding:
-                              EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
-                          child: Text("Upload New",
-                              style: TextStyle(
-                                  fontSize: 14, color: primaryTextColor)),
+    return Row(
+      children: <Widget>[
+        const CircleAvatar(
+          radius: 40,
+          backgroundImage: AssetImage("assets/icons/app_icon.png"),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  ElevatedButton(
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
                         )),
-                    ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                          MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.0),
-                              )),
-                          backgroundColor:
-                          MaterialStateProperty.all<Color>(textFieldColor),
-                        ),
-                        onPressed: () => null,
-                        child: const Padding(
-                          padding:
-                          EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
-                          child: Text("Upload New",
-                              style: TextStyle(
-                                  fontSize: 14, color: textWhiteColor)),
-                        )),
-                  ],
-                ),
-              ],
-            ),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(primaryColor1),
+                      ),
+                      onPressed: () => null,
+                      child: const Padding(
+                        padding:
+                            EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                        child: Text("Upload New",
+                            style: TextStyle(
+                                fontSize: 14, color: primaryTextColor)),
+                      )),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                        shape:
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0),
+                            )),
+                        backgroundColor:
+                        MaterialStateProperty.all<Color>(textFieldColor),
+                      ),
+                      onPressed: () => null,
+                      child: const Padding(
+                        padding:
+                        EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                        child: Text("Upload New",
+                            style: TextStyle(
+                                fontSize: 14, color: textWhiteColor)),
+                      )),
+                ],
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -289,7 +283,7 @@ class _CreateProfileCardState extends State<CreateProfileCard> {
     return Container(
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
             padding: EdgeInsets.only(left: 15, right: 15, top: 5),
@@ -301,6 +295,9 @@ class _CreateProfileCardState extends State<CreateProfileCard> {
                   hintStyle: textTheme.subtitle1
                       ?.copyWith(fontSize: 14, color: textInputTitleColor),
                   hintText: 'Lucknow',
-                ))));
+                )
+            )
+        )
+    );
   }
 }

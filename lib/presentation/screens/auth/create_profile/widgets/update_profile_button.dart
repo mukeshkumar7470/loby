@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../../core/theme/colors.dart';
 import '../../../main/main_screen.dart';
@@ -17,11 +18,6 @@ class _UpdateProfileButtonState extends State<UpdateProfileButton> {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text("Update Profile",
-                style: TextStyle(fontSize: 14, color: textWhiteColor)),
-          ),
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
@@ -32,8 +28,13 @@ class _UpdateProfileButtonState extends State<UpdateProfileButton> {
           ),
           onPressed: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => MainScreen()));
-          }),
+                .push(MaterialPageRoute(builder: (context) => const MainScreen()));
+          },
+          child: Padding(
+            padding: EdgeInsets.all(2.h),
+            child: const Text("Update Profile",
+                style: TextStyle(fontSize: 14, color: textWhiteColor)),
+          )),
     );
   }
 }

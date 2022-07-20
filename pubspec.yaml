@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   sizer: ^2.0.15
   google_nav_bar: ^5.0.6
+  flutter_svg: ^1.1.1+1
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,19 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+          weight: 600
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

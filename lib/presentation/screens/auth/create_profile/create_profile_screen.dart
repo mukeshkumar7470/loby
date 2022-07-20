@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loby/presentation/screens/auth/create_profile/widgets/create_profile_card.dart';
-import 'package:loby/presentation/screens/auth/sign_up/widgets/sign_up_card.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../widgets/background_image.dart';
 
 
 class CreateProfileScreen extends StatefulWidget {
-  CreateProfileScreen({Key? key}) : super(key: key);
+  const CreateProfileScreen({Key? key}) : super(key: key);
 
   @override
   State<CreateProfileScreen> createState() => _CreateProfileScreenState();
@@ -24,7 +23,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
   Widget body() {
     return Stack(
       children: [
-        BackgroundImage(),
+        const BackgroundImage(),
         SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,9 +32,9 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
             children: <Widget>[
               SizedBox(
                 width: double.infinity,
-                height: 64.00,
+                height: 64.h,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.bottomCenter,
                 child: CreateProfileCard(),
               ),

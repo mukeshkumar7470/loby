@@ -16,9 +16,8 @@ class _SignUpCardState extends State<SignUpCard> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    Size size = MediaQuery.of(context).size;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: loginCardBackgroundColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(40.0),
@@ -155,13 +154,12 @@ class _SignUpCardState extends State<SignUpCard> {
     return Container(
         decoration: BoxDecoration(
           color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
+                style: textTheme.subtitle1,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: textTheme.subtitle1
