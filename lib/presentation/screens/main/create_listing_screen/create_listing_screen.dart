@@ -1,9 +1,12 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
-import 'package:dotted_border/dotted_border.dart';
+
 import '../../../../core/theme/colors.dart';
+import '../../../widgets/Custom_Checkbox.dart';
 import '../../../widgets/custom_button.dart';
+import '../../../widgets/drop_down.dart';
 
 class CreateListingScreen extends StatefulWidget {
   const CreateListingScreen({Key? key}) : super(key: key);
@@ -13,6 +16,8 @@ class CreateListingScreen extends StatefulWidget {
 }
 
 class _CreateListingScreenState extends State<CreateListingScreen> {
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -90,11 +95,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
               child: Expanded(
                 child: Text(
                     textAlign: TextAlign.start,
-                    "For Accounts That Cannot Change Email Address : Sellers must provide the email address to the buyers and make sure they gain full access of the email such as secret questions etc." +
-                        "For Accounts That Can Change Email Address : Sellers must assist buyers to change the email address and provide the proof" +
-                        "Payment will be put on hold if seller did not submit proof for (1) or (2). If seller fails to provide proof, the payment will be deducted to refund buyer when there is a dispute." +
-                        "You must be the main owner of the account(s) you intend to sell." +
-                        "Visit Accounts Service Rules and Descriptions for more info.",
+                    "For Accounts That Cannot Change Email Address : Sellers must provide the email address to the buyers and make sure they gain full access of the email such as secret questions etc.For Accounts That Can Change Email Address : Sellers must assist buyers to change the email address and provide the proofPayment will be put on hold if seller did not submit proof for (1) or (2). If seller fails to provide proof, the payment will be deducted to refund buyer when there is a dispute.You must be the main owner of the account(s) you intend to sell.Visit Accounts Service Rules and Descriptions for more info.",
                     style:
                         textTheme.headline3?.copyWith(color: textLightColor)),
               ),
@@ -152,45 +153,174 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           _buildDescriptionTypeField(textTheme),
           const SizedBox(height: 16.0),
           _buildUploadField(textTheme),
+          const SizedBox(height: 16.0),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Expanded(
+                child: Text(
+                    textAlign: TextAlign.start,
+                    'Price',
+                    style:
+                        textTheme.headline3?.copyWith(color: textLightColor)),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16.0),
+          _buildPrice(textTheme),
+          const SizedBox(height: 16.0),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Expanded(
+                child: Text(
+                    textAlign: TextAlign.start,
+                    '‘Loby Protection’ Insurance',
+                    style:
+                        textTheme.headline3?.copyWith(color: textLightColor)),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16.0),
+          _buildTermsCheckbox(textTheme, '7 Days Insurance'),
+          const SizedBox(height: 16.0),
+          Padding(
+            padding:
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Expanded(
+                child: Text(
+                    textAlign: TextAlign.start,
+                    'Estimated Delivery Time (Hours)',
+                    style:
+                    textTheme.headline3?.copyWith(color: textLightColor)),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16.0),
+          Padding(
+            padding: EdgeInsets.only(left: 00,
+              top: 00,
+              right: 18.h,
+              bottom: 00),
+            child: Container(
+              child:  _buildSearchField(textTheme, 'Select'),
+            ),
+          ),
+          const SizedBox(height: 16.0),
+          _buildTermsCheckbox(textTheme, 'I have read and agreed to all sellers policy and the Terms of Service.'),
+          const SizedBox(height: 16.0),
+          Padding(
+            padding:
+            EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.h),
+            child: CustomButton(
+              color: createProfileButtonColor,
+              name: "Publish",
+              onTap: () {
+                debugPrint('click chat');
+              },
+            ),
+          ),
+          const SizedBox(height: 16.0),
         ],
       ),
     );
   }
 
-  _buildSearchField(TextTheme textTheme, String name) {
+  _buildTermsCheckbox(TextTheme textTheme, String content) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
         child: Container(
-          decoration: BoxDecoration(
-            color: textFieldColor,
-            borderRadius: BorderRadius.circular(10.0),
-          ),
           child: Row(
-            children: <Widget>[
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Custom_Checkbox(
+                isChecked: isChecked,
+                onChange: (value) {
+                  isChecked = value;
+                  print(isChecked);
+                },
+                backgroundColor: primaryColor1,
+                borderColor: primaryColor1,
+                icon: Icons.check,
+                size: 22,
+                iconSize: 16,
+              ),
+              const SizedBox(width: 8.0),
               Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(10),
-                    hintStyle: textTheme.subtitle1
-                        ?.copyWith(fontSize: 18, color: iconTintColor),
-                    hintText: name,
-                    border: InputBorder.none,
+                child: SizedBox(
+                  child: Text(
+                    content,
+                    style: textTheme.headline3
+                        ?.copyWith(fontSize: 13.0, color: textLightColor),
                   ),
                 ),
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.2,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
-                  child: SvgPicture.asset(
-                    'assets/icons/dropdown_icon.svg',
-                    color: iconTintColor,
-                  ),
-                ),
-              )
             ],
           ),
         ));
+  }
+
+  _buildPrice(TextTheme textTheme) {
+    return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+        child: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: textFieldColor,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: TextField(
+                    style: textTheme.subtitle1
+                        ?.copyWith(fontSize: 18, color: textWhiteColor),
+                    decoration: InputDecoration(
+                      prefixIcon: Padding(
+                        padding: EdgeInsets.all(3.w),
+                        child: SvgPicture.asset(
+                          'assets/icons/search_icon.svg',
+                          color: iconTintColor,
+                        ),
+                      ),
+                      border: InputBorder.none,
+                      hintStyle: textTheme.subtitle1
+                          ?.copyWith(fontSize: 18, color: iconTintColor),
+                      hintText: 'Search',
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 2.0),
+              Text(
+                "per",
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+                style: textTheme.headline3
+                    ?.copyWith(fontSize: 13.0, color: textLightColor),
+              ),
+              const SizedBox(width: 2.0),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4,
+                child: MyDropDownWidget(),
+              ),
+            ],
+          ),
+        ));
+  }
+
+  _buildSearchField(TextTheme textTheme, String name) {
+    return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+        child: MyDropDownWidget());
   }
 
   _buildTitleField(TextTheme textTheme) {
@@ -252,7 +382,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         // This is your Badge
                         padding: const EdgeInsets.all(8),
                         constraints:
-                        BoxConstraints(minHeight: 12.h, minWidth: 36.w),
+                            BoxConstraints(minHeight: 12.h, minWidth: 36.w),
                         decoration: BoxDecoration(
                           // This controls the shadow
                           boxShadow: [
@@ -263,7 +393,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                           ],
                           borderRadius: BorderRadius.circular(12),
                           color:
-                          iconWhiteColor, // This would be color of the Badge
+                              iconWhiteColor, // This would be color of the Badge
                         ), // This is your Badge
                         child: Center(
                           // Here you can put whatever content you want inside your Badge
@@ -277,7 +407,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         // This is your Badge
                         padding: const EdgeInsets.all(8),
                         constraints:
-                        BoxConstraints(minHeight: 12.h, minWidth: 36.w),
+                            BoxConstraints(minHeight: 12.h, minWidth: 36.w),
                         decoration: BoxDecoration(
                           // This controls the shadow
                           boxShadow: [
@@ -288,7 +418,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                           ],
                           borderRadius: BorderRadius.circular(12),
                           color:
-                          iconWhiteColor, // This would be color of the Badge
+                              iconWhiteColor, // This would be color of the Badge
                         ), // This is your Badge
                         child: Center(
                           // Here you can put whatever content you want inside your Badge
@@ -307,7 +437,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         // This is your Badge
                         padding: const EdgeInsets.all(8),
                         constraints:
-                        BoxConstraints(minHeight: 12.h, minWidth: 36.w),
+                            BoxConstraints(minHeight: 12.h, minWidth: 36.w),
                         decoration: BoxDecoration(
                           // This controls the shadow
                           boxShadow: [
@@ -318,7 +448,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                           ],
                           borderRadius: BorderRadius.circular(12),
                           color:
-                          iconWhiteColor, // This would be color of the Badge
+                              iconWhiteColor, // This would be color of the Badge
                         ), // This is your Badge
                         child: Center(
                           // Here you can put whatever content you want inside your Badge
@@ -332,7 +462,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         // This is your Badge
                         padding: const EdgeInsets.all(8),
                         constraints:
-                        BoxConstraints(minHeight: 12.h, minWidth: 36.w),
+                            BoxConstraints(minHeight: 12.h, minWidth: 36.w),
                         decoration: BoxDecoration(
                           // This controls the shadow
                           boxShadow: [
@@ -343,7 +473,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                           ],
                           borderRadius: BorderRadius.circular(12),
                           color:
-                          iconWhiteColor, // This would be color of the Badge
+                              iconWhiteColor, // This would be color of the Badge
                         ), // This is your Badge
                         child: Center(
                           // Here you can put whatever content you want inside your Badge
@@ -356,8 +486,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                   ),
                   const SizedBox(height: 8.0),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 0.0, horizontal: 10.h),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.h),
                     child: CustomButton(
                       color: createProfileButtonColor,
                       name: "Choose file",
@@ -381,8 +511,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                   ),
                   const SizedBox(height: 8.0),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 0.0, horizontal: 4.h),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 4.h),
                     child: CustomButton(
                       color: backgroundColor,
                       name: "Paste Youtube/Twitch Link",
@@ -392,12 +522,9 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                     ),
                   ),
                   const SizedBox(height: 16.0),
-
                 ],
-              )
-          ),
-        )
-    );
+              )),
+        ));
   }
 
   _buildDescriptionTypeField(TextTheme textTheme) {
@@ -443,25 +570,6 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                   hintStyle: textTheme.subtitle1
                       ?.copyWith(fontSize: 14, color: textInputTitleColor),
                   hintText: 'Ex: jhonsingh@gmail.com',
-                ))));
-  }
-
-  _buildPasswordField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: '********',
                 ))));
   }
 }

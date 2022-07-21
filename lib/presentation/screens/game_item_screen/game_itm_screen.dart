@@ -4,6 +4,7 @@ import 'package:loby/presentation/screens/game_item_screen/widgets/ItemList.dart
 import 'package:sizer/sizer.dart';
 
 import '../../../core/theme/colors.dart';
+import '../../widgets/custom_chip.dart';
 
 class GameItemScreen extends StatefulWidget {
   String name;
@@ -15,6 +16,7 @@ class GameItemScreen extends StatefulWidget {
 }
 
 class _GameItemScreenState extends State<GameItemScreen> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     debugPrint(widget.name);
@@ -105,7 +107,7 @@ class _GameItemScreenState extends State<GameItemScreen> {
               ],
             ),
           ),
-          _buildCategories(textTheme),
+         _buildCategories(textTheme),
           const SizedBox(height: 8),
           Padding(
             padding:
@@ -206,29 +208,7 @@ class _GameItemScreenState extends State<GameItemScreen> {
   }
 
   _buildCategories(TextTheme textTheme) {
-    final items = List.generate(7, (i) => " item $i");
-    return Wrap(
-      spacing: 8.0,
-      runSpacing: 8.0,
-      alignment: WrapAlignment.spaceEvenly,
-      children: [
-        ...List.generate(
-          items.length,
-          (index) => Container(
-            decoration: BoxDecoration(
-              color: primaryColor2,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
-              child: Text('Account',
-                  style: textTheme.headline3?.copyWith(color: textWhiteColor)),
-            ),
-          ),
-        ),
-      ],
-    );
+    return CustomChip();
   }
 
   _buildGames(TextTheme textTheme) {
