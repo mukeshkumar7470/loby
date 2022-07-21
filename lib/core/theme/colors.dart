@@ -16,11 +16,15 @@ const Color primaryDarkColor4 = Color(0xFF006FC2);
 
 const Color secondaryColor = Color(0xFF3F8CFF);
 const Color secondaryDarkColor = Color(0xFF006FC2);
+const Color gameDetailCategoryNameBgColor = Color(0xFF6C5DD3);
+
+
+
 MaterialColor primarySwatchColor = MaterialColor(0xFF00B598, color);
 const Color primaryTextColor = Color(0xFF000000);
 const Color secondaryTextColor = Color(0xFF000000);
 const Color bodyTextColor = Color(0xFF000000);
-const Color textLightColor = Color(0xFF535353);
+const Color textLightColor = Color(0xFF808191);
 const Color textWhiteColor = Color(0xFFFFFFFF);
 const Color textInputTitleColor = Color(0xFF808191);
 const Color textErrorColor = Color(0xFFFF0000);
@@ -37,6 +41,8 @@ const Color btnWhiteColor = Color(0xFFFFFFFF);
 const Color loginCardBackgroundColor = Color(0xFF292929);
 const Color scaffoldBackgroundColor = Color(0xffffffff);
 const Color iconColor = Color(0xFF000000);
+const Color iconTintColor = Color(0xFF7B7B7B);
+const Color iconYellowColor = Color(0xFFFF7A00);
 const Color iconWhiteColor = Color(0xFFFFFFFF);
 const Color borderColor = Color(0xFFC8C8C8);
 const Color textFieldColor = Color(0x1AE4E4E4);

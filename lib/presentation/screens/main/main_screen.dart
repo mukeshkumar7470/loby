@@ -4,6 +4,7 @@ import 'package:loby/presentation/screens/main/profile_screen/profile_screen.dar
 
 import '../../../core/theme/colors.dart';
 import '../../widgets/bottom_nav_bar.dart';
+import 'create_listing_screen/create_listing_screen.dart';
 import 'home_screen/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -38,39 +39,39 @@ class _MainScreenState extends State<MainScreen> {
       items: <BottomNavyBarItem>[
         BottomNavyBarItem(
           icon: Padding(
-            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
             child: SvgPicture.asset(
               'assets/icons/home_icon.svg',
               color: iconColor,
             ),
           ),
-          title: Text('Home'),
+          title: const Text('Home'),
           activeColor: defaultBottomNavItemColor,
           inactiveColor: _inactiveColor,
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
             child: SvgPicture.asset(
               'assets/icons/create_icon.svg',
               color: iconColor,
             ),
           ),
-          title: Text('Create'),
+          title: const Text('Create'),
           activeColor: defaultBottomNavItemColor,
           inactiveColor: _inactiveColor,
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
             child: SvgPicture.asset(
               'assets/icons/chat_icon.svg',
               color: iconColor,
             ),
           ),
-          title: Text(
+          title: const Text(
             'Chat',
           ),
           activeColor: defaultBottomNavItemColor,
@@ -79,26 +80,26 @@ class _MainScreenState extends State<MainScreen> {
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
             child: SvgPicture.asset(
               'assets/icons/notification_icon.svg',
               color: iconColor,
             ),
           ),
-          title: Text('Notification'),
+          title: const Text('Notification'),
           activeColor: defaultBottomNavItemColor,
           inactiveColor: _inactiveColor,
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
             child: SvgPicture.asset(
               'assets/icons/profile_icon.svg',
               color: iconColor,
             ),
           ),
-          title: Text('Profile'),
+          title: const Text('Profile'),
           activeColor: defaultBottomNavItemColor,
           inactiveColor: _inactiveColor,
           textAlign: TextAlign.center,
@@ -112,11 +113,11 @@ class _MainScreenState extends State<MainScreen> {
     List<Widget> pages = [
       Container(
         alignment: Alignment.center,
-        child: HomeScreen(),
+        child: const HomeScreen(),
       ),
       Container(
         alignment: Alignment.center,
-        child: Text("Users",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+        child: const CreateListingScreen(),
       ),
       Container(
         alignment: Alignment.center,

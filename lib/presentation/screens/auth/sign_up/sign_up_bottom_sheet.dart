@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../../widgets/custom_button.dart';
+import '../../main/main_screen.dart';
 import '../create_profile/widgets/apple_account_button.dart';
 import '../create_profile/widgets/create_profile_button.dart';
 import '../create_profile/widgets/google_account_button.dart';
@@ -33,7 +35,7 @@ class SignUpCardList extends StatelessWidget {
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Full Name',
                         style: textTheme.subtitle1?.copyWith(
@@ -48,7 +50,7 @@ class SignUpCardList extends StatelessWidget {
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Email Address',
                         style: textTheme.subtitle1?.copyWith(
@@ -63,7 +65,7 @@ class SignUpCardList extends StatelessWidget {
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Text('Password',
                         style: textTheme.subtitle1?.copyWith(
@@ -86,21 +88,25 @@ class SignUpCardList extends StatelessWidget {
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  Container(
-                    child: Text('Sign up using Google or Apple',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
+                  Text('Sign up using Google or Apple',
+                      style: textTheme.subtitle1?.copyWith(
+                          fontSize: 14, color: textInputTitleColor)),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 4.h,
+                  ),
+                  CustomButton(color: primaryColor4, name: "Google Account", onTap: () {
+                    _goToMainScreen(context, textTheme);
+                  }
                   ),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  AppleAccountButton(),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
+                  CustomButton(color: primaryColor4, name: "Apple Account", onTap: () {
+                    _goToMainScreen(context, textTheme);
+                  }
                   ),
-                  GoogleAccountButton(),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
@@ -108,6 +114,11 @@ class SignUpCardList extends StatelessWidget {
                 ],
               ),
             ));
+  }
+
+  void _goToMainScreen(BuildContext context, TextTheme textTheme) {
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const MainScreen()));
   }
 
   _buildFullNameField(TextTheme textTheme) {

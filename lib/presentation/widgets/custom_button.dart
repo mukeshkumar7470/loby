@@ -5,44 +5,39 @@ import '../../core/theme/colors.dart';
 import '../screens/auth/sign_up/sign_up_bottom_sheet.dart';
 import '../screens/main/main_screen.dart';
 
-class SignInWithGoogle extends StatefulWidget {
+class CustomButton extends StatelessWidget {
   final Color color;
   final String name;
-  const SignInWithGoogle({required this.color, required this.name});
+  var onTap;
 
-  @override
-  State<SignInWithGoogle> createState() => _SignInWithGoogleState();
-}
+  CustomButton({Key? key, required this.color, required this.name, required this.onTap}) : super(key: key);
 
-class _SignInWithGoogleState extends State<SignInWithGoogle> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
-          style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2.h),
-                  )
-              ),
-            backgroundColor: MaterialStateProperty.all<Color>(widget.color),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.all(0.0),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(2.h),
           ),
-          onPressed: () {
-            if (widget.name == 'Create New Account') {
-              _showDialog(context, textTheme);
-            } else {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MainScreen()));
-            }
-          },
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(widget.name,
-                style: TextStyle(fontSize: 14, color: primaryTextColor)),
-          )),
+          child: Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(name,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14, color: primaryTextColor)),
+            )
+          ),
+        ),
+      ),
     );
   }
+
 
   void _showDialog(BuildContext context, TextTheme textTheme) {
     showModalBottomSheet(

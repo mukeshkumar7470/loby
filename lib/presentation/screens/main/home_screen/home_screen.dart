@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 50,
+        itemCount: 5,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:loby/core/theme/colors.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../main/main_screen.dart';
 import '../../sign_up/sign_up_bottom_sheet.dart';
 import 'sign_in_with_apple_button.dart';
-import '../../../../widgets/sign_in_with_google_button.dart';
+import '../../../../widgets/custom_button.dart';
 import 'create_new_account_button.dart';
 
 class LoginCard extends StatefulWidget {
@@ -35,12 +36,18 @@ class _LoginCardState extends State<LoginCard> {
             width: double.infinity,
             child: Column(
               children: [
-                const SignInWithGoogle(color: primaryColor1, name: "Sign in with Apple"),
+                CustomButton(color: primaryColor1, name: "Sign in with Apple", onTap: () {
+                  _goToMainScreen(context, textTheme);
+                }
+                ),
                 SizedBox(
                   width: double.infinity,
                   height: 2.h,
                 ),
-                SignInWithGoogle(color: primaryColor1, name: "Sign in with Google"),
+                CustomButton(color: primaryColor1, name: "Sign in with Google", onTap: () {
+                  _goToMainScreen(context, textTheme);
+                }
+                ),
                 SizedBox(
                   width: double.infinity,
                   height: 2.h,
@@ -50,18 +57,21 @@ class _LoginCardState extends State<LoginCard> {
                   width: double.infinity,
                   height: 2.h,
                 ),
-                GestureDetector(
-                    onTap: (){
-                      debugPrint("texdgdg");
-                      _showDialog(context, textTheme);
-                    },
-                    child: SignInWithGoogle(color: btnWhiteColor, name: "Create New Account")),
+                CustomButton(color: btnWhiteColor, name: "Create New Account", onTap: () {
+                  _showDialog(context, textTheme);
+                }
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void _goToMainScreen(BuildContext context, TextTheme textTheme) {
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const MainScreen()));
   }
 
   void _showDialog(BuildContext context, TextTheme textTheme) {
