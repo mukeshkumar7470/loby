@@ -4,6 +4,7 @@ import 'package:loby/presentation/screens/main/profile_screen/profile_screen.dar
 
 import '../../../core/theme/colors.dart';
 import '../../widgets/bottom_nav_bar.dart';
+import 'chat/chat_screen.dart';
 import 'create_listing_screen/create_listing_screen.dart';
 import 'home_screen/home_screen.dart';
 
@@ -121,7 +122,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       Container(
         alignment: Alignment.center,
-        child: Text("Messages",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+        child: ChatScreen(), 
       ),
       Container(
         alignment: Alignment.center,

@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:loby/presentation/screens/my_order/my_order_screen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../widgets/body_padding_widget.dart';
+import '../../my_listing/my_listing_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -104,6 +106,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return GestureDetector(
       onTap: (){
         print("Container $name");
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const MyOrderScreen()));
       },
       child: Container(
         margin: EdgeInsets.fromLTRB(25, 25, 12, 0),
