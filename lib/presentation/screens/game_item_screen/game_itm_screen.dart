@@ -4,6 +4,7 @@ import 'package:loby/presentation/screens/game_item_screen/widgets/ItemList.dart
 import 'package:sizer/sizer.dart';
 
 import '../../../core/theme/colors.dart';
+import '../../../models/BubbleData.dart';
 import '../../widgets/custom_chip.dart';
 
 class GameItemScreen extends StatefulWidget {
@@ -207,8 +208,18 @@ class _GameItemScreenState extends State<GameItemScreen> {
     );
   }
 
+  final List<BubbleData> bubbles = [
+    BubbleData(text: 'Accounts'),
+    BubbleData(text: 'Buddy'),
+    BubbleData(text: 'Rank Push'),
+    BubbleData(text: 'In-Game Currency'),
+    BubbleData(text: 'In-Game Items'),
+    BubbleData(text: 'Coach'),
+    BubbleData(text: 'Duel'),
+  ];
+
   _buildCategories(TextTheme textTheme) {
-    return CustomChip();
+    return CustomChip(labelName: bubbles,);
   }
 
   _buildGames(TextTheme textTheme) {

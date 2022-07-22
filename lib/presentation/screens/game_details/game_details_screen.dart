@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../core/theme/colors.dart';
 import '../../widgets/custom_button.dart';
+import '../other_user_profile/other_user_profile_screen.dart';
 
 class GameDetailScreen extends StatefulWidget {
   const GameDetailScreen({Key? key}) : super(key: key);
@@ -313,118 +314,128 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
               ),
             ),
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
-            child: Card(
-              color: backgroundColor,
-              elevation: 0.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 1,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.green[500],
-                        radius: 36,
-                        child: const Padding(
-                          padding: EdgeInsets.all(1.0),
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"),
-                            //NetworkImage
-                            radius: 36,
-                          ),
-                        ), //CircleAvatar
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.fromLTRB(8, 0, 0, 0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Mukesh Kumar Patel",
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1,
-                                style: textTheme.headline3?.copyWith(
-                                    fontSize: 16.0, color: textWhiteColor),
-                              ),
-                              Row(
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SvgPicture.asset(
-                                        'assets/icons/user_rating_icon.svg',
-                                        color: iconWhiteColor,
-                                        height: 16.0,
-                                        width: 16.0,
-                                      ),
-                                      const SizedBox(width: 4.0),
-                                      Text(
-                                        "4.5",
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        style: textTheme.headline3?.copyWith(
-                                            fontSize: 16.0,
-                                            color: textWhiteColor),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(width: 16.0),
-                                  Row(
-                                    children: [
-                                      SvgPicture.asset(
-                                        'assets/icons/user_chat_icon.svg',
-                                        color: iconWhiteColor,
-                                        height: 16.0,
-                                        width: 16.0,
-                                      ),
-                                      const SizedBox(width: 4.0),
-                                      Text(
-                                        "12",
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        style: textTheme.headline3?.copyWith(
-                                            fontSize: 16.0,
-                                            color: textWhiteColor),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OtherUserProfileScreen(),
+                ),
+              );
+            },
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+              child: Card(
+                color: backgroundColor,
+                elevation: 0.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.green[500],
+                          radius: 36,
+                          child: const Padding(
+                            padding: EdgeInsets.all(1.0),
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"),
+                              //NetworkImage
+                              radius: 36,
+                            ),
+                          ), //CircleAvatar
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Mukesh Kumar Patel",
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  style: textTheme.headline3?.copyWith(
+                                      fontSize: 16.0, color: textWhiteColor),
+                                ),
+                                Row(
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        SvgPicture.asset(
+                                          'assets/icons/user_rating_icon.svg',
+                                          color: iconWhiteColor,
+                                          height: 16.0,
+                                          width: 16.0,
+                                        ),
+                                        const SizedBox(width: 4.0),
+                                        Text(
+                                          "4.5",
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          style: textTheme.headline3?.copyWith(
+                                              fontSize: 16.0,
+                                              color: textWhiteColor),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(width: 16.0),
+                                    Row(
+                                      children: [
+                                        SvgPicture.asset(
+                                          'assets/icons/user_chat_icon.svg',
+                                          color: iconWhiteColor,
+                                          height: 16.0,
+                                          width: 16.0,
+                                        ),
+                                        const SizedBox(width: 4.0),
+                                        Text(
+                                          "12",
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          style: textTheme.headline3?.copyWith(
+                                              fontSize: 16.0,
+                                              color: textWhiteColor),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(width: 4.0),
-                      SizedBox(
-                        width: 7.h,
-                        height: 7.h,
-                        child: MaterialButton(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          color: backgroundColor2,
-                          onPressed: () {
-                            debugPrint("Click Search");
-                          },
-                          child: SvgPicture.asset(
-                            'assets/icons/a_check_icon.svg',
-                            color: iconYellowColor,
+                        const SizedBox(width: 4.0),
+                        SizedBox(
+                          width: 7.h,
+                          height: 7.h,
+                          child: MaterialButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            color: backgroundColor2,
+                            onPressed: () {
+                              debugPrint("Click Search");
+                            },
+                            child: SvgPicture.asset(
+                              'assets/icons/a_check_icon.svg',
+                              color: iconYellowColor,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -582,6 +593,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                   child: CustomButton(
                     color: primaryColor2,
                     name: "Buy Now",
+                    textColor: textWhiteColor,
                     onTap: () {
                       debugPrint('click chat');
                     },

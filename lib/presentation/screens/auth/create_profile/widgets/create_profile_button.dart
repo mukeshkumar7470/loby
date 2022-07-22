@@ -18,11 +18,6 @@ class _CreateProfileButtonState extends State<CreateProfileButton> {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-          child: Padding(
-            padding: EdgeInsets.all(2.h),
-            child: Text("Create Profile",
-                style: TextStyle(fontSize: 14, color: textWhiteColor)),
-          ),
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
@@ -35,7 +30,12 @@ class _CreateProfileButtonState extends State<CreateProfileButton> {
             Navigator.pop(context);
             _showDialog(context, textTheme);
             //  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));
-          }),
+          },
+          child: Padding(
+            padding: EdgeInsets.all(2.h),
+            child: const Text("Create Profile",
+                style: TextStyle(fontSize: 14, color: textWhiteColor)),
+          )),
     );
   }
 

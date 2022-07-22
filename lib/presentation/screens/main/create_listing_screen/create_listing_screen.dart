@@ -20,7 +20,6 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor2,
@@ -39,19 +38,19 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
+                SizedBox(
                   width: 7.h,
                   height: 7.h,
                   child: MaterialButton(
-                    shape: CircleBorder(),
-                    child: SvgPicture.asset(
-                      'assets/icons/back_icon.svg',
-                      color: whiteColor,
-                    ),
+                    shape: const CircleBorder(),
                     color: backgroundColor,
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
+                    child: SvgPicture.asset(
+                      'assets/icons/back_icon.svg',
+                      color: whiteColor,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -177,20 +176,28 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
             child: Align(
               alignment: Alignment.topLeft,
               child: Expanded(
-                child: Text(
-                    textAlign: TextAlign.start,
-                    '‘Loby Protection’ Insurance',
-                    style:
-                        textTheme.headline3?.copyWith(color: textLightColor)),
+                child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: "‘Loby Protection’",
+                        style: textTheme.headline3
+                            ?.copyWith(fontSize: 13.0, color: primaryColor1),
+                      ),
+                      TextSpan(
+                          text: " Insurance",
+                          style: textTheme.headline3
+                              ?.copyWith(fontSize: 13.0, color: textLightColor)),
+                    ]))
               ),
             ),
           ),
           const SizedBox(height: 16.0),
-          _buildTermsCheckbox(textTheme, '7 Days Insurance'),
+          _buildTermsCheckbox(textTheme, '7 Days Insurance', ''),
           const SizedBox(height: 16.0),
           Padding(
             padding:
-            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
               child: Expanded(
@@ -198,29 +205,28 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                     textAlign: TextAlign.start,
                     'Estimated Delivery Time (Hours)',
                     style:
-                    textTheme.headline3?.copyWith(color: textLightColor)),
+                        textTheme.headline3?.copyWith(color: textLightColor)),
               ),
             ),
           ),
           const SizedBox(height: 16.0),
           Padding(
-            padding: EdgeInsets.only(left: 00,
-              top: 00,
-              right: 18.h,
-              bottom: 00),
+            padding:
+                EdgeInsets.only(left: 00, top: 00, right: 18.h, bottom: 00),
             child: Container(
-              child:  _buildSearchField(textTheme, 'Select'),
+              child: _buildSearchField(textTheme, 'Select'),
             ),
           ),
           const SizedBox(height: 16.0),
-          _buildTermsCheckbox(textTheme, 'I have read and agreed to all sellers policy and the Terms of Service.'),
+          _buildTermsCheckbox(textTheme,
+              'I have read and agreed to all sellers policy and the ', 'Terms of Service.'),
           const SizedBox(height: 16.0),
           Padding(
-            padding:
-            EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.h),
+            padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.h),
             child: CustomButton(
               color: createProfileButtonColor,
               name: "Publish",
+              textColor: textWhiteColor,
               onTap: () {
                 debugPrint('click chat');
               },
@@ -232,94 +238,96 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
     );
   }
 
-  _buildTermsCheckbox(TextTheme textTheme, String content) {
+  _buildTermsCheckbox(TextTheme textTheme, String content, String textSpan) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
-        child: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Custom_Checkbox(
-                isChecked: isChecked,
-                onChange: (value) {
-                  isChecked = value;
-                  print(isChecked);
-                },
-                backgroundColor: primaryColor1,
-                borderColor: primaryColor1,
-                icon: Icons.check,
-                size: 22,
-                iconSize: 16,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Custom_Checkbox(
+              isChecked: isChecked,
+              onChange: (value) {
+                isChecked = value;
+              },
+              backgroundColor: primaryColor1,
+              borderColor: primaryColor1,
+              icon: Icons.check,
+              size: 22,
+              iconSize: 16,
+            ),
+            const SizedBox(width: 8.0),
+            Expanded(
+              child: SizedBox(
+                child: RichText(
+                    textAlign: TextAlign.start,
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: content,
+                        style: textTheme.headline3
+                            ?.copyWith(fontSize: 13.0, color: textLightColor),
+                      ),
+                      TextSpan(
+                          text: textSpan,
+                          style: textTheme.headline3
+                              ?.copyWith(fontSize: 13.0, color: primaryColor2)),
+                    ]))
               ),
-              const SizedBox(width: 8.0),
-              Expanded(
-                child: SizedBox(
-                  child: Text(
-                    content,
-                    style: textTheme.headline3
-                        ?.copyWith(fontSize: 13.0, color: textLightColor),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ));
   }
 
   _buildPrice(TextTheme textTheme) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
-        child: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: textFieldColor,
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: TextField(
-                    style: textTheme.subtitle1
-                        ?.copyWith(fontSize: 18, color: textWhiteColor),
-                    decoration: InputDecoration(
-                      prefixIcon: Padding(
-                        padding: EdgeInsets.all(3.w),
-                        child: SvgPicture.asset(
-                          'assets/icons/search_icon.svg',
-                          color: iconTintColor,
-                        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.4,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: textFieldColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: TextField(
+                  style: textTheme.bodyText1?.copyWith(color: textWhiteColor),
+                  decoration: InputDecoration(
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.all(3.w),
+                      child: SvgPicture.asset(
+                        'assets/icons/doller_icon.svg',
+                        color: iconWhiteColor,
                       ),
-                      border: InputBorder.none,
-                      hintStyle: textTheme.subtitle1
-                          ?.copyWith(fontSize: 18, color: iconTintColor),
-                      hintText: 'Search',
                     ),
+                    border: InputBorder.none,
+                    hintStyle: textTheme.subtitle1
+                        ?.copyWith(fontSize: 18, color: iconTintColor),
+                    hintText: 'Search',
                   ),
                 ),
               ),
-              const SizedBox(width: 2.0),
-              Text(
-                "per",
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: textTheme.headline3
-                    ?.copyWith(fontSize: 13.0, color: textLightColor),
-              ),
-              const SizedBox(width: 2.0),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4,
-                child: MyDropDownWidget(),
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(width: 2.0),
+            Text(
+              "per",
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              style: textTheme.headline3
+                  ?.copyWith(fontSize: 13.0, color: textLightColor),
+            ),
+            const SizedBox(width: 2.0),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.4,
+              child: const MyDropDownWidget(),
+            ),
+          ],
         ));
   }
 
   _buildSearchField(TextTheme textTheme, String name) {
-    return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+    return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
         child: MyDropDownWidget());
   }
 
@@ -330,10 +338,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           decoration: BoxDecoration(
             color: textFieldColor,
             border: Border.all(color: primaryColor1),
-            borderRadius: new BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(10.0),
           ),
           child: Padding(
-              padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
               child: TextFormField(
                   style: textTheme.subtitle1
                       ?.copyWith(fontSize: 14, color: whiteColor),
@@ -346,18 +354,41 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
     );
   }
 
+  _buildYoutubeLinkPasteField(TextTheme textTheme) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+      child: Container(
+          decoration: BoxDecoration(
+            color: textFieldColor,
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+              child: TextFormField(
+                  style: textTheme.subtitle1
+                      ?.copyWith(fontSize: 14, color: whiteColor),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintStyle:
+                        textTheme.bodyText1?.copyWith(color: textWhiteColor),
+                    hintText: 'Paste Youtube/Twitch Link',
+                  )))),
+    );
+  }
+
   _buildUploadField(TextTheme textTheme) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
         child: DottedBorder(
           color: iconTintColor,
           borderType: BorderType.RRect,
-          radius: Radius.circular(22),
+          radius: const Radius.circular(24),
           strokeWidth: 1,
           child: Container(
               decoration: BoxDecoration(
                 color: textFieldColor,
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(22),
               ),
               child: Column(
                 children: [
@@ -491,6 +522,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                     child: CustomButton(
                       color: createProfileButtonColor,
                       name: "Choose file",
+                      textColor: textWhiteColor,
                       onTap: () {
                         debugPrint('click chat');
                       },
@@ -510,17 +542,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                     ),
                   ),
                   const SizedBox(height: 8.0),
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 4.h),
-                    child: CustomButton(
-                      color: backgroundColor,
-                      name: "Paste Youtube/Twitch Link",
-                      onTap: () {
-                        debugPrint('click chat');
-                      },
-                    ),
-                  ),
+                  _buildYoutubeLinkPasteField(textTheme),
                   const SizedBox(height: 16.0),
                 ],
               )),
@@ -534,10 +556,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           height: 100.0,
           decoration: BoxDecoration(
             color: textFieldColor,
-            borderRadius: new BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(10.0),
           ),
           child: Padding(
-              padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
               child: Wrap(
                 children: [
                   TextFormField(
@@ -552,24 +574,5 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                 ],
               ))),
     );
-  }
-
-  _buildEmailField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'Ex: jhonsingh@gmail.com',
-                ))));
   }
 }

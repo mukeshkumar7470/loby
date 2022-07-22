@@ -6,8 +6,6 @@ import 'package:loby/presentation/screens/game_item_screen/game_itm_screen.dart'
 import 'package:loby/presentation/screens/main/home_screen/widgets/game_list_card.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../widgets/body_padding_widget.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -75,7 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 3.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
               child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -108,8 +107,8 @@ class _HomeScreenState extends State<HomeScreen> {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: TextField(
-          style:
-              textTheme.subtitle1?.copyWith(fontSize: 18, color: textWhiteColor),
+          style: textTheme.subtitle1
+              ?.copyWith(fontSize: 18, color: textWhiteColor),
           decoration: InputDecoration(
             prefixIcon: Padding(
               padding: EdgeInsets.all(3.w),
@@ -143,27 +142,29 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: 5,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {
-              debugPrint('Buddy $index');
-              FocusManager.instance.primaryFocus?.unfocus();
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CategoryItemScreen(name: 'Buddy $index')));
-            },
+              onTap: () {
+                debugPrint('Buddy $index');
+                FocusManager.instance.primaryFocus?.unfocus();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        CategoryItemScreen(name: 'Buddy $index')));
+              },
               child: Container(
-            decoration: BoxDecoration(
-              color: textFieldColor,
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Buddy $index',
-                  style: textTheme.headline1
-                      ?.copyWith(fontSize: 12.sp, color: primaryColor1),
+                decoration: BoxDecoration(
+                  color: textFieldColor,
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-              ],
-            ),
-          ));
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Buddy $index',
+                      style: textTheme.headline1
+                          ?.copyWith(fontSize: 12.sp, color: primaryColor1),
+                    ),
+                  ],
+                ),
+              ));
         },
       ),
     );
@@ -179,7 +180,9 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: () {
             debugPrint('Battlegrounds Mobile India $index');
             FocusManager.instance.primaryFocus?.unfocus();
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => GameItemScreen(name: 'Battlegrounds Mobile $index')));
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    GameItemScreen(name: 'Battlegrounds Mobile $index')));
           },
           child: Container(
             height: 150,

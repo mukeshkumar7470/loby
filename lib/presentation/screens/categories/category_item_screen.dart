@@ -4,6 +4,7 @@ import 'package:loby/presentation/screens/categories/widgets/categoriy_item_card
 import 'package:sizer/sizer.dart';
 
 import '../../../core/theme/colors.dart';
+import '../../widgets/drop_down.dart';
 
 class CategoryItemScreen extends StatefulWidget {
   String name;
@@ -115,39 +116,9 @@ class _CategoryItemScreenState extends State<CategoryItemScreen> {
   }
 
   _buildSearchField(TextTheme textTheme) {
-    return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: textFieldColor,
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(10),
-                    hintStyle: textTheme.subtitle1
-                        ?.copyWith(fontSize: 18, color: iconTintColor),
-                    hintText: 'Select Game (Dropdown + Search)',
-                    border: InputBorder.none,
-                  ),
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.2,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 0.0, top: 0.0),
-                  child: SvgPicture.asset(
-                    'assets/icons/dropdown_icon.svg',
-                    color: iconTintColor,
-                  ),
-                ),
-              )
-            ],
-          ),
-        )
+    return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+        child: MyDropDownWidget()
         );
   }
 

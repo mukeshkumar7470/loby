@@ -26,8 +26,9 @@ class _MyDropDownWidgetState extends State<MyDropDownWidget> {
             isExpanded: true,
             isDense: false,
             // Reduces the dropdowns height by +/- 50%
-            icon: Icon(Icons.keyboard_arrow_down),
+            icon: const Icon(Icons.keyboard_arrow_down),
             value: selectedValue,
+            dropdownColor: backgroundColor,
             items: items.map((item) {
               return DropdownMenuItem(
                 value: item,

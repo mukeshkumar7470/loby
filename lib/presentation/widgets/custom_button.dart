@@ -8,9 +8,10 @@ import '../screens/main/main_screen.dart';
 class CustomButton extends StatelessWidget {
   final Color color;
   final String name;
+  Color? textColor;
   var onTap;
 
-  CustomButton({Key? key, required this.color, required this.name, required this.onTap}) : super(key: key);
+  CustomButton({Key? key, required this.color, required this.name, required this.onTap, this.textColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,48 +26,14 @@ class CustomButton extends StatelessWidget {
             color: color,
             borderRadius: BorderRadius.circular(2.h),
           ),
-          child: Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text(name,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14, color: primaryTextColor)),
-            )
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(name,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14, color: textColor?? primaryTextColor)),
           ),
         ),
       ),
-    );
-  }
-
-
-  void _showDialog(BuildContext context, TextTheme textTheme) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (BuildContext context) {
-        return DraggableScrollableSheet(
-          expand: false,
-          initialChildSize: 0.9,
-          maxChildSize: 0.9,
-          minChildSize: 0.5,
-          builder: (context, scrollController) {
-            return Column(
-              children: <Widget>[
-                Expanded(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: loginCardBackgroundColor,
-                        borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(24)),
-                      ),
-                      child: SignUpCardList(scrollController),
-                    )),
-              ],
-            );
-          },
-        );
-      },
     );
   }
 }

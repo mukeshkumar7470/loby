@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:loby/core/theme/colors.dart';
 
+import '../../models/BubbleData.dart';
+
 class CustomChip extends StatefulWidget {
   String? label;
   Color? color;
+  List<BubbleData> labelName;
 
-  CustomChip({Key? key, this.label, this.color}) : super(key: key);
+  CustomChip({Key? key, this.label, this.color, required this.labelName})
+      : super(key: key);
 
   @override
   State<CustomChip> createState() => _CustomChipState();
@@ -27,10 +31,10 @@ class _CustomChipState extends State<CustomChip> {
       runSpacing: 4.0,
       children: [
         ...List.generate(
-            8,
+            widget.labelName.length,
             (index) => ChoiceChip(
                   selected: _selectedIndex == index,
-                  label: Text('Account $index',
+                  label: Text(widget.labelName[index].text.toString(),
                       style:
                           textTheme.subtitle1?.copyWith(color: textWhiteColor)),
                   elevation: 1,
