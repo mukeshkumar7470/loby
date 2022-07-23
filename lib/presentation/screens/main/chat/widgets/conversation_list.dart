@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loby/core/theme/colors.dart';
 
 import '../chat_detail/chat_detail_screen.dart';
+import '../message_page.dart';
 
 class ConversationList extends StatelessWidget {
   String name;
@@ -19,7 +20,7 @@ class ConversationList extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return GestureDetector(
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatDetailScreen()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => MessagePage()));
         },
         child: Padding(
           padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
