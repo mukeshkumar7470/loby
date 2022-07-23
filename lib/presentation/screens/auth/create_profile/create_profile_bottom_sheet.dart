@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:loby/presentation/screens/auth/create_profile/widgets/update_profile_button.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../../widgets/custom_button.dart';
+import '../../main/main_screen.dart';
+import '../widgets/input_text_title_widget.dart';
+import '../widgets/input_text_widget.dart';
 
 class CreateProfileCard extends StatelessWidget {
   final ScrollController controller;
 
-   const CreateProfileCard(this.controller);
+  const CreateProfileCard(this.controller);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +27,8 @@ class CreateProfileCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text('Your Profile',
-                          style: textTheme.headlineLarge?.copyWith(
-                              fontSize: 18, color: textWhiteColor)),
+                          style: textTheme.headlineLarge
+                              ?.copyWith(fontSize: 18, color: textWhiteColor)),
                       IconButton(
                         icon: const Icon(Icons.close, color: whiteColor),
                         onPressed: () => Navigator.of(context).pop(null),
@@ -49,86 +52,68 @@ class CreateProfileCard extends StatelessWidget {
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text('Full Name',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
-                  ),
+                  const InputTextTitleWidget(
+                      titleName: 'Full Name',
+                      titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildFullNameField(textTheme),
+                  const InputTextWidget(hintName: 'Ex: Jhon Singh'),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text('Display Name',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
-                  ),
+                  const InputTextTitleWidget(
+                      titleName: 'Display Name',
+                      titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildDisplayNameField(textTheme),
+                  const InputTextWidget(hintName: 'Ex: Commander'),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text('Country',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
-                  ),
+                  const InputTextTitleWidget(
+                      titleName: 'Country',
+                      titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildCountryField(textTheme),
+                  const InputTextWidget(hintName: 'India (Default)'),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
+                  const InputTextTitleWidget(
+                      titleName: 'Country',
+                      titleTextColor: textInputTitleColor),
                   SizedBox(
-                    width: double.infinity,
-                    child: Text('City',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
-                  ),
-                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildCityField(textTheme),
-                   SizedBox(
+                  const InputTextWidget(hintName: 'Ex: Bhopal'),
+                  SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
+                  const InputTextTitleWidget(
+                      titleName: 'DOB', titleTextColor: textInputTitleColor),
                   SizedBox(
-                    width: double.infinity,
-                    child: Text('Date of Birth',
-                        style: textTheme.subtitle1),
-                  ),
-                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildDOBField(textTheme),
-                   SizedBox(
+                  const InputTextWidget(hintName: '15 July 1999'),
+                  SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
+                  const InputTextTitleWidget(
+                      titleName: 'DOB', titleTextColor: textInputTitleColor),
                   SizedBox(
-                    width: double.infinity,
-                    child: Text('Bio',
-                        style: textTheme.subtitle1),
-                  ),
-                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
@@ -137,10 +122,17 @@ class CreateProfileCard extends StatelessWidget {
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
-                    child: UpdateProfileButton(),
-                  ),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: CustomButton(
+                          color: btnBgColor1,
+                          textColor: textWhiteColor,
+                          name: "Update Profile",
+                          onTap: () {
+                            Navigator.pop(context);
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const MainScreen()));
+                          })),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
@@ -174,7 +166,9 @@ class CreateProfileCard extends StatelessWidget {
                         backgroundColor:
                             MaterialStateProperty.all<Color>(primaryColor1),
                       ),
-                      onPressed: () => null,
+                      onPressed: () {
+                        debugPrint("change");
+                      },
                       child: const Padding(
                         padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
                         child: Text("Upload New",
@@ -197,8 +191,8 @@ class CreateProfileCard extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
                         child: Text("Upload New",
-                            style: TextStyle(
-                                fontSize: 14, color: textWhiteColor)),
+                            style:
+                                TextStyle(fontSize: 14, color: textWhiteColor)),
                       )),
                 ],
               ),
@@ -209,121 +203,25 @@ class CreateProfileCard extends StatelessWidget {
     );
   }
 
-  _buildFullNameField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'Ex: Jhon Singh',
-                )
-            )
-        )
-    );
-  }
-
-  _buildDisplayNameField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'Ex: Commandar',
-                ))));
-  }
-
-  _buildCountryField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'India (Default)',
-                ))));
-  }
-
-  _buildCityField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'India (Default)',
-                ))));
-  }
-
-  _buildDOBField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'Lucknow',
-                ))));
-  }
-
   _buildBioNameField(TextTheme textTheme) {
     return Container(
-        height: 100,
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: BorderRadius.circular(10.0),
+      height: 100,
+      decoration: BoxDecoration(
+        color: textFieldColor,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
+        child: TextFormField(
+          style: textTheme.subtitle1?.copyWith(fontSize: 14, color: whiteColor),
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintStyle: textTheme.subtitle1
+                ?.copyWith(fontSize: 14, color: textInputTitleColor),
+            hintText: 'Ex: Jhon Singh',
+          ),
         ),
-        child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'Ex: Jhon Singh',
-                ))));
+      ),
+    );
   }
 }

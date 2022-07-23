@@ -4,9 +4,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../main/main_screen.dart';
 import '../../sign_up/sign_up_bottom_sheet.dart';
-import 'sign_in_with_apple_button.dart';
 import '../../../../widgets/custom_button.dart';
-import 'create_new_account_button.dart';
 
 class LoginCard extends StatefulWidget {
   const LoginCard({Key? key}) : super(key: key);
@@ -52,7 +50,7 @@ class _LoginCardState extends State<LoginCard> {
                   width: double.infinity,
                   height: 2.h,
                 ),
-                Text("New User ?", style: textTheme.headline1?.copyWith(color: primaryColor1)),
+                Text("New User ?", style: textTheme.subtitle2?.copyWith(color: primaryColor1)),
                 SizedBox(
                   width: double.infinity,
                   height: 2.h,
@@ -95,7 +93,7 @@ class _LoginCardState extends State<LoginCard> {
                         borderRadius:
                         BorderRadius.vertical(top: Radius.circular(24)),
                       ),
-                      child: SignUpCardList(scrollController),
+                      child: SignUpCardList(controller: scrollController),
                     )),
               ],
             );

@@ -58,13 +58,13 @@ class ApplicationTheme {
         color: primaryTextColor,
         fontFamily: 'Poppins',
       ),
-      subtitle1: const TextStyle(
-        fontSize: 12,
+      subtitle1: TextStyle(
+        fontSize: 12.sp,
         fontWeight: FontWeight.w400,
         color: textInputTitleColor,
       ),
-      subtitle2: const TextStyle(
-        fontSize: 10,
+      subtitle2: TextStyle(
+        fontSize: 10.sp,
         fontWeight: FontWeight.w400,
         color: bodyTextColor,
       ),
@@ -79,8 +79,8 @@ class ApplicationTheme {
         color: bodyTextColor,
       ),
       button: TextStyle(
-        fontSize: 14.sp,
-        fontWeight: FontWeight.w600,
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w700,
         color: primaryTextColor,
       ),
     ),

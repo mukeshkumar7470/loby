@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:loby/presentation/screens/auth/widgets/input_text_title_widget.dart';
+import 'package:loby/presentation/screens/auth/widgets/input_text_widget.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../widgets/custom_button.dart';
 import '../../main/main_screen.dart';
-import '../create_profile/widgets/apple_account_button.dart';
-import '../create_profile/widgets/create_profile_button.dart';
-import '../create_profile/widgets/google_account_button.dart';
+import '../create_profile/create_profile_bottom_sheet.dart';
 
 class SignUpCardList extends StatelessWidget {
   final ScrollController controller;
 
-  const SignUpCardList(this.controller);
+  const SignUpCardList({Key? key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -35,78 +35,81 @@ class SignUpCardList extends StatelessWidget {
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text('Full Name',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
-                  ),
+                  const InputTextTitleWidget(
+                      titleName: 'Full Name',
+                      titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildFullNameField(textTheme),
+                  const InputTextWidget(hintName: 'Ex: Jhon Singh'),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text('Email Address',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
-                  ),
+                  const InputTextTitleWidget(
+                      titleName: 'Email Address',
+                      titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildEmailField(textTheme),
+                  const InputTextWidget(hintName: 'Ex: jhonsingh@gmail.com'),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
+                  const InputTextTitleWidget(
+                      titleName: 'Password',
+                      titleTextColor: textInputTitleColor),
                   SizedBox(
-                    width: double.infinity,
-                    child: Text('Password',
-                        style: textTheme.subtitle1?.copyWith(
-                            fontSize: 14, color: textInputTitleColor)),
-                  ),
-                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildPasswordField(textTheme),
+                  const InputTextWidget(hintName: '******'),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
-                    child: CreateProfileButton(),
-                  ),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: CustomButton(
+                          color: btnBgColor1,
+                          textColor: textWhiteColor,
+                          name: "Create Profile",
+                          onTap: () {
+                            Navigator.pop(context);
+                            _showCreateProfileBottomSheet(context, textTheme);
+                          })),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
                   Text('Sign up using Google or Apple',
-                      style: textTheme.subtitle1?.copyWith(
-                          fontSize: 14, color: textInputTitleColor)),
+                      style: textTheme.subtitle2
+                          ?.copyWith(color: textInputTitleColor)),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  CustomButton(color: primaryColor4, name: "Google Account", onTap: () {
-                    _goToMainScreen(context, textTheme);
-                  }
-                  ),
+                  CustomButton(
+                      color: primaryColor4,
+                      textColor: textWhiteColor,
+                      name: "Google Account",
+                      onTap: () {
+                        _goToMainScreen(context, textTheme);
+                      }),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
                   ),
-                  CustomButton(color: primaryColor4, name: "Apple Account", onTap: () {
-                    _goToMainScreen(context, textTheme);
-                  }
-                  ),
+                  CustomButton(
+                      color: primaryColor4,
+                      textColor: textWhiteColor,
+                      name: "Apple Account",
+                      onTap: () {
+                        _goToMainScreen(context, textTheme);
+                      }),
                   SizedBox(
                     width: double.infinity,
                     height: 4.h,
@@ -117,64 +120,38 @@ class SignUpCardList extends StatelessWidget {
   }
 
   void _goToMainScreen(BuildContext context, TextTheme textTheme) {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const MainScreen()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const MainScreen()));
   }
 
-  _buildFullNameField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'Ex: Jhon Singh',
-                ))));
-  }
-
-  _buildEmailField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: 'Ex: jhonsingh@gmail.com',
-                ))));
-  }
-
-  _buildPasswordField(TextTheme textTheme) {
-    return Container(
-        decoration: BoxDecoration(
-          color: textFieldColor,
-          borderRadius: new BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-            child: TextFormField(
-                style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 14, color: whiteColor),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textInputTitleColor),
-                  hintText: '********',
-                ))));
+  _showCreateProfileBottomSheet(BuildContext context, TextTheme textTheme) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return DraggableScrollableSheet(
+          expand: false,
+          initialChildSize: 0.9,
+          maxChildSize: 0.9,
+          minChildSize: 0.5,
+          builder: (context, scrollController) {
+            return Column(
+              children: <Widget>[
+                Expanded(
+                    child: Container(
+                  decoration: const BoxDecoration(
+                    color: loginCardBackgroundColor,
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(24)),
+                  ),
+                  child: CreateProfileCard(scrollController),
+                )),
+              ],
+            );
+          },
+        );
+      },
+    );
   }
 }

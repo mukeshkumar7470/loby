@@ -71,20 +71,18 @@ class _GameItemScreenState extends State<GameItemScreen> {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 0.0, horizontal: 8.0),
-                      child: Text(
-                        name,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style:
-                            textTheme.headline1?.copyWith(color: primaryColor1),
-                      ),
+                Container(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 8.0),
+                    child: Text(
+                      name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style:
+                          textTheme.headline1?.copyWith(color: primaryColor1),
                     ),
                   ),
                 ),

@@ -24,9 +24,9 @@ class GameCard extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: Colors.green[500],
                 radius: 35,
-                child: Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: const CircleAvatar(
+                child: const Padding(
+                  padding: EdgeInsets.all(2.0),
+                  child: CircleAvatar(
                     backgroundImage: AssetImage('assets/images/img.png'),
                     radius: 35,
                   ),
@@ -35,13 +35,11 @@ class GameCard extends StatelessWidget {
               SizedBox(
                 height: 0.5.h,
               ),//CircleAvatar//SizedBox
-              Expanded(
-                child: Text(
-                  'Bettelground Mobile',
-                  textAlign: TextAlign.center,
-                  style: textTheme.subtitle1
-                      ?.copyWith(fontSize: 14, color: textWhiteColor), //Textstyle
-                ),
+              Text(
+                'Bettelground Mobile',
+                textAlign: TextAlign.center,
+                style: textTheme.subtitle1
+                    ?.copyWith(fontSize: 14, color: textWhiteColor), //Textstyle
               ), //Text
               SizedBox(
                 height: 0.5.h,

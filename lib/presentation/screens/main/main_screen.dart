@@ -7,6 +7,7 @@ import '../../widgets/bottom_nav_bar.dart';
 import 'chat/chat_screen.dart';
 import 'create_listing_screen/create_listing_screen.dart';
 import 'home_screen/home_screen.dart';
+import 'notification/notification_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -19,16 +20,16 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final _inactiveColor = defaultBottomNavItemColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor2,
+        backgroundColor: backgroundColor2,
         body: getBody(),
-        bottomNavigationBar: _buildBottomBar()
-    );
+        bottomNavigationBar: _buildBottomBar());
   }
 
-  Widget _buildBottomBar(){
+  Widget _buildBottomBar() {
     return CustomAnimatedBottomBar(
       containerHeight: 70,
       backgroundColor: primaryColor1,
@@ -109,29 +110,13 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-
   Widget getBody() {
     List<Widget> pages = [
-      Container(
-        alignment: Alignment.center,
-        child: const HomeScreen(),
-      ),
-      Container(
-        alignment: Alignment.center,
-        child: const CreateListingScreen(),
-      ),
-      Container(
-        alignment: Alignment.center,
-        child: ChatScreen(), 
-      ),
-      Container(
-        alignment: Alignment.center,
-        child: Text("Messages",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-      ),
-      Container(
-        alignment: Alignment.center,
-        child:const ProfileScreen(),
-      ),
+      HomeScreen(),
+      CreateListingScreen(),
+      ChatScreen(),
+      NotificationScreen(),
+      ProfileScreen(),
     ];
     return IndexedStack(
       index: _currentIndex,

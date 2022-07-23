@@ -39,13 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.all(2.h),
                 child: Align(
                   alignment: Alignment.center,
-                  child: Container(
-                    child: SizedBox(
-                      height: 9.h,
-                      child: Image.asset(
-                        "assets/icons/app_icon.png",
-                        fit: BoxFit.contain,
-                      ),
+                  child: SizedBox(
+                    height: 9.h,
+                    child: Image.asset(
+                      "assets/icons/app_icon.png",
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
@@ -184,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 builder: (context) =>
                     GameItemScreen(name: 'Battlegrounds Mobile $index')));
           },
-          child: Container(
+          child: SizedBox(
             height: 150,
             width: 150,
             child: Center(

@@ -42,7 +42,7 @@ class CategoryItemCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../core/theme/colors.dart';
-import '../screens/auth/sign_up/sign_up_bottom_sheet.dart';
-import '../screens/main/main_screen.dart';
 
 class CustomButton extends StatelessWidget {
   final Color color;
@@ -21,13 +18,12 @@ class CustomButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          padding: EdgeInsets.all(0.0),
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(2.h),
           ),
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Text(name,
                 textAlign: TextAlign.center,
                 style: textTheme.button?.copyWith(color: textColor?? primaryTextColor)),

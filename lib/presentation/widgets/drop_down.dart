@@ -16,7 +16,7 @@ class _MyDropDownWidgetState extends State<MyDropDownWidget> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Container(
-        padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
         decoration: BoxDecoration(
             color: backgroundColor, borderRadius: BorderRadius.circular(10)),
 

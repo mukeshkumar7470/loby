@@ -34,7 +34,7 @@ class _CategoryItemScreenState extends State<CategoryItemScreen> {
       child: Column(
         children: [
           Container(
-            decoration: BoxDecoration(color: backgroundColor),
+            decoration: const BoxDecoration(color: backgroundColor),
             child: Padding(
               padding: EdgeInsets.all(2.h),
               child: Align(
@@ -61,48 +61,46 @@ class _CategoryItemScreenState extends State<CategoryItemScreen> {
                   height: 7.h,
                   child: MaterialButton(
                     shape: CircleBorder(),
-                    child: SvgPicture.asset(
-                      'assets/icons/back_icon.svg',
-                      color: whiteColor,
-                    ),
                     color: backgroundColor,
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 0.0, horizontal: 8.0),
-                      child: Text(
-                        '$name',
-                        maxLines: 2,
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
-                        style: textTheme.headlineLarge
-                            ?.copyWith(color: primaryColor1),
-                      ),
+                    child: SvgPicture.asset(
+                      'assets/icons/back_icon.svg',
+                      color: whiteColor,
                     ),
                   ),
                 ),
                 Container(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 8.0),
+                    child: Text(
+                      name,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: textTheme.headlineLarge
+                          ?.copyWith(color: primaryColor1),
+                    ),
+                  ),
+                ),
+                SizedBox(
                   width: 7.h,
                   height: 7.h,
                   child: MaterialButton(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: SvgPicture.asset(
-                      'assets/icons/search_icon.svg',
-                      color: whiteColor,
-                    ),
                     color: backgroundColor,
                     onPressed: () {
                       debugPrint("Click Search");
                     },
+                    child: SvgPicture.asset(
+                      'assets/icons/search_icon.svg',
+                      color: whiteColor,
+                    ),
                   ),
                 ),
               ],
