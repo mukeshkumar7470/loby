@@ -128,7 +128,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                 const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Text(
                 "Lvl 78 Account on SALE. Trusted Seller. 100% Guaranteed",
-                style: textTheme.headline1?.copyWith(color: textWhiteColor)),
+                style: textTheme.headline2?.copyWith(color: textWhiteColor)),
           ),
           const SizedBox(height: 8.0),
           Padding(
@@ -198,7 +198,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                             "₹ 25,000",
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
-                            style: textTheme.headlineLarge
+                            style: textTheme.headline1
                                 ?.copyWith(color: primaryColor1),
                           ),
                         ],
@@ -282,7 +282,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                             "₹ 50,000",
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
-                            style: textTheme.headlineLarge
+                            style: textTheme.headline1
                                 ?.copyWith(color: primaryColor1),
                           ),
                         ],
