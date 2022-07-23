@@ -17,19 +17,19 @@ class ApplicationTheme {
     ),
     textTheme:  TextTheme(
       headlineLarge: TextStyle(
-        fontSize: SizerUtil.deviceType == DeviceType.web ? 5.0.sp : 32.sp,
-        fontWeight: FontWeight.w500,
+        fontSize: SizerUtil.deviceType == DeviceType.web ? 5.0.sp : 16.sp,
+        fontWeight: FontWeight.w800,
         color: primaryTextColor,
         fontFamily: 'Poppins',
       ),
       headline1: TextStyle(
-        fontSize: SizerUtil.deviceType == DeviceType.web ? 4.5.sp : 24.sp,
+        fontSize: SizerUtil.deviceType == DeviceType.web ? 4.5.sp : 13.sp,
         fontWeight: FontWeight.w500,
         color: primaryTextColor,
         fontFamily: 'Poppins',
       ),
       headline2: TextStyle(
-        fontSize: SizerUtil.deviceType == DeviceType.web ? 4.0.sp : 16.sp,
+        fontSize: SizerUtil.deviceType == DeviceType.web ? 4.0.sp : 12.sp,
         fontWeight: FontWeight.w500,
         color: primaryTextColor,
         fontFamily: 'Poppins',
