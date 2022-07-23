@@ -57,9 +57,7 @@ class ProfileHeader extends StatelessWidget {
                               child: const Padding(
                                 padding: EdgeInsets.all(1.0),
                                 child: CircleAvatar(
-                                  backgroundImage: NetworkImage(
-                                      "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"),
-                                  //NetworkImage
+                                  backgroundImage: AssetImage('assets/images/img.png'),
                                   radius: 36,
                                 ),
                               ), //CircleAvatar
@@ -131,7 +129,7 @@ class ProfileHeader extends StatelessWidget {
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.4,
                                 child: CustomButton(
-                                  color: primaryColor2,
+                                  color: btnBgColor1,
                                   textColor: textWhiteColor,
                                   name: "Message",
                                   onTap: () {

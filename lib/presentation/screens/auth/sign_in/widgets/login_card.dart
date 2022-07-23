@@ -52,7 +52,7 @@ class _LoginCardState extends State<LoginCard> {
                   width: double.infinity,
                   height: 2.h,
                 ),
-                const Text("New User ?", style: TextStyle(fontSize: 14, color: quoteTileCallButton)),
+                Text("New User ?", style: textTheme.headline1?.copyWith(color: primaryColor1)),
                 SizedBox(
                   width: double.infinity,
                   height: 2.h,

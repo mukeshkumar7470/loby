@@ -117,8 +117,7 @@ class ItemList extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(1.0),
                           child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
+                            backgroundImage: AssetImage('assets/images/img.png'),
                             radius: 15,
                           ),
                         ), //CircleAvatar

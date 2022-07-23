@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loby/presentation/screens/other_user_profile/widgets/user_about_widget.dart';
+import 'package:loby/presentation/screens/other_user_profile/widgets/user_duels_widget.dart';
 import 'package:loby/presentation/screens/other_user_profile/widgets/user_listing_widget.dart';
 import 'package:loby/presentation/screens/other_user_profile/widgets/user_review_rating_widget.dart';
 import 'package:sizer/sizer.dart';
@@ -37,8 +38,8 @@ class UserInfo extends StatelessWidget {
                 _buildCategories(textTheme),
                // UserListingWidget(),
                // UserAboutWidget(),
-                UserReviewRatingWidget(),
-                UserReviewRatingWidget(),
+               // UserReviewRatingWidget(),
+                UserDuelsWidget(),
               ],
             ),
           ),

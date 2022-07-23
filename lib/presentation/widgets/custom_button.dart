@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
             padding: EdgeInsets.all(16.0),
             child: Text(name,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14, color: textColor?? primaryTextColor)),
+                style: textTheme.button?.copyWith(color: textColor?? primaryTextColor)),
           ),
         ),
       ),

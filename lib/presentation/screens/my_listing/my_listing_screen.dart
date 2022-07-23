@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loby/presentation/screens/my_listing/widgets/myListingItemList.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/theme/colors.dart';
-import '../../widgets/custom_button.dart';
 
 class MyListingScreen extends StatefulWidget {
   const MyListingScreen({Key? key}) : super(key: key);
@@ -15,16 +15,22 @@ class MyListingScreen extends StatefulWidget {
 class _MyListingScreenState extends State<MyListingScreen> {
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor2,
-        body: body(),
+        body: body(textTheme),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {},
+          backgroundColor: btnBgColor1,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(16.0))),
+          label: Text('Add Listing', style: textTheme.headline2?.copyWith(color: textWhiteColor)),
+        ),
       ),
     );
   }
-
-  Widget body() {
-    final textTheme = Theme.of(context).textTheme;
+  Widget body(TextTheme textTheme) {
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -47,7 +53,7 @@ class _MyListingScreenState extends State<MyListingScreen> {
           Container(
             margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   width: 7.h,
@@ -64,40 +70,50 @@ class _MyListingScreenState extends State<MyListingScreen> {
                     ),
                   ),
                 ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment:
-              MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.35,
-                  child: CustomButton(
-                    color: primaryColor3,
-                    name: "Add Funds",
-                    onTap: () {
-                      debugPrint('click chat');
-                    },
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.35,
-                  child: CustomButton(
-                    color: primaryColor3,
-                    name: "Withdraw",
-                    onTap: () {
-                      debugPrint('click chat');
-                    },
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 0.0, horizontal: 8.0),
+                      child: Text(
+                        'My Listing',
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        style: textTheme.headlineLarge
+                            ?.copyWith(color: textWhiteColor),
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
+          const SizedBox(height: 10.0),
+          _buildGames(textTheme),
         ],
       ),
+    );
+  }
+
+  _buildGames(TextTheme textTheme) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 6.0 / 10.2,
+        mainAxisSpacing: 0.1.h,
+        crossAxisSpacing: 0.1.h,
+      ),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 2,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: MyListingItemList(name: 'hello $index'),
+        );
+      },
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/theme/colors.dart';
+import 'all_orders_screen.dart';
 
 class MyOrderScreen extends StatefulWidget {
   const MyOrderScreen({Key? key}) : super(key: key);
@@ -86,15 +87,9 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         ),
         body:  TabBarView(
           children: <Widget>[
-             Column(
-              children: <Widget>[Text("Lunches Page")],
-            ),
-             Column(
-              children: <Widget>[Text("Cart Page")],
-            ),
-            Column(
-              children: <Widget>[Text("Cart Page")],
-            )
+            AllOrdersTabScreen(),
+            AllOrdersTabScreen(),
+            AllOrdersTabScreen()
           ],
         ),
       ),

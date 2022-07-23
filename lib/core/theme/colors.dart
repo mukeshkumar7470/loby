@@ -12,6 +12,15 @@ const Color primaryDarkColor2 = Color(0xFFD82F0E);
 const Color primaryDarkColor3 = Color(0xFFE29509);
 const Color primaryDarkColor4 = Color(0xFF006FC2);
 
+//Button background color
+const Color btnBgColor1 = Color(0xFF6C5DD3);
+const Color btnBgColor2 = Color(0xFF00FF62);
+const Color btnBgColor3 = Color(0xFFEE7C5E);
+const Color btnBgColor4 = Color(0xFF33A9FF);
+const Color btnBgColor5 = Color(0xFFE80505);
+const Color btnBgColor6 = Color(0xFF7B7B7B);
+
+
 
 
 const Color secondaryColor = Color(0xFF3F8CFF);

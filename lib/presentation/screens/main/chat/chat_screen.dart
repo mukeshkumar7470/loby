@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:loby/presentation/screens/main/chat/widgets/conversation_list.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../models/ChatUsers.dart';
-import '../../game_item_screen/game_itm_screen.dart';
-import '../home_screen/widgets/game_list_card.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -16,7 +13,6 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-
   List<ChatUsers> chatUsers = [
     ChatUsers(name: "Jane Russel", time: "Now"),
     ChatUsers(name: "Glady's Murphy", time: "Yesterday"),
@@ -64,21 +60,6 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 7.h,
-                  height: 7.h,
-                  child: MaterialButton(
-                    shape: const CircleBorder(),
-                    color: backgroundColor,
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: SvgPicture.asset(
-                      'assets/icons/back_icon.svg',
-                      color: whiteColor,
-                    ),
-                  ),
-                ),
                 Expanded(
                   child: Container(
                     alignment: Alignment.center,
@@ -86,7 +67,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 0.0, horizontal: 8.0),
                       child: Text(
-                        'Create New Listing',
+                        'Chat',
                         maxLines: 2,
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.ellipsis,
@@ -99,19 +80,19 @@ class _ChatScreenState extends State<ChatScreen> {
               ],
             ),
           ),
-          _buildTopGames(textTheme),
+          _buildchatUser(textTheme),
         ],
       ),
     );
   }
 
-  _buildTopGames(TextTheme textTheme) {
+  _buildchatUser(TextTheme textTheme) {
     return ListView.builder(
       itemCount: chatUsers.length,
       shrinkWrap: true,
       padding: EdgeInsets.only(top: 16),
       physics: NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index){
+      itemBuilder: (context, index) {
         return ConversationList(
           name: chatUsers[index].name,
           time: chatUsers[index].time,

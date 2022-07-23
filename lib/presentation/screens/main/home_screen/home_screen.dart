@@ -133,9 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 2.0,
-          mainAxisSpacing: 2.h,
-          crossAxisSpacing: 4.h,
+          childAspectRatio: 3.0,
+          mainAxisSpacing: 1.h,
+          crossAxisSpacing: 1.h,
         ),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

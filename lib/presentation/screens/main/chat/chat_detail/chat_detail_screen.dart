@@ -3,8 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../core/theme/colors.dart';
-import '../../../../../models/ChatUsers.dart';
-import '../widgets/conversation_list.dart';
 
 class ChatDetailScreen extends StatefulWidget{
   @override
@@ -12,16 +10,6 @@ class ChatDetailScreen extends StatefulWidget{
 }
 
 class _ChatDetailScreenState extends State<ChatDetailScreen> {
-  List<ChatUsers> chatUsers = [
-    ChatUsers(name: "Jane Russel", imageURL: "images/userImage1.jpeg", time: "Now"),
-    ChatUsers(name: "Glady's Murphy", imageURL: "images/userImage2.jpeg", time: "Yesterday"),
-    ChatUsers(name: "Jorge Henry", imageURL: "images/userImage3.jpeg", time: "31 Mar"),
-    ChatUsers(name: "Philip Fox", imageURL: "images/userImage4.jpeg", time: "28 Mar"),
-    ChatUsers(name: "Debra Hawkins", imageURL: "images/userImage5.jpeg", time: "23 Mar"),
-    ChatUsers(name: "Jacob Pena", imageURL: "images/userImage6.jpeg", time: "17 Mar"),
-    ChatUsers(name: "Andrey Jones", imageURL: "images/userImage7.jpeg", time: "24 Feb"),
-    ChatUsers(name: "John Wick", imageURL: "images/userImage8.jpeg", time: "18 Feb"),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +69,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 0.0, horizontal: 8.0),
                       child: Text(
-                        'Detail',
+                        'Gavin Henry',
                         maxLines: 2,
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.ellipsis,
@@ -94,25 +82,10 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
               ],
             ),
           ),
-          _buildTopGames(textTheme),
+         // _build_conversation(textTheme),
         ],
       ),
     );
   }
 
-  _buildTopGames(TextTheme textTheme) {
-    return ListView.builder(
-      itemCount: chatUsers.length,
-      shrinkWrap: true,
-      padding: EdgeInsets.only(top: 16),
-      physics: NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index){
-        return ConversationList(
-          name: chatUsers[index].name,
-          imageUrl: chatUsers[index].imageURL,
-          time: chatUsers[index].time,
-        );
-      },
-    );
-  }
 }

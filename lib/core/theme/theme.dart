@@ -8,7 +8,7 @@ class ApplicationTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primaryColor: primaryColor1,
     primarySwatch: primarySwatchColor,
-    scaffoldBackgroundColor: backgroundColor,
+    scaffoldBackgroundColor: backgroundColor2,
     // colorScheme:_customColorScheme,
     iconTheme: const IconThemeData(color: iconColor),
     appBarTheme: const AppBarTheme(backgroundColor: backgroundColor),
@@ -78,8 +78,8 @@ class ApplicationTheme {
         fontWeight: FontWeight.w400,
         color: bodyTextColor,
       ),
-      button: const TextStyle(
-        fontSize: 14,
+      button: TextStyle(
+        fontSize: 14.sp,
         fontWeight: FontWeight.w600,
         color: primaryTextColor,
       ),

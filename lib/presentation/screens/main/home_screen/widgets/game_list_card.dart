@@ -27,7 +27,7 @@ class GameCard extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: const CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/img.png'), //NetworkImage
+                    backgroundImage: AssetImage('assets/images/img.png'),
                     radius: 35,
                   ),
                 ), //CircleAvatar

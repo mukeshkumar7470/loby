@@ -118,8 +118,7 @@ class _CategoryItemScreenState extends State<CategoryItemScreen> {
   _buildSearchField(TextTheme textTheme) {
     return const Padding(
         padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
-        child: MyDropDownWidget()
-        );
+        child: MyDropDownWidget());
   }
 
   _buildCategories(TextTheme textTheme) {
@@ -127,9 +126,9 @@ class _CategoryItemScreenState extends State<CategoryItemScreen> {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        childAspectRatio: 7.0 / 9.0,
-        mainAxisSpacing: 0.h,
-        crossAxisSpacing: 0.h,
+        childAspectRatio: 6.0 / 7.5,
+        mainAxisSpacing: 0.1.h,
+        crossAxisSpacing: 0.1.h,
       ),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),

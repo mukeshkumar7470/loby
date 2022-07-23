@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:loby/presentation/screens/main/profile_screen/widgets/profile_options.dart';
 import 'package:loby/presentation/screens/my_order/my_order_screen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../widgets/body_padding_widget.dart';
 import '../../my_listing/my_listing_screen.dart';
+import '../../wallet/my_wallet_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -51,8 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: const CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
+                        backgroundImage: AssetImage('assets/images/img.png'),
                         radius: 35,
                       ),
                     ), //CircleAvatar
@@ -87,13 +88,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildProfileOptions(textTheme, 'Wallet'),
-              _buildProfileOptions(textTheme, 'My Listings'),
-              _buildProfileOptions(textTheme, 'My Orders'),
-              _buildProfileOptions(textTheme, 'Feedback/Suggestions'),
-              _buildProfileOptions(textTheme, 'Profile Verification'),
-              _buildProfileOptions(textTheme, 'Terms & Conditions'),
-              _buildProfileOptions(textTheme, 'Logout'),
+              ProfileOptionsWidget(name: "Wallet", onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MyWalletScreen()));
+              }),
+              ProfileOptionsWidget(name: "My Listings", onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MyListingScreen()));
+              }),
+              ProfileOptionsWidget(name: "My Orders", onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MyOrderScreen()));
+              }),
+              ProfileOptionsWidget(name: "Feedback/Suggestions", onTap: () {
+                debugPrint('check data');
+              }),
+              ProfileOptionsWidget(name: "Profile Verification", onTap: () {
+                debugPrint('check data');
+              }),
+              ProfileOptionsWidget(name: "Terms & Conditions", onTap: () {
+                debugPrint('check data');
+              }),
+              ProfileOptionsWidget(name: "Logout", onTap: () {
+                debugPrint('check data');
+              }),
             ],
           ),
           SizedBox(height: 45),

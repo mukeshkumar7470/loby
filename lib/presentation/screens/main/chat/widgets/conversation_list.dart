@@ -16,6 +16,7 @@ class ConversationList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatDetailScreen()));
@@ -32,6 +33,7 @@ class ConversationList extends StatelessWidget {
               padding: EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
               decoration: BoxDecoration(
                 color: backgroundColor3,
+                border: Border.all(width: 0.2, color: dividerColor),
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Row(
@@ -39,10 +41,7 @@ class ConversationList extends StatelessWidget {
                   Expanded(
                     child: Row(
                       children: <Widget>[
-                        CircleAvatar(
-                          backgroundImage: NetworkImage("hfh"),
-                          maxRadius: 30,
-                        ),
+                        _buildUserAvtar(primaryDarkColor2),
                         SizedBox(
                           width: 16,
                         ),
@@ -54,18 +53,40 @@ class ConversationList extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   name,
-                                  style: TextStyle(fontSize: 16),
+                                  style: textTheme.headline1?.copyWith(color: textWhiteColor),
                                 ),
                                 SizedBox(
                                   height: 6,
                                 ),
                                 Text(
                                   time,
-                                  style: TextStyle(
-                                      fontSize: 13, color: Colors.grey.shade600),
+                                  style: textTheme.headline3?.copyWith(color: textLightColor),
                                 ),
                               ],
                             ),
+                          ),
+                        ),
+                        Container(
+                          // This is your Badge
+                          padding: const EdgeInsets.all(8),
+                          constraints:
+                          const BoxConstraints(minHeight: 46, minWidth: 46),
+                          decoration: BoxDecoration(
+                            // This controls the shadow
+                            boxShadow: [
+                              BoxShadow(
+                                  spreadRadius: 1,
+                                  color: primaryColor2)
+                            ],
+                            borderRadius: BorderRadius.circular(32),
+                            color:
+                            primaryColor2, // This would be color of the Badge
+                          ), // This is your Badge
+                          child: Center(
+                            // Here you can put whatever content you want inside your Badge
+                            child: Text('4',
+                                style: textTheme.headline1
+                                    ?.copyWith(color: textWhiteColor)),
                           ),
                         ),
                       ],
@@ -76,5 +97,30 @@ class ConversationList extends StatelessWidget {
             ),
           ),
         ));
+  }
+
+  _buildUserAvtar(Color borderColor) {
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: CircleAvatar(
+        radius: 36,
+        backgroundColor: primaryColor4,
+        child: Padding(
+          padding: EdgeInsets.all(2.0),
+          child: CircleAvatar(
+            backgroundColor: backgroundColor2,
+            radius: 36,
+            child: Padding(
+              padding: EdgeInsets.all(2.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/img.png'),
+                radius: 36,
+                backgroundColor: backgroundColor,
+              ),
+            ), //CircleAvatar
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -348,9 +348,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                           child: const Padding(
                             padding: EdgeInsets.all(1.0),
                             child: CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"),
-                              //NetworkImage
+                              backgroundImage: AssetImage('assets/images/img.png'),
                               radius: 36,
                             ),
                           ), //CircleAvatar
@@ -579,12 +577,18 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                 SizedBox(
                   width: 6.3.h,
                   height: 6.3.h,
-                  child: CustomButton(
-                    color: primaryColor1,
-                    name: "Chat",
-                    onTap: () {
-                      debugPrint('click chat');
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    color: backgroundColor2,
+                    onPressed: () {
+                      debugPrint("Click Search");
                     },
+                    child: SvgPicture.asset(
+                      'assets/icons/a_check_icon.svg',
+                      color: iconYellowColor,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 4.0),

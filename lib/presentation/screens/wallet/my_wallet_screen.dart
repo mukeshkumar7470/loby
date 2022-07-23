@@ -27,6 +27,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
     final textTheme = Theme.of(context).textTheme;
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Container(
             decoration: const BoxDecoration(color: backgroundColor),
@@ -47,7 +48,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
           Container(
             margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   width: 7.h,
@@ -61,6 +62,23 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                     child: SvgPicture.asset(
                       'assets/icons/back_icon.svg',
                       color: whiteColor,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 0.0, horizontal: 8.0),
+                      child: Text(
+                        'Wallet',
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        style: textTheme.headlineLarge
+                            ?.copyWith(color: textWhiteColor),
+                      ),
                     ),
                   ),
                 ),
@@ -102,19 +120,23 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                       ),
                       child: Container(
                           width: MediaQuery.of(context).size.width * 1,
-                          height: MediaQuery.of(context).size.height * 0.2,
+                          height: MediaQuery.of(context).size.height * 0.17,
                           decoration: BoxDecoration(
                             color: backgroundColor,
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('₹ 25,000',
-                                  textAlign: TextAlign.center,
-                                  style: textTheme.headlineLarge
-                                      ?.copyWith(color: primaryColor1)),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.only(bottom:16.0),
+                                child: Text('₹ 25,000',
+                                    textAlign: TextAlign.center,
+                                    style: textTheme.headlineLarge
+                                        ?.copyWith(color: primaryColor1)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -122,7 +144,8 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                                     Container(
                                       width: MediaQuery.of(context).size.width * 0.35,
                                       child: CustomButton(
-                                        color: primaryColor3,
+                                        color: btnBgColor1,
+                                        textColor: textWhiteColor,
                                         name: "Add Funds",
                                         onTap: () {
                                           debugPrint('click chat');
@@ -132,7 +155,8 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                                     Container(
                                       width: MediaQuery.of(context).size.width * 0.35,
                                       child: CustomButton(
-                                        color: primaryColor3,
+                                        color: btnBgColor1,
+                                        textColor: textWhiteColor,
                                         name: "Withdraw",
                                         onTap: () {
                                           debugPrint('click chat');
@@ -148,6 +172,13 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                   ),
                 ],
               )),
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: Text('View all Transactions',
+                textAlign: TextAlign.end,
+                style: textTheme.headline2
+                ?.copyWith(color: textWhiteColor)),
+          ),
           const SizedBox(height: 8.0),
           Padding(
               padding: const EdgeInsets.all(16.0),
@@ -184,21 +215,26 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                       ),
                       child: Container(
                           width: MediaQuery.of(context).size.width * 1,
-                          height: MediaQuery.of(context).size.height * 0.2,
+                          height: MediaQuery.of(context).size.height * 0.17,
                           decoration: BoxDecoration(
                             color: backgroundColor,
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('500',
-                                  textAlign: TextAlign.center,
-                                  style: textTheme.headlineLarge
-                                      ?.copyWith(color: primaryColor1)),
                               Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+                                padding: const EdgeInsets.only(bottom:16.0),
+                                child: Text('500',
+                                    textAlign: TextAlign.center,
+                                    style: textTheme.headlineLarge
+                                        ?.copyWith(color: primaryColor1)),
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.3,
                                 child: CustomButton(
-                                  color: primaryColor3,
+                                  color: btnBgColor1,
+                                  textColor: textWhiteColor,
                                   name: "Redeem",
                                   onTap: () {
                                     debugPrint('click chat');
@@ -211,6 +247,13 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                   ),
                 ],
               )),
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: Text('View all Transactions',
+                textAlign: TextAlign.end,
+                style: textTheme.headline2
+                ?.copyWith(color: textWhiteColor)),
+          ),
         ],
       ),
     );

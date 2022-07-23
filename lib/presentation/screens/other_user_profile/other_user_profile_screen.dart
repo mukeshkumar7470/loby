@@ -32,7 +32,7 @@ class _OtherUserProfileScreenState extends State<OtherUserProfileScreen> {
       child: Column(
         children: <Widget>[
           ProfileHeader(
-            avatar: NetworkImage('dfd'),
+            avatar: AssetImage('assets/images/img.png'),
             title: "StringConst.DEEPAK_SHARMA",
             subtitle: "StringConst.WEBADDICTED",
           ),

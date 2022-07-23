@@ -227,8 +227,8 @@ class _GameItemScreenState extends State<GameItemScreen> {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 6.0 / 9,
-        mainAxisSpacing: 0.h,
-        crossAxisSpacing: 3.h,
+        mainAxisSpacing: 0.1.h,
+        crossAxisSpacing: 0.1.h,
       ),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
