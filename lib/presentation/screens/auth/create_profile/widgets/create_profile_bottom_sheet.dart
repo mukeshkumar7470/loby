@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../core/theme/colors.dart';
-import '../../../widgets/custom_button.dart';
-import '../../main/main_screen.dart';
-import '../widgets/input_text_title_widget.dart';
-import '../widgets/input_text_widget.dart';
+import '../../../../../core/theme/colors.dart';
+import '../../../../widgets/custom_button.dart';
+import '../../../main/main_screen.dart';
+import '../../widgets/input_text_title_widget.dart';
+import '../../widgets/input_text_widget.dart';
 
 class CreateProfileCard extends StatelessWidget {
   final ScrollController controller;

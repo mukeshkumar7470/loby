@@ -77,7 +77,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(
@@ -88,16 +88,14 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           ),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Expanded(
-                child: Text(
-                    textAlign: TextAlign.start,
-                    "For Accounts That Cannot Change Email Address : Sellers must provide the email address to the buyers and make sure they gain full access of the email such as secret questions etc.For Accounts That Can Change Email Address : Sellers must assist buyers to change the email address and provide the proofPayment will be put on hold if seller did not submit proof for (1) or (2). If seller fails to provide proof, the payment will be deducted to refund buyer when there is a dispute.You must be the main owner of the account(s) you intend to sell.Visit Accounts Service Rules and Descriptions for more info.",
-                    style:
-                        textTheme.headline3?.copyWith(color: textLightColor)),
-              ),
+              child: Text(
+                  textAlign: TextAlign.start,
+                  "For Accounts That Cannot Change Email Address : Sellers must provide the email address to the buyers and make sure they gain full access of the email such as secret questions etc.For Accounts That Can Change Email Address : Sellers must assist buyers to change the email address and provide the proofPayment will be put on hold if seller did not submit proof for (1) or (2). If seller fails to provide proof, the payment will be deducted to refund buyer when there is a dispute.You must be the main owner of the account(s) you intend to sell.Visit Accounts Service Rules and Descriptions for more info.",
+                  style:
+                  textTheme.headline3?.copyWith(color: textLightColor)),
             ),
           ),
           const SizedBox(height: 16.0),
@@ -107,7 +105,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(
@@ -121,31 +119,27 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Expanded(
-                child: Text(
-                    textAlign: TextAlign.start,
-                    "For safety reasons, sellers are not allowed to leave their personal contacts. All communications with the buyers can only be made using Loby chat. Any conversation outside Loby Chat will not be insured/covered by Loby Protection",
-                    style:
-                        textTheme.headline3?.copyWith(color: textLightColor)),
-              ),
+              child: Text(
+                  textAlign: TextAlign.start,
+                  "For safety reasons, sellers are not allowed to leave their personal contacts. All communications with the buyers can only be made using Loby chat. Any conversation outside Loby Chat will not be insured/covered by Loby Protection",
+                  style:
+                  textTheme.headline3?.copyWith(color: textLightColor)),
             ),
           ),
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Expanded(
-                child: Text(
-                    textAlign: TextAlign.start,
-                    'Description',
-                    style:
-                        textTheme.headline3?.copyWith(color: textLightColor)),
-              ),
+              child: Text(
+                  textAlign: TextAlign.start,
+                  'Description',
+                  style:
+                  textTheme.headline3?.copyWith(color: textLightColor)),
             ),
           ),
           const SizedBox(height: 16.0),
@@ -155,16 +149,14 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Expanded(
-                child: Text(
-                    textAlign: TextAlign.start,
-                    'Price',
-                    style:
-                        textTheme.headline3?.copyWith(color: textLightColor)),
-              ),
+              child: Text(
+                  textAlign: TextAlign.start,
+                  'Price',
+                  style:
+                  textTheme.headline3?.copyWith(color: textLightColor)),
             ),
           ),
           const SizedBox(height: 16.0),
@@ -172,24 +164,22 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Expanded(
-                child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(children: [
-                      TextSpan(
-                        text: "‘Loby Protection’",
+              child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(children: [
+                    TextSpan(
+                      text: "‘Loby Protection’",
+                      style: textTheme.headline3
+                          ?.copyWith(fontSize: 13.0, color: primaryColor1),
+                    ),
+                    TextSpan(
+                        text: " Insurance",
                         style: textTheme.headline3
-                            ?.copyWith(fontSize: 13.0, color: primaryColor1),
-                      ),
-                      TextSpan(
-                          text: " Insurance",
-                          style: textTheme.headline3
-                              ?.copyWith(fontSize: 13.0, color: textLightColor)),
-                    ]))
-              ),
+                            ?.copyWith(fontSize: 13.0, color: textLightColor)),
+                  ])),
             ),
           ),
           const SizedBox(height: 16.0),
@@ -197,22 +187,20 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Expanded(
-                child: Text(
-                    textAlign: TextAlign.start,
-                    'Estimated Delivery Time (Hours)',
-                    style:
-                        textTheme.headline3?.copyWith(color: textLightColor)),
-              ),
+              child: Text(
+                  textAlign: TextAlign.start,
+                  'Estimated Delivery Time (Hours)',
+                  style:
+                  textTheme.headline3?.copyWith(color: textLightColor)),
             ),
           ),
           const SizedBox(height: 16.0),
           Padding(
             padding:
-                EdgeInsets.only(left: 00, top: 00, right: 18.h, bottom: 00),
+            EdgeInsets.only(left: 00, top: 00, right: 18.h, bottom: 00),
             child: Container(
               child: _buildSearchField(textTheme, 'Select'),
             ),

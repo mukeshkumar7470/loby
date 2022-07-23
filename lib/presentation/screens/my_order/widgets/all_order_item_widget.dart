@@ -67,7 +67,7 @@ class OrderItem extends StatelessWidget {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 8.0, horizontal: 8.0),
                                   child: Text('Update Status',
-                                      style: textTheme.subtitle2
+                                      style: textTheme.headline6
                                           ?.copyWith(color: textWhiteColor)),
                                 ),
                               ),

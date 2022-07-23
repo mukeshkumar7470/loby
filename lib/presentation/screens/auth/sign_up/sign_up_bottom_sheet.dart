@@ -6,7 +6,7 @@ import 'package:sizer/sizer.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../widgets/custom_button.dart';
 import '../../main/main_screen.dart';
-import '../create_profile/create_profile_bottom_sheet.dart';
+import '../create_profile/widgets/create_profile_bottom_sheet.dart';
 
 class SignUpCardList extends StatelessWidget {
   final ScrollController controller;
