@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/colors.dart';
+import '../../../../../../core/theme/colors.dart';
 
-class ChatBubble extends StatelessWidget {
+class MessageReceiverWidget extends StatelessWidget {
   final String imageUrl;
   final String text;
   final String time;
 
-  const ChatBubble(
+  const MessageReceiverWidget(
       {Key? key,
       required this.imageUrl,
       required this.text,
@@ -21,22 +21,15 @@ class ChatBubble extends StatelessWidget {
       padding: const EdgeInsets.only(left: 30, top: 30, right: 30),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Image.asset(
-            imageUrl,
-            width: 40,
-            height: 40,
-          ),
-          const SizedBox(
-            width: 12,
-          ),
           Container(
             decoration: const BoxDecoration(
-                color: Color(0xffEAEFF3),
+                color: primaryColor4,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
-                    bottomRight: Radius.circular(20))),
+                    bottomLeft: Radius.circular(20))),
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 20,
@@ -47,16 +40,12 @@ class ChatBubble extends StatelessWidget {
                 children: [
                   Text(
                     text,
-                    style: TextStyle(fontSize: 16, color: primaryColor1),
+                    style: textTheme.headline3?.copyWith(color: textWhiteColor),
                   ),
-                  Text(
-                    time,
-                    style: textTheme.subtitle1?.copyWith(color: primaryColor1),
-                  )
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

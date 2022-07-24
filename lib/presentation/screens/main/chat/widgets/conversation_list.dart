@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loby/core/theme/colors.dart';
-
-import '../chat_detail/chat_detail_screen.dart';
-import '../message_page.dart';
+import '../chat_detail/message_page.dart';
 
 class ConversationList extends StatelessWidget {
   String name;

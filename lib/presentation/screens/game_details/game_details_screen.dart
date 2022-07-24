@@ -237,8 +237,8 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                           Container(
                             // This is your Badge
                             padding: const EdgeInsets.all(8),
-                            constraints:
-                                const BoxConstraints(minHeight: 46, minWidth: 46),
+                            constraints: const BoxConstraints(
+                                minHeight: 46, minWidth: 46),
                             decoration: BoxDecoration(
                               // This controls the shadow
                               boxShadow: [
@@ -348,7 +348,8 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                           child: const Padding(
                             padding: EdgeInsets.all(1.0),
                             child: CircleAvatar(
-                              backgroundImage: AssetImage('assets/images/img.png'),
+                              backgroundImage:
+                                  AssetImage('assets/images/img.png'),
                               radius: 36,
                             ),
                           ), //CircleAvatar
@@ -581,13 +582,13 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    color: backgroundColor2,
+                    color: btnBgColor1,
                     onPressed: () {
                       debugPrint("Click Search");
                     },
                     child: SvgPicture.asset(
-                      'assets/icons/a_check_icon.svg',
-                      color: iconYellowColor,
+                      'assets/icons/chat_icon.svg',
+                      color: iconWhiteColor,
                     ),
                   ),
                 ),
