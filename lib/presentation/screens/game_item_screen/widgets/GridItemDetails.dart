@@ -5,7 +5,7 @@ import '../../../../models/item.dart';
 class GridItemDetails extends StatelessWidget {
   final Item item;
 
-  GridItemDetails(this.item);
+  const GridItemDetails(this.item);
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +14,16 @@ class GridItemDetails extends StatelessWidget {
       appBar: AppBar(
         title: Text(item.name),
       ),
-      backgroundColor: Color(0xFF761322),
+      backgroundColor: const Color(0xFF761322),
       body: ListView(
         children: <Widget>[
-          HeaderBanner(this.item),
-          GetTags(),
+          HeaderBanner(item),
+          const GetTags(),
           Container(
             padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 20.0),
             child: Text(
               item.desc,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13.0,
                 color: Colors.white,
               ),
@@ -32,14 +32,14 @@ class GridItemDetails extends StatelessWidget {
           InkWell(
             onTap: () => {},
             child: Container(
-              margin: EdgeInsets.fromLTRB(50.0, 5.0, 50.0, 5.0),
+              margin: const EdgeInsets.fromLTRB(50.0, 5.0, 50.0, 5.0),
               width: 80.0,
               height: 40.0,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Watch Movies',
                   style: TextStyle(
@@ -53,7 +53,7 @@ class GridItemDetails extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 10.0),
-            child: Text(
+            child: const Text(
               'Trailers',
               style: TextStyle(
                 fontSize: 16.0,
@@ -61,7 +61,7 @@ class GridItemDetails extends StatelessWidget {
               ),
             ),
           ),
-          GetTrailers(this.item),
+          GetTrailers(item),
         ],
         // ),
         //],
@@ -71,13 +71,13 @@ class GridItemDetails extends StatelessWidget {
 }
 
 class GetTags extends StatelessWidget {
-  GetTags();
+  const GetTags();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 10.0),
+      margin: const EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 10.0),
       height: 35.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -87,16 +87,16 @@ class GetTags extends StatelessWidget {
             child: Container(
               width: 100.0,
               height: 35.0,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 left: 5.0,
                 right: 5.0,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF761322),
+                color: const Color(0xFF761322),
                 border: Border.all(color: Colors.white, width: 1.0),
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Action',
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
@@ -109,16 +109,16 @@ class GetTags extends StatelessWidget {
             child: Container(
               width: 100.0,
               height: 35.0,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 left: 5.0,
                 right: 5.0,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF761322),
+                color: const Color(0xFF761322),
                 border: Border.all(color: Colors.white, width: 1.0),
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Adventure',
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
@@ -131,16 +131,16 @@ class GetTags extends StatelessWidget {
             child: Container(
               width: 100.0,
               height: 35.0,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 left: 5.0,
                 right: 5.0,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF761322),
+                color: const Color(0xFF761322),
                 border: Border.all(color: Colors.white, width: 1.0),
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Fantasy',
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
@@ -157,7 +157,7 @@ class GetTags extends StatelessWidget {
 class SetTagsItem extends StatelessWidget {
   final String tag;
 
-  SetTagsItem(this.tag);
+  const SetTagsItem(this.tag);
 
   @override
   Widget build(BuildContext context) {
@@ -166,19 +166,19 @@ class SetTagsItem extends StatelessWidget {
       child: Container(
         width: 100.0,
         height: 35.0,
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: 5.0,
           right: 5.0,
         ),
         decoration: BoxDecoration(
-          color: Color(0xFF761322),
+          color: const Color(0xFF761322),
           border: Border.all(color: Colors.white, width: 1.0),
           borderRadius: BorderRadius.circular(30.0),
         ),
         child: Center(
           child: Text(
             tag,
-            style: TextStyle(fontSize: 16.0, color: Colors.white),
+            style: const TextStyle(fontSize: 16.0, color: Colors.white),
           ),
         ),
       ),
@@ -189,19 +189,19 @@ class SetTagsItem extends StatelessWidget {
 class HeaderBanner extends StatelessWidget {
   final Item item;
 
-  HeaderBanner(this.item);
+  const HeaderBanner(this.item);
 
   @override
   Widget build(BuildContext context) {
     return Material(
       elevation: 0.0,
-      child: Container(
+      child: SizedBox(
         height: 380.0,
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
-            HeaderImage(this.item.bannerUrl),
-            HeaderContent(this.item),
+            HeaderImage(item.bannerUrl),
+            HeaderContent(item),
           ],
         ),
       ),
@@ -212,7 +212,7 @@ class HeaderBanner extends StatelessWidget {
 class HeaderImage extends StatelessWidget {
   final String bannerUrl;
 
-  HeaderImage(this.bannerUrl);
+  const HeaderImage(this.bannerUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -228,7 +228,7 @@ class HeaderImage extends StatelessWidget {
 class HeaderContent extends StatelessWidget {
   final Item item;
 
-  HeaderContent(this.item);
+  const HeaderContent(this.item);
 
   @override
   Widget build(BuildContext context) {
@@ -236,7 +236,7 @@ class HeaderContent extends StatelessWidget {
       alignment: Alignment.bottomLeft,
       child: Container(
         //color: Colors.black.withOpacity(0.1),
-        constraints: BoxConstraints.expand(
+        constraints: const BoxConstraints.expand(
           height: 110.0,
         ),
         child: Padding(
@@ -254,7 +254,7 @@ class HeaderContent extends StatelessWidget {
                           item.name,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 26.0,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -263,10 +263,10 @@ class HeaderContent extends StatelessWidget {
                       ),
                      // GetRatings(),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
+                        margin: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
                         child: Text(
                           item.directors,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
                           ),
@@ -276,7 +276,7 @@ class HeaderContent extends StatelessWidget {
                         //margin: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
                         child: Text(
                           item.releaseDateDesc,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
                           ),
@@ -298,12 +298,12 @@ class HeaderContent extends StatelessWidget {
 class GetTrailers extends StatelessWidget {
   final Item item;
 
-  GetTrailers(this.item);
+  const GetTrailers(this.item);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
       height: 100.0,
       child: ListView(
         scrollDirection: Axis.horizontal,

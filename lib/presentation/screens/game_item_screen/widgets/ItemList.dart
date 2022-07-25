@@ -6,7 +6,7 @@ import '../../game_details/game_details_screen.dart';
 class ItemList extends StatelessWidget {
   final String name;
 
-  ItemList({required this.name});
+  const ItemList({required this.name});
 
   @override
   Widget build(BuildContext context) {

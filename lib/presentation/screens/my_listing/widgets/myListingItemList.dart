@@ -6,7 +6,7 @@ import '../../game_details/game_details_screen.dart';
 class MyListingItemList extends StatelessWidget {
   final String name;
 
-  MyListingItemList({required this.name});
+  const MyListingItemList({required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +96,7 @@ class MyListingItemList extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: TextButton(
                       style: ButtonStyle(

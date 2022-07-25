@@ -22,13 +22,36 @@ class ProfileHeader extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return Stack(
       children: <Widget>[
-        Container(
-          height: 250,
-          width: double.infinity,
-          child: Image.asset(
-            "assets/images/img1.png",
-            fit: BoxFit.fitWidth,
-          ),
+        Stack(
+          children: <Widget>[
+            SizedBox(
+              height: 250,
+              width: double.infinity,
+              child: Image.asset(
+                "assets/images/img1.png",
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
+                width: 7.h,
+                height: 7.h,
+                child: MaterialButton(
+                  shape: const CircleBorder(),
+                  color: backgroundColor,
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: SvgPicture.asset(
+                    'assets/icons/back_icon.svg',
+                    color: whiteColor,
+                  ),
+                ),
+              ),
+            ),
+
+          ]
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 12.0),
@@ -85,7 +108,7 @@ class ProfileHeader extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 4,
                                     ),
                                     Row(
@@ -117,7 +140,7 @@ class ProfileHeader extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         Padding(
@@ -158,7 +181,7 @@ class ProfileHeader extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         Padding(
@@ -181,7 +204,7 @@ class ProfileHeader extends StatelessWidget {
                                           ?.copyWith(color: textWhiteColor)),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 16,
                               ),
                               Row(

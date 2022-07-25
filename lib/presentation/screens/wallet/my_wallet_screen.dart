@@ -30,22 +30,6 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Container(
-            decoration: const BoxDecoration(color: backgroundColor),
-            child: Padding(
-              padding: EdgeInsets.all(2.h),
-              child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  height: 9.h,
-                  child: Image.asset(
-                    "assets/icons/app_icon.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Container(
             margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -141,7 +125,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                       width: MediaQuery.of(context).size.width * 0.35,
                                       child: CustomButton(
                                         color: btnBgColor1,
@@ -152,7 +136,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                                         },
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: MediaQuery.of(context).size.width * 0.35,
                                       child: CustomButton(
                                         color: btnBgColor1,
@@ -230,7 +214,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                                     style: textTheme.headlineLarge
                                         ?.copyWith(color: primaryColor1)),
                               ),
-                              Container(
+                              SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.3,
                                 child: CustomButton(
                                   color: btnBgColor1,

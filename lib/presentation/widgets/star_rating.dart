@@ -8,7 +8,7 @@ class StarRating extends StatelessWidget {
   final RatingChangeCallback onRatingChanged;
   final Color color;
 
-  StarRating(
+  const StarRating(
       {this.starCount = 5, this.rating = .0, required this.onRatingChanged, required this.color});
 
   Widget buildStar(BuildContext context, int index) {

@@ -18,7 +18,7 @@ class ConversationList extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return GestureDetector(
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => MessagePage()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MessagePage()));
         },
         child: Padding(
           padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
@@ -29,7 +29,7 @@ class ConversationList extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.0),
             ),
             child: Container(
-              padding: EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
+              padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
               decoration: BoxDecoration(
                 color: backgroundColor3,
                 border: Border.all(width: 0.2, color: dividerColor),
@@ -41,7 +41,7 @@ class ConversationList extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         _buildUserAvtar(primaryDarkColor2),
-                        SizedBox(
+                        const SizedBox(
                           width: 16,
                         ),
                         Expanded(
@@ -54,7 +54,7 @@ class ConversationList extends StatelessWidget {
                                   name,
                                   style: textTheme.headline1?.copyWith(color: textWhiteColor),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 6,
                                 ),
                                 Text(
@@ -72,7 +72,7 @@ class ConversationList extends StatelessWidget {
                           const BoxConstraints(minHeight: 46, minWidth: 46),
                           decoration: BoxDecoration(
                             // This controls the shadow
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                   spreadRadius: 1,
                                   color: primaryColor2)

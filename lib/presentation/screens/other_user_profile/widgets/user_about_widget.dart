@@ -20,7 +20,7 @@ class UserAboutWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(height: 8),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -29,7 +29,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",
@@ -38,7 +38,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -47,7 +47,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",
@@ -56,7 +56,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -65,7 +65,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",
@@ -74,7 +74,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -83,7 +83,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",
@@ -92,7 +92,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -101,7 +101,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",
@@ -110,7 +110,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -119,7 +119,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",
@@ -128,7 +128,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -137,7 +137,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",
@@ -146,7 +146,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Text(
                   "Name",
@@ -155,7 +155,7 @@ class UserAboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: MyText(
                   name: "Mukesh Kumar",

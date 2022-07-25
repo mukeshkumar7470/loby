@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
 import '../../core/theme/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final Color color;
   final String name;
   Color? textColor;
-  var onTap;
+  dynamic onTap;
 
-  CustomButton({Key? key, required this.color, required this.name, required this.onTap, this.textColor}) : super(key: key);
+  CustomButton(
+      {Key? key,
+      required this.color,
+      required this.name,
+      required this.onTap,
+      this.textColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +33,8 @@ class CustomButton extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Text(name,
                 textAlign: TextAlign.center,
-                style: textTheme.button?.copyWith(color: textColor?? primaryTextColor)),
+                style: textTheme.button
+                    ?.copyWith(color: textColor ?? primaryTextColor)),
           ),
         ),
       ),

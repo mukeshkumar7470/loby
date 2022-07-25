@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../core/theme/colors.dart';
@@ -89,7 +90,7 @@ class CreateProfileCard extends StatelessWidget {
                     height: 4.h,
                   ),
                   const InputTextTitleWidget(
-                      titleName: 'Country',
+                      titleName: 'City',
                       titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
@@ -101,7 +102,7 @@ class CreateProfileCard extends StatelessWidget {
                     height: 4.h,
                   ),
                   const InputTextTitleWidget(
-                      titleName: 'DOB', titleTextColor: textInputTitleColor),
+                      titleName: 'Date Of Birth', titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
@@ -112,7 +113,24 @@ class CreateProfileCard extends StatelessWidget {
                     height: 4.h,
                   ),
                   const InputTextTitleWidget(
-                      titleName: 'DOB', titleTextColor: textInputTitleColor),
+                      titleName: 'Profile Tag',
+                      titleTextColor: textInputTitleColor),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 2.h,
+                  ),
+                  const InputTextWidget(hintName: 'tag'),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 4.h,
+                  ),
+                  _buildSearchField(textTheme),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 4.h,
+                  ),
+                  const InputTextTitleWidget(
+                      titleName: 'Bio', titleTextColor: textInputTitleColor),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
@@ -140,6 +158,32 @@ class CreateProfileCard extends StatelessWidget {
                 ],
               ),
             ));
+  }
+
+  Widget _buildSearchField(TextTheme textTheme) {
+    return Container(
+      decoration: BoxDecoration(
+        color: textFieldColor,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: TextField(
+        style: textTheme.subtitle1
+            ?.copyWith(fontSize: 18, color: textWhiteColor),
+        decoration: InputDecoration(
+          prefixIcon: Padding(
+            padding: EdgeInsets.all(3.w),
+            child: SvgPicture.asset(
+              'assets/icons/search_icon.svg',
+              color: iconWhiteColor,
+            ),
+          ),
+          border: InputBorder.none,
+          hintStyle: textTheme.subtitle1
+              ?.copyWith(fontSize: 18, color: textWhiteColor),
+          hintText: 'Type Tags',
+        ),
+      ),
+    );
   }
 
   Widget _buildRow() {

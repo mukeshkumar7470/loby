@@ -90,8 +90,8 @@ class _ChatScreenState extends State<ChatScreen> {
     return ListView.builder(
       itemCount: chatUsers.length,
       shrinkWrap: true,
-      padding: EdgeInsets.only(top: 16),
-      physics: NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.only(top: 16),
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         return ConversationList(
           name: chatUsers[index].name,

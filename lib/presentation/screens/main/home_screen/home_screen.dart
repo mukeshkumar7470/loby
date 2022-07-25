@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:loby/core/theme/colors.dart';
-import 'package:loby/presentation/screens/categories/category_item_screen.dart';
 import 'package:loby/presentation/screens/game_item_screen/game_itm_screen.dart';
 import 'package:loby/presentation/screens/main/home_screen/widgets/game_list_card.dart';
 import 'package:sizer/sizer.dart';
+
+import 'categories/category_item_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Container(
-              decoration: BoxDecoration(color: backgroundColor),
+              decoration: const BoxDecoration(color: backgroundColor),
               child: Padding(
                 padding: EdgeInsets.all(2.h),
                 child: Align(

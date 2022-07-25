@@ -112,11 +112,11 @@ class _MainScreenState extends State<MainScreen> {
 
   Widget getBody() {
     List<Widget> pages = [
-      HomeScreen(),
-      CreateListingScreen(),
-      ChatScreen(),
-      NotificationScreen(),
-      ProfileScreen(),
+      const HomeScreen(),
+      const CreateListingScreen(),
+      const ChatScreen(),
+      const NotificationScreen(),
+      const ProfileScreen(),
     ];
     return IndexedStack(
       index: _currentIndex,

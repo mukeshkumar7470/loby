@@ -16,7 +16,7 @@ class ProfileOptionsWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.fromLTRB(25, 25, 12, 0),
+        margin: EdgeInsets.fromLTRB(8.w, 2.h, 1.h, 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

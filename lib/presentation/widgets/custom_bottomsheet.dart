@@ -25,12 +25,12 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
               topLeft: Radius.circular(50), topRight: Radius.circular(50))),
       child: Align(alignment: Alignment.topCenter,
         child: (isSwipeUp)
-            ? Icon(
+            ? const Icon(
           Icons.expand_more_outlined,
           size: 30,
           color: Colors.white,
         )
-            : Icon(
+            : const Icon(
           Icons.expand_less_outlined,
           size: 30,
           color: Colors.white,

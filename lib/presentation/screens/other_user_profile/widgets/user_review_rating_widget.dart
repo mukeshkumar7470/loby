@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../widgets/star_rating.dart';
@@ -29,7 +28,8 @@ class _UserReviewRatingWidgetState extends State<UserReviewRatingWidget> {
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -40,24 +40,29 @@ class _UserReviewRatingWidgetState extends State<UserReviewRatingWidget> {
                         overflow: TextOverflow.ellipsis,
                         style: textTheme.headline2
                             ?.copyWith(color: textWhiteColor)),
-                    SizedBox(
+                    const SizedBox(
                       width: 16,
                     ),
                     StarRating(
                       rating: rating,
-                        color: primaryColor3,
-                      onRatingChanged: (rating) => setState(() => rating = rating),
+                      color: primaryColor3,
+                      onRatingChanged: (rating) =>
+                          setState(() => rating = rating),
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
-                Text("Good service. Fast delivery. Trusted seller. ",
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: textTheme.headline3
-                        ?.copyWith(color: textLightColor)),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 16.0, horizontal: 16.0),
+                  child: Text("Good service. Fast delivery. Trusted seller. ",
+                      softWrap: true,
+                      overflow: TextOverflow.ellipsis,
+                      style:
+                          textTheme.headline3?.copyWith(color: textLightColor)),
+                ),
               ],
             ),
           ),

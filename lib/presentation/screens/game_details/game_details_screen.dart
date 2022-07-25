@@ -30,22 +30,6 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
       child: Column(
         children: [
           Container(
-            decoration: const BoxDecoration(color: backgroundColor),
-            child: Padding(
-              padding: EdgeInsets.all(2.h),
-              child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  height: 9.h,
-                  child: Image.asset(
-                    "assets/icons/app_icon.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Container(
             margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,23 +63,6 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                         style: textTheme.headlineLarge
                             ?.copyWith(color: primaryColor1),
                       ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 7.h,
-                  height: 7.h,
-                  child: MaterialButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    color: backgroundColor,
-                    onPressed: () {
-                      debugPrint("Click Search");
-                    },
-                    child: SvgPicture.asset(
-                      'assets/icons/search_icon.svg',
-                      color: whiteColor,
                     ),
                   ),
                 ),

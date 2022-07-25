@@ -3,32 +3,31 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/theme/colors.dart';
-import 'all_orders_screen.dart';
+import 'closed_dispute_screen.dart';
+import 'open_dispute_screen.dart';
 
-class MyOrderScreen extends StatefulWidget {
-  const MyOrderScreen({Key? key}) : super(key: key);
+class DisputeScreen extends StatefulWidget {
+  const DisputeScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyOrderScreen> createState() => _MyOrderScreenState();
+  State<DisputeScreen> createState() => _DisputeScreenState();
 }
 
-class _MyOrderScreenState extends State<MyOrderScreen> {
-  final _tabs = [
-    const Tab(text: 'All Orders'),
-    const Tab(text: 'Bought'),
-    const Tab(text: 'Sold'),
-  ];
+class _DisputeScreenState extends State<DisputeScreen> {
 
+  final _tabs = [
+    const Tab(text: 'Open'),
+    const Tab(text: 'Closed'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child:  Scaffold(
-        backgroundColor: backgroundColor2,
         appBar:  PreferredSize(
-          preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.19),
+          preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.2),
           child:  Container(
             child:  SafeArea(
               child: Column(
@@ -53,11 +52,28 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                             ),
                           ),
                         ),
+                        Expanded(
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 0.0, horizontal: 8.0),
+                              child: Text(
+                                'My Disputes',
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                                overflow: TextOverflow.ellipsis,
+                                style: textTheme.headlineLarge
+                                    ?.copyWith(color: textWhiteColor),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                   TabBar(
-                     indicatorSize: TabBarIndicatorSize.label,
+                  TabBar(
+                    indicatorSize: TabBarIndicatorSize.label,
                     indicatorColor: tabIndicatorColor,
                     indicatorWeight: 4.0,
                     labelColor: textWhiteColor,
@@ -71,9 +87,8 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         ),
         body:  const TabBarView(
           children: <Widget>[
-            AllOrdersTabScreen(),
-            AllOrdersTabScreen(),
-            AllOrdersTabScreen()
+            OpenDisputeScreen(),
+            ClosedDisputeScreen()
           ],
         ),
       ),

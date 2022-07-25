@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../disputes/create_new_dispute_screen.dart';
 
 class OrderItem extends StatelessWidget {
   final String name;
@@ -25,11 +26,11 @@ class OrderItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+              padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width * 0.2,
                     height: 10.h,
                     child: Container(
@@ -43,22 +44,39 @@ class OrderItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.6,
+                  SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.66,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Row(
                             children: <Widget>[
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.35,
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.5,
                                 child: Text("Lvl 78 Account on SA",
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     style: textTheme.headline1
                                         ?.copyWith(color: textWhiteColor)),
                               ),
-                              Container(
+                              IconButton(
+                                iconSize: 24,
+                                icon: const Icon(
+                                  Icons.more_vert,
+                                ),
+                                color: iconWhiteColor,
+                                // the method which is called
+                                // when button is pressed
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const CreateNewDispute(),
+                                    ),
+                                  );
+                                },
+                              )
+                              /*Container(
                                 decoration: BoxDecoration(
                                   color: btnBgColor4,
                                   borderRadius: BorderRadius.circular(8.0),
@@ -70,7 +88,7 @@ class OrderItem extends StatelessWidget {
                                       style: textTheme.headline6
                                           ?.copyWith(color: textWhiteColor)),
                                 ),
-                              ),
+                              ),*/
                             ],
                           ),
                           Text("item.category",

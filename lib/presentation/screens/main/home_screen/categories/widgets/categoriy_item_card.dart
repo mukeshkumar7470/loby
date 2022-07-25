@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:sizer/sizer.dart';
 
-import '../../../../../core/theme/colors.dart';
-import '../../game_item_screen/game_itm_screen.dart';
+import '../../../../../../core/theme/colors.dart';
+import '../../../../game_item_screen/game_itm_screen.dart';
 
 class CategoryItemCard extends StatelessWidget {
   int index;

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/colors.dart';
 
-class UserDuelsWidget extends StatelessWidget {
-  const UserDuelsWidget({Key? key}) : super(key: key);
+class DisputeWidget extends StatelessWidget {
+  final String disputeType;
+  final String currentStatus;
+  const DisputeWidget({Key? key, required this.disputeType, required this.currentStatus}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,6 @@ class UserDuelsWidget extends StatelessWidget {
   }
 
   _buildWidget(TextTheme textTheme, BuildContext context) {
-    double rating = 3.5;
     return Column(
       children: <Widget>[
         Card(
@@ -29,13 +30,11 @@ class UserDuelsWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    buildUser(textTheme, 'Winner', primaryColor1, context),
+                    buildUser(textTheme, 'Seller', primaryColor1, context),
                     const SizedBox(
                       width: 8,
                     ),
-                    _buildNameField(textTheme, 'Vs',
-                        textTheme.headline1?.copyWith(color: textWhiteColor)),
-                    buildUser(textTheme, 'Loser', primaryDarkColor2, context),
+                    buildUser(textTheme, 'Buyer', primaryColor2, context),
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -75,6 +74,12 @@ class UserDuelsWidget extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 8),
+                _buildListingIdWidget(textTheme, "Listing Id :", textWhiteColor,
+                    context),
+                const SizedBox(height: 8),
+                _buildListingIdWidget(textTheme, "Current Status :", disputeType == "Open" ? primaryColor2 : primaryColor1,
+                    context)
               ],
             ),
           ),
@@ -145,6 +150,28 @@ class UserDuelsWidget extends StatelessWidget {
             ), //CircleAvatar
           ),
         ),
+      ),
+    );
+  }
+
+  _buildListingIdWidget(TextTheme textTheme, String title, Color textColor,
+      BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        Text(
+          title,
+        style: textTheme.headline3?.copyWith(color: textLightColor),
+      ),
+      Expanded(
+        child: Text(
+          currentStatus,
+          style: textTheme.headline3?.copyWith(color: textColor),
+        ),
+      ),
+        ],
       ),
     );
   }

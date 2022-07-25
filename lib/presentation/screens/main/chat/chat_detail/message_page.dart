@@ -95,14 +95,14 @@ class MessagePage extends StatelessWidget {
   Widget chatInput(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width - (2 * 17),
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(75),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        children: const [
           Text(
             'Type Something',
           ),

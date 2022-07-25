@@ -17,7 +17,7 @@ class GameItemScreen extends StatefulWidget {
 }
 
 class _GameItemScreenState extends State<GameItemScreen> {
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     debugPrint(widget.name);
@@ -35,22 +35,6 @@ class _GameItemScreenState extends State<GameItemScreen> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            decoration: const BoxDecoration(color: backgroundColor),
-            child: Padding(
-              padding: EdgeInsets.all(2.h),
-              child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  height: 9.h,
-                  child: Image.asset(
-                    "assets/icons/app_icon.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ),
-          ),
           Container(
             margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
             child: Row(
@@ -71,35 +55,20 @@ class _GameItemScreenState extends State<GameItemScreen> {
                     ),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 0.0, horizontal: 8.0),
-                    child: Text(
-                      name,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                      style:
-                          textTheme.headline1?.copyWith(color: primaryColor1),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 7.h,
-                  height: 7.h,
-                  child: MaterialButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    color: backgroundColor,
-                    onPressed: () {
-                      debugPrint("Click Search");
-                    },
-                    child: SvgPicture.asset(
-                      'assets/icons/search_icon.svg',
-                      color: whiteColor,
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 0.0, horizontal: 8.0),
+                      child: Text(
+                        name,
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        style: textTheme.headlineLarge
+                            ?.copyWith(color: primaryColor1),
+                      ),
                     ),
                   ),
                 ),

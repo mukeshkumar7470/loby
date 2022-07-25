@@ -23,7 +23,7 @@ class _MyListingScreenState extends State<MyListingScreen> {
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {},
           backgroundColor: btnBgColor1,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16.0))),
           label: Text('Add Listing', style: textTheme.headline2?.copyWith(color: textWhiteColor)),
         ),
@@ -34,22 +34,6 @@ class _MyListingScreenState extends State<MyListingScreen> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            decoration: const BoxDecoration(color: backgroundColor),
-            child: Padding(
-              padding: EdgeInsets.all(2.h),
-              child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  height: 9.h,
-                  child: Image.asset(
-                    "assets/icons/app_icon.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ),
-          ),
           Container(
             margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
             child: Row(
