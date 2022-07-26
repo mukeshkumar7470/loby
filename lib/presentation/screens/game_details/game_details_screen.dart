@@ -222,7 +222,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                               // Here you can put whatever content you want inside your Badge
                               child: Text('4',
                                   style: textTheme.headline1
-                                      ?.copyWith(color: textLightColor)),
+                                      ?.copyWith(color: bodyTextColor)),
                             ),
                           ),
                           const SizedBox(width: 8.0),
@@ -543,7 +543,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: 6.3.h,
+                  width: MediaQuery.of(context).size.width * 0.17,
                   height: 6.3.h,
                   child: MaterialButton(
                     shape: RoundedRectangleBorder(
@@ -556,6 +556,8 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                     child: SvgPicture.asset(
                       'assets/icons/chat_icon.svg',
                       color: iconWhiteColor,
+                      width: 24,
+                      height: 24,
                     ),
                   ),
                 ),
