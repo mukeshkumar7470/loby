@@ -130,7 +130,6 @@ class _CreateNewDisputeState extends State<CreateNewDispute> {
                   )))),
     );
   }
-
   _buildUploadField(TextTheme textTheme) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
