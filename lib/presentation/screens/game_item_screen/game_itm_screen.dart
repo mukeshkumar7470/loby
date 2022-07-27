@@ -104,7 +104,7 @@ class _GameItemScreenState extends State<GameItemScreen> {
                         border: InputBorder.none,
                         hintStyle: textTheme.subtitle1
                             ?.copyWith(fontSize: 18, color: iconTintColor),
-                        hintText: 'Search',
+                        hintText: 'Keyword',
                       ),
                     ),
                   ),

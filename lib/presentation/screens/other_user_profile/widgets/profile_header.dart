@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loby/presentation/screens/other_user_profile/follower_following_screen/followers_screen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -19,6 +20,7 @@ class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final maxWidth = MediaQuery.of(context).size.width * 0.55;
     final textTheme = Theme.of(context).textTheme;
     return Stack(
       children: <Widget>[
@@ -85,26 +87,38 @@ class ProfileHeader extends StatelessWidget {
                                 ),
                               ), //CircleAvatar
                             ),
-                            Expanded(
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                    const FollowersScreen(),
+                                  ),
+                                );
+                              },
                               child: Container(
                                 margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
-                                        Text("Mukesh Kumar",
-                                            overflow: TextOverflow.ellipsis,
-                                            style: textTheme.headline1
-                                                ?.copyWith(
-                                                fontSize: 16.sp,
-                                                color: textWhiteColor)),
-                                        const SizedBox(width: 2.0),
+                                        Container(
+                                          constraints: BoxConstraints(maxWidth: maxWidth),
+                                          child: Text("Mukesh Kumar",
+                                              overflow: TextOverflow.ellipsis,
+                                              style: textTheme.headline1
+                                                  ?.copyWith(
+                                                  fontSize: 16.sp,
+                                                  color: textWhiteColor)),
+                                        ),
+                                        const SizedBox(width: 8.0),
                                         SvgPicture.asset(
-                                          'assets/icons/user_rating_icon.svg',
-                                          color: iconWhiteColor,
-                                          height: 14,
-                                          width: 14,
+                                          'assets/icons/verified_user_bedge.svg',
+                                          height: 15,
+                                          width: 15,
                                         ),
                                       ],
                                     ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../../widgets/custom_dialog.dart';
+import '../../../widgets/follow_btn.dart';
 import '../../disputes/create_new_dispute_screen.dart';
 
 class OrderItem extends StatelessWidget {
@@ -52,30 +54,30 @@ class OrderItem extends StatelessWidget {
                           Row(
                             children: <Widget>[
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.5,
+                                width: MediaQuery.of(context).size.width * 0.6,
                                 child: Text("Lvl 78 Account on SA",
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     style: textTheme.headline1
                                         ?.copyWith(color: textWhiteColor)),
                               ),
-                              IconButton(
-                                iconSize: 24,
-                                icon: const Icon(
-                                  Icons.more_vert,
-                                ),
-                                color: iconWhiteColor,
-                                // the method which is called
-                                // when button is pressed
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const CreateNewDispute(),
-                                    ),
-                                  );
-                                },
-                              )
+                              SizedBox(
+                                  height: 2.h,
+                                  width: 5.w,
+                                  child: IconButton(
+                                    padding: EdgeInsets.all(0.0),
+                                    color: iconWhiteColor,
+                                    icon: const Icon(Icons.more_vert, size: 18.0),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                          const CreateNewDispute(),
+                                        ),
+                                      );
+                                    },
+                                  ))
                               /*Container(
                                 decoration: BoxDecoration(
                                   color: btnBgColor4,
@@ -101,25 +103,34 @@ class OrderItem extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Container(
-                                margin: const EdgeInsets.only(right: 4.0),
-                                child: Column(
-                                  children: <Widget>[
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: primaryColor2,
-                                        borderRadius: BorderRadius.circular(16),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 0.0, horizontal: 4.0),
-                                        child: Text('Account',
-                                            style: textTheme.headline3
-                                                ?.copyWith(
-                                                    fontSize: 10.0,
-                                                    color: textWhiteColor)),
-                                      ),
-                                    ),
-                                  ],
+                                decoration: BoxDecoration(
+                                  color: primaryColor2,
+                                  borderRadius: BorderRadius.circular(1.2.h),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 4.0, horizontal: 6.0),
+                                  child: Text('Account',
+                                      style: textTheme.headline3
+                                          ?.copyWith(
+                                          fontSize: 10.0,
+                                          color: textWhiteColor)),
+                                ),
+                              ),
+                              const SizedBox(width: 4.0),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.31,
+                                child: Button(
+                                  width: MediaQuery.of(context).size.width * 0.31,
+                                  height: 24,
+                                  onPress: () {
+                                    showDialog(context: context, builder: (BuildContext context) => CustomDialog());
+                                  },
+                                  txtPadding: 2.0,
+                                  btnBgColor: btnBgColor4,
+                                  txtColor: textWhiteColor,
+                                  borderRadius: 1.2.h,
+                                  btnName: 'Update Status',
                                 ),
                               ),
                             ],

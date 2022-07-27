@@ -19,22 +19,6 @@ class MessagePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              decoration: const BoxDecoration(color: backgroundColor),
-              child: Padding(
-                padding: EdgeInsets.all(2.h),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    height: 9.h,
-                    child: Image.asset(
-                      "assets/icons/app_icon.png",
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Container(
               margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

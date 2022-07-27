@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sizer/sizer.dart';
+
 import '../../../../core/theme/colors.dart';
+import '../../disputes/create_new_dispute_screen.dart';
 import '../../game_details/game_details_screen.dart';
 
 class ItemList extends StatelessWidget {
@@ -109,7 +112,7 @@ class ItemList extends StatelessWidget {
                   ),
                   const SizedBox(height: 10.0),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircleAvatar(
                         backgroundColor: Colors.green[500],
@@ -117,14 +120,17 @@ class ItemList extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(1.0),
                           child: CircleAvatar(
-                            backgroundImage: AssetImage('assets/images/img.png'),
+                            backgroundImage:
+                                AssetImage('assets/images/img.png'),
                             radius: 15,
                           ),
                         ), //CircleAvatar
                       ),
+                      const SizedBox(
+                        width: 2.0,
+                      ),
                       Expanded(
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -132,13 +138,13 @@ class ItemList extends StatelessWidget {
                                 "Mukesh Kumar Patel",
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
-                                style: textTheme.headline3
-                                    ?.copyWith(fontSize: 11.0, color: textWhiteColor),
+                                style: textTheme.headline3?.copyWith(
+                                    fontSize: 11.0, color: textWhiteColor),
                               ),
                               Row(
                                 children: [
                                   Row(
-                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       SvgPicture.asset(
                                         'assets/icons/user_rating_icon.svg',
@@ -149,14 +155,15 @@ class ItemList extends StatelessWidget {
                                         "4.5",
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
-                                        style: textTheme.headline3
-                                            ?.copyWith(fontSize: 11.0, color: textWhiteColor),
+                                        style: textTheme.headline3?.copyWith(
+                                            fontSize: 11.0,
+                                            color: textWhiteColor),
                                       ),
                                     ],
                                   ),
                                   const SizedBox(width: 4.0),
                                   Row(
-                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       SvgPicture.asset(
                                         'assets/icons/user_chat_icon.svg',
@@ -167,19 +174,35 @@ class ItemList extends StatelessWidget {
                                         "12",
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
-                                        style: textTheme.headline3
-                                            ?.copyWith(fontSize: 11.0, color: textWhiteColor),
+                                        style: textTheme.headline3?.copyWith(
+                                            fontSize: 11.0,
+                                            color: textWhiteColor),
                                       ),
                                     ],
                                   ),
-
                                 ],
                               ),
-
                             ],
                           ),
                         ),
-                      )
+                      ),
+                      SizedBox(
+                          height: 4.h,
+                          width: 5.w,
+                          child: IconButton(
+                            padding: const EdgeInsets.all(0.0),
+                            color: iconWhiteColor,
+                            icon: const Icon(Icons.more_vert, size: 18.0),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const CreateNewDispute(),
+                                ),
+                              );
+                            },
+                          ))
                     ],
                   ),
                 ],
