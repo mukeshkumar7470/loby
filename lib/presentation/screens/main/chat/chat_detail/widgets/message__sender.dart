@@ -27,7 +27,7 @@ class MessageSenderWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const CircleAvatar(
-                backgroundColor: backgroundColor2,
+                backgroundColor: backgroundDarkJungleGreenColor,
                 radius: 24,
                 child: Padding(
                   padding: EdgeInsets.all(1.0),

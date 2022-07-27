@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../core/theme/colors.dart';
-class CustomAnimatedBottomBar extends StatelessWidget {
 
+class CustomAnimatedBottomBar extends StatelessWidget {
   const CustomAnimatedBottomBar({
     Key? key,
     this.selectedIndex = 0,
@@ -17,7 +16,7 @@ class CustomAnimatedBottomBar extends StatelessWidget {
     required this.items,
     required this.onItemSelected,
     this.curve = Curves.linear,
-  }) : assert(items.length >= 2 && items.length <= 5),
+  })  : assert(items.length >= 2 && items.length <= 5),
         super(key: key);
 
   final int selectedIndex;
@@ -34,13 +33,12 @@ class CustomAnimatedBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(24.0),
-          color: primaryColor1,
+          borderRadius: BorderRadius.circular(18.0),
+          color: aquaGreenColor,
           boxShadow: [
             if (showElevation)
               const BoxShadow(
@@ -53,7 +51,7 @@ class CustomAnimatedBottomBar extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: containerHeight,
-            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
             child: Row(
               mainAxisAlignment: mainAxisAlignment,
               children: items.map((item) {
@@ -64,7 +62,7 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                     item: item,
                     iconSize: iconSize,
                     isSelected: index == selectedIndex,
-                    backgroundColor: primaryColor1,
+                    backgroundColor: aquaGreenColor,
                     itemCornerRadius: itemCornerRadius,
                     animationDuration: animationDuration,
                     curve: curve,
@@ -97,7 +95,7 @@ class _ItemWidget extends StatelessWidget {
     required this.itemCornerRadius,
     required this.iconSize,
     this.curve = Curves.linear,
-  })  : super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -105,36 +103,37 @@ class _ItemWidget extends StatelessWidget {
       container: true,
       selected: isSelected,
       child: AnimatedContainer(
-        width: isSelected ? 30.w : 12.w,
+        // width: isSelected ? 12.w : 12.w,
         height: double.maxFinite,
         duration: animationDuration,
         curve: curve,
         decoration: BoxDecoration(
-          color:
-          isSelected ? activeBottomNavItemColor : primaryColor1,
+          color: isSelected ? activeBottomNavItemColor : aquaGreenColor,
           borderRadius: BorderRadius.circular(itemCornerRadius),
         ),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           physics: const NeverScrollableScrollPhysics(),
           child: Container(
-            width: isSelected ? 30.w : 12.w,
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            // width: isSelected ? 12.w : 12.w,
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                IconTheme(
-                  data: IconThemeData(
-                    size: iconSize,
-                    color: isSelected
-                        ? item.activeColor.withOpacity(1)
-                        : item.inactiveColor ?? item.activeColor,
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: isSelected? 16.0: 0.0),
+                  child: IconTheme(
+                    data: IconThemeData(
+                      size: iconSize,
+                      color: isSelected
+                          ? item.activeColor
+                          : item.inactiveColor ?? item.activeColor,
+                    ),
+                    child: item.icon,
                   ),
-                  child: item.icon,
                 ),
-                if (isSelected)
+                /*if (isSelected)
                   Expanded(
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -148,7 +147,7 @@ class _ItemWidget extends StatelessWidget {
                         child: item.title,
                       ),
                     ),
-                  ),
+                  ),*/
               ],
             ),
           ),
@@ -158,24 +157,7 @@ class _ItemWidget extends StatelessWidget {
   }
 }
 
-class BottomNavyBarItem1 extends Container {
-  BottomNavyBarItem1({
-    required this.icon,
-    required this.title,
-    this.activeColor = activeBottomNavItemColor,
-    this.textAlign,
-    this.inactiveColor,
-  });
-
-  final Widget icon;
-  final Widget title;
-  final Color activeColor;
-  final Color? inactiveColor;
-  final TextAlign? textAlign;
-}
-
 class BottomNavyBarItem {
-
   BottomNavyBarItem({
     required this.icon,
     required this.title,
@@ -189,6 +171,4 @@ class BottomNavyBarItem {
   final Color activeColor;
   final Color? inactiveColor;
   final TextAlign? textAlign;
-
 }
-

@@ -28,7 +28,7 @@ class MessagePage extends StatelessWidget {
                     height: 7.h,
                     child: MaterialButton(
                       shape: const CircleBorder(),
-                      color: backgroundColor,
+                      color: backgroundBalticSeaColor,
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
@@ -81,7 +81,7 @@ class MessagePage extends StatelessWidget {
       width: MediaQuery.of(context).size.width - (2 * 17),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: backgroundBalticSeaColor,
         borderRadius: BorderRadius.circular(75),
       ),
       child: Row(

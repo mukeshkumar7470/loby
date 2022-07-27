@@ -3,7 +3,7 @@ import 'package:loby/presentation/screens/main/chat/widgets/conversation_list.da
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
-import '../../../../models/ChatUsers.dart';
+import '../../../../data/models/ChatUsers.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -28,7 +28,6 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: backgroundColor2,
         body: body(),
       ),
     );
@@ -40,7 +39,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Column(
         children: [
           Container(
-            decoration: const BoxDecoration(color: backgroundColor),
+            decoration: const BoxDecoration(color: backgroundBalticSeaColor),
             child: Padding(
               padding: EdgeInsets.all(2.h),
               child: Align(

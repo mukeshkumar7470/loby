@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:loby/presentation/screens/main/profile_screen/profile_verification_screen.dart';
+import 'package:loby/presentation/screens/main/profile_screen/wallet/my_wallet_screen.dart';
 import 'package:loby/presentation/screens/main/profile_screen/widgets/profile_options.dart';
-import 'package:loby/presentation/screens/my_order/my_order_screen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
-import '../../disputes/disputes_screen.dart';
-import '../../my_listing/my_listing_screen.dart';
-import '../../wallet/my_wallet_screen.dart';
+import '../home_screen/disputes/disputes_screen.dart';
+import 'feedback_screen.dart';
+import 'my_listing/my_listing_screen.dart';
+import 'my_order/my_order_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -102,12 +104,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ProfileOptionsWidget(
                           name: "Profile Verification",
                           onTap: () {
-                            debugPrint('check data');
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const ProfileVerificationScreen()));
                           }),
                       ProfileOptionsWidget(
                           name: "Feedback/Suggestions",
                           onTap: () {
-                            debugPrint('check data');
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const FeedbackScreen()));
                           }),
                       ProfileOptionsWidget(
                           name: "App Setting",

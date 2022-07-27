@@ -18,7 +18,7 @@ class _MyDropDownWidgetState extends State<MyDropDownWidget> {
     return Container(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
         decoration: BoxDecoration(
-            color: backgroundColor, borderRadius: BorderRadius.circular(10)),
+            color: backgroundBalticSeaColor, borderRadius: BorderRadius.circular(10)),
 
         // dropdown below..
         child: DropdownButtonHideUnderline(
@@ -28,7 +28,7 @@ class _MyDropDownWidgetState extends State<MyDropDownWidget> {
             // Reduces the dropdowns height by +/- 50%
             icon: const Icon(Icons.keyboard_arrow_down),
             value: selectedValue,
-            dropdownColor: backgroundColor,
+            dropdownColor: backgroundBalticSeaColor,
             items: items.map((item) {
               return DropdownMenuItem(
                 value: item,

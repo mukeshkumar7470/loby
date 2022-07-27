@@ -25,7 +25,7 @@ class MessageReceiverWidget extends StatelessWidget {
         children: [
           Container(
             decoration: const BoxDecoration(
-                color: primaryColor4,
+                color: butterflyBlueColor,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),

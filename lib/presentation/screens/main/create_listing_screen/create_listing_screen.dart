@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../widgets/Custom_Checkbox.dart';
+import '../../../widgets/bottom_dialog_widget.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/drop_down.dart';
 
@@ -22,7 +23,6 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: backgroundColor2,
         body: body(),
       ),
     );
@@ -43,7 +43,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                   height: 7.h,
                   child: MaterialButton(
                     shape: const CircleBorder(),
-                    color: backgroundColor,
+                    color: backgroundBalticSeaColor,
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
@@ -173,7 +173,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                     TextSpan(
                       text: "‘Loby Protection’",
                       style: textTheme.headline3
-                          ?.copyWith(fontSize: 13.0, color: primaryColor1),
+                          ?.copyWith(fontSize: 13.0, color: aquaGreenColor),
                     ),
                     TextSpan(
                         text: " Insurance",
@@ -216,7 +216,13 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
               name: "Publish",
               textColor: textWhiteColor,
               onTap: () {
-                debugPrint('click chat');
+                BottomDialog(
+                    textTheme: textTheme,
+                    tileName: "Congratulations",
+                    titleColor: aquaGreenColor,
+                    contentName: "Your service has been successfully listed. You can edit your listings from My Listings.",
+                    contentLinkName: ' My Listings')
+                    .showBottomDialog(context);
               },
             ),
           ),
@@ -237,8 +243,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
               onChange: (value) {
                 isChecked = value;
               },
-              backgroundColor: primaryColor1,
-              borderColor: primaryColor1,
+              backgroundColor: aquaGreenColor,
+              borderColor: aquaGreenColor,
               icon: Icons.check,
               size: 22,
               iconSize: 16,
@@ -257,7 +263,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                       TextSpan(
                           text: textSpan,
                           style: textTheme.headline3
-                              ?.copyWith(fontSize: 13.0, color: primaryColor2)),
+                              ?.copyWith(fontSize: 13.0, color: orangeColor)),
                     ]))
               ),
             ),
@@ -325,7 +331,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
       child: Container(
           decoration: BoxDecoration(
             color: textFieldColor,
-            border: Border.all(color: primaryColor1),
+            border: Border.all(color: aquaGreenColor),
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Padding(
@@ -541,7 +547,6 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
       child: Container(
-          height: 100.0,
           decoration: BoxDecoration(
             color: textFieldColor,
             borderRadius: BorderRadius.circular(10.0),
@@ -558,7 +563,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         hintStyle: textTheme.subtitle1?.copyWith(
                             fontSize: 14, color: textInputTitleColor),
                         hintText: 'Type Description',
-                      )),
+                      ),
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 4,
+                  ),
                 ],
               ))),
     );

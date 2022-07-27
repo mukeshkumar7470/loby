@@ -24,7 +24,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor2,
         body: getBody(),
         bottomNavigationBar: _buildBottomBar());
   }
@@ -32,16 +31,16 @@ class _MainScreenState extends State<MainScreen> {
   Widget _buildBottomBar() {
     return CustomAnimatedBottomBar(
       containerHeight: 70,
-      backgroundColor: primaryColor1,
+      backgroundColor: aquaGreenColor,
       selectedIndex: _currentIndex,
       showElevation: true,
-      itemCornerRadius: 18,
+      itemCornerRadius: 16,
       curve: Curves.easeIn,
       onItemSelected: (index) => setState(() => _currentIndex = index),
       items: <BottomNavyBarItem>[
         BottomNavyBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: SvgPicture.asset(
               'assets/icons/home_icon.svg',
               color: iconColor,
@@ -54,7 +53,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: SvgPicture.asset(
               'assets/icons/create_icon.svg',
               color: iconColor,
@@ -67,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: SvgPicture.asset(
               'assets/icons/chat_icon.svg',
               color: iconColor,
@@ -82,7 +81,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: SvgPicture.asset(
               'assets/icons/notification_icon.svg',
               color: iconColor,
@@ -95,7 +94,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         BottomNavyBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
+            padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
             child: SvgPicture.asset(
               'assets/icons/profile_icon.svg',
               color: iconColor,

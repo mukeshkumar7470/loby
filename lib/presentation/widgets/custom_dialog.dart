@@ -28,7 +28,7 @@ class CustomDialog extends StatelessWidget {
           Stack(
             children: [
               Card(
-                color: backgroundColor,
+                color: backgroundBalticSeaColor,
                 elevation: 0.0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
@@ -37,7 +37,7 @@ class CustomDialog extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 1,
                   height: MediaQuery.of(context).size.height * 0.3,
                   decoration: BoxDecoration(
-                    color: backgroundColor2,
+                    color: backgroundDarkJungleGreenColor,
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Padding(
@@ -77,7 +77,7 @@ class CustomDialog extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 8.h),
                 child: Card(
-                  color: backgroundColor,
+                  color: backgroundBalticSeaColor,
                   elevation: 0.0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16.0),
@@ -87,7 +87,7 @@ class CustomDialog extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 1,
                       decoration: BoxDecoration(
-                        color: backgroundColor,
+                        color: backgroundBalticSeaColor,
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: SingleChildScrollView(
@@ -139,7 +139,7 @@ class CustomDialog extends StatelessWidget {
                                         debugPrint('update');
                                       },
                                       txtPadding: 8.0,
-                                      btnBgColor: btnBgColor3,
+                                      btnBgColor: orangeColor,
                                       txtColor: textWhiteColor,
                                       borderRadius: 1.2.h,
                                       btnName: 'Reject Order',
@@ -156,7 +156,7 @@ class CustomDialog extends StatelessWidget {
                                         debugPrint('update');
                                       },
                                       txtPadding: 8.0,
-                                      btnBgColor: btnBgColor1,
+                                      btnBgColor: purpleLightIndigoColor,
                                       txtColor: textWhiteColor,
                                       borderRadius: 1.2.h,
                                       btnName: 'Accept Order',
@@ -178,7 +178,7 @@ class CustomDialog extends StatelessWidget {
                                         TextSpan(
                                             text: 'Loby Chat ',
                                             style: textTheme.headline3
-                                                ?.copyWith(color: primaryColor1)),
+                                                ?.copyWith(color: aquaGreenColor)),
                                         TextSpan(
                                             text:
                                                 'before accpecting or declining the Order. Any conversation outside Loby Chat will not be insured/covered by Loby Protection',
@@ -246,7 +246,7 @@ class CustomDialog extends StatelessWidget {
                                   debugPrint('update');
                                 },
                                 txtPadding: 8.0,
-                                btnBgColor: btnBgColor1,
+                                btnBgColor: purpleLightIndigoColor,
                                 txtColor: textWhiteColor,
                                 borderRadius: 1.2.h,
                                 btnName: 'Upload Proofs & Confirm Delivery',

@@ -24,14 +24,14 @@ class ConversationList extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
           child: Card(
             elevation: 0,
-            color: backgroundColor3,
+            color: backgroundBalticSeaColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),
             ),
             child: Container(
               padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
               decoration: BoxDecoration(
-                color: backgroundColor3,
+                color: backgroundBalticSeaColor,
                 border: Border.all(width: 0.2, color: dividerColor),
                 borderRadius: BorderRadius.circular(16.0),
               ),
@@ -40,7 +40,7 @@ class ConversationList extends StatelessWidget {
                   Expanded(
                     child: Row(
                       children: <Widget>[
-                        _buildUserAvtar(primaryDarkColor2),
+                        _buildUserAvtar(lavaRedColor),
                         const SizedBox(
                           width: 16,
                         ),
@@ -75,11 +75,11 @@ class ConversationList extends StatelessWidget {
                             boxShadow: const [
                               BoxShadow(
                                   spreadRadius: 1,
-                                  color: primaryColor2)
+                                  color: orangeColor)
                             ],
                             borderRadius: BorderRadius.circular(32),
                             color:
-                            primaryColor2, // This would be color of the Badge
+                            orangeColor, // This would be color of the Badge
                           ), // This is your Badge
                           child: Center(
                             // Here you can put whatever content you want inside your Badge
@@ -103,18 +103,18 @@ class ConversationList extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       child: CircleAvatar(
         radius: 36,
-        backgroundColor: primaryColor4,
+        backgroundColor: butterflyBlueColor,
         child: Padding(
           padding: EdgeInsets.all(2.0),
           child: CircleAvatar(
-            backgroundColor: backgroundColor2,
+            backgroundColor: backgroundDarkJungleGreenColor,
             radius: 36,
             child: Padding(
               padding: EdgeInsets.all(2.0),
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/img.png'),
                 radius: 36,
-                backgroundColor: backgroundColor,
+                backgroundColor: backgroundBalticSeaColor,
               ),
             ), //CircleAvatar
           ),

@@ -53,7 +53,7 @@ class _Custom_CheckboxState extends State<Custom_Checkbox> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
               color: isChecked
-                  ? widget.backgroundColor ?? primaryColor1
+                  ? widget.backgroundColor ?? aquaGreenColor
                   : Colors.transparent,
               border: Border.all(color: widget.borderColor ?? Colors.black)),
           child: isChecked

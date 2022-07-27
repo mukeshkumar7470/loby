@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:loby/core/theme/colors.dart';
-import 'package:loby/presentation/screens/game_item_screen/game_itm_screen.dart';
 import 'package:loby/presentation/screens/main/home_screen/widgets/game_list_card.dart';
 import 'package:sizer/sizer.dart';
 
-import 'categories/category_item_screen.dart';
+import 'category_item_screen.dart';
+import 'game_itm_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: backgroundColor2,
         body: body(),
       ),
     );
@@ -35,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Container(
-              decoration: const BoxDecoration(color: backgroundColor),
+              decoration: const BoxDecoration(color: backgroundBalticSeaColor),
               child: Padding(
                 padding: EdgeInsets.all(2.h),
                 child: Align(
@@ -107,18 +106,18 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: TextField(
           style: textTheme.subtitle1
-              ?.copyWith(fontSize: 18, color: textWhiteColor),
+              ?.copyWith(color: textWhiteColor),
           decoration: InputDecoration(
             prefixIcon: Padding(
-              padding: EdgeInsets.all(3.w),
+              padding: EdgeInsets.all(16.0),
               child: SvgPicture.asset(
                 'assets/icons/search_icon.svg',
                 color: iconWhiteColor,
               ),
             ),
             border: InputBorder.none,
-            hintStyle: textTheme.subtitle1
-                ?.copyWith(fontSize: 18, color: textWhiteColor),
+            hintStyle: textTheme.headline1
+                ?.copyWith(color: textWhiteColor),
             hintText: 'Search',
           ),
         ),
@@ -159,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text(
                       'Buddy $index',
                       style: textTheme.headline1
-                          ?.copyWith(fontSize: 12.sp, color: primaryColor1),
+                          ?.copyWith(fontSize: 12.sp, color: aquaGreenColor),
                     ),
                   ],
                 ),
