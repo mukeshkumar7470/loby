@@ -12,7 +12,7 @@ class CustomDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
       elevation: 0.0,
       backgroundColor: Colors.transparent,
-      insetPadding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 0.0),
+      insetPadding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 0.0),
       child: dialogContent(context),
     );
   }
@@ -22,7 +22,7 @@ class CustomDialog extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width - 40,
       // height: MediaQuery.of(context).size.height - 60,
-      margin: EdgeInsets.only(left: 0.0, right: 0.0),
+      margin: const EdgeInsets.only(left: 0.0, right: 0.0),
       child: Stack(
         children: <Widget>[
           Stack(
@@ -59,7 +59,7 @@ class CustomDialog extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).pop();
                             },
-                            child:  Padding(
+                            child: Padding(
                               padding: const EdgeInsets.only(top: 8.0),
                               child: SvgPicture.asset(
                                 'assets/icons/increase_icon.svg',
@@ -83,7 +83,8 @@ class CustomDialog extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 0.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width * 1,
                       decoration: BoxDecoration(
@@ -107,33 +108,30 @@ class CustomDialog extends StatelessWidget {
                                     width: 15,
                                   ),
                                   const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Order Placed",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
-                                  ),
+                                  Text("Order Placed",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
                                   const SizedBox(width: 8.0),
                                   Expanded(
-                                    child: Container(
-                                      child: Text("May 26, 2022 18:23:43",
-                                          overflow: TextOverflow.ellipsis,
-                                          style: textTheme.headline6
-                                              ?.copyWith(color: textLightColor)),
-                                    ),
+                                    child: Text("May 26, 2022 18:23:43",
+                                        overflow: TextOverflow.ellipsis,
+                                        style: textTheme.headline6?.copyWith(
+                                            color: textLightColor)),
                                   ),
                                 ],
                               ),
                               const SizedBox(height: 16.0),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(
                                     width:
                                         MediaQuery.of(context).size.width * 0.3,
                                     child: Button(
-                                      width:
-                                          MediaQuery.of(context).size.width * 0.3,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
                                       height: 36,
                                       onPress: () {
                                         debugPrint('update');
@@ -141,7 +139,7 @@ class CustomDialog extends StatelessWidget {
                                       txtPadding: 8.0,
                                       btnBgColor: orangeColor,
                                       txtColor: textWhiteColor,
-                                      borderRadius: 1.2.h,
+                                      borderRadius: 2.h,
                                       btnName: 'Reject Order',
                                     ),
                                   ),
@@ -149,8 +147,8 @@ class CustomDialog extends StatelessWidget {
                                     width:
                                         MediaQuery.of(context).size.width * 0.3,
                                     child: Button(
-                                      width:
-                                          MediaQuery.of(context).size.width * 0.3,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
                                       height: 36,
                                       onPress: () {
                                         debugPrint('update');
@@ -158,7 +156,7 @@ class CustomDialog extends StatelessWidget {
                                       txtPadding: 8.0,
                                       btnBgColor: purpleLightIndigoColor,
                                       txtColor: textWhiteColor,
-                                      borderRadius: 1.2.h,
+                                      borderRadius: 2.h,
                                       btnName: 'Accept Order',
                                     ),
                                   ),
@@ -172,18 +170,20 @@ class CustomDialog extends StatelessWidget {
                                         TextSpan(
                                           text:
                                               'Sellers are requsted to discuss & freeze all delivery details with buyer on ',
-                                          style: textTheme.headline3
+                                          style: textTheme.subtitle1
                                               ?.copyWith(color: textLightColor),
                                         ),
                                         TextSpan(
                                             text: 'Loby Chat ',
-                                            style: textTheme.headline3
-                                                ?.copyWith(color: aquaGreenColor)),
+                                            style: textTheme.subtitle1
+                                                ?.copyWith(
+                                                    color: aquaGreenColor)),
                                         TextSpan(
                                             text:
                                                 'before accpecting or declining the Order. Any conversation outside Loby Chat will not be insured/covered by Loby Protection',
-                                            style: textTheme.headline3?.copyWith(
-                                                color: textLightColor)),
+                                            style: textTheme.subtitle1
+                                                ?.copyWith(
+                                                    color: textLightColor)),
                                       ]))),
                               const SizedBox(height: 16.0),
                               Row(
@@ -195,20 +195,16 @@ class CustomDialog extends StatelessWidget {
                                     width: 15,
                                   ),
                                   const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Seller Accepted",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
-                                  ),
+                                  Text("Seller Accepted",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
                                   const SizedBox(width: 8.0),
                                   Expanded(
-                                    child: Container(
-                                      child: Text("May 26, 2022 18:23:43",
-                                          overflow: TextOverflow.ellipsis,
-                                          style: textTheme.headline6
-                                              ?.copyWith(color: textLightColor)),
-                                    ),
+                                    child: Text("May 26, 2022 18:23:43",
+                                        overflow: TextOverflow.ellipsis,
+                                        style: textTheme.headline6?.copyWith(
+                                            color: textLightColor)),
                                   ),
                                 ],
                               ),
@@ -222,20 +218,16 @@ class CustomDialog extends StatelessWidget {
                                     width: 15,
                                   ),
                                   const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Order in Progress",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
-                                  ),
+                                  Text("Order in Progress",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
                                   const SizedBox(width: 8.0),
                                   Expanded(
-                                    child: Container(
-                                      child: Text("May 26, 2022 18:23:43",
-                                          overflow: TextOverflow.ellipsis,
-                                          style: textTheme.headline6
-                                              ?.copyWith(color: textLightColor)),
-                                    ),
+                                    child: Text("May 26, 2022 18:23:43",
+                                        overflow: TextOverflow.ellipsis,
+                                        style: textTheme.headline6?.copyWith(
+                                            color: textLightColor)),
                                   ),
                                 ],
                               ),
@@ -261,12 +253,10 @@ class CustomDialog extends StatelessWidget {
                                     width: 15,
                                   ),
                                   const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Seller Delivery Confirmed ",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
-                                  ),
+                                  Text("Seller Delivery Confirmed ",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
                                 ],
                               ),
                               const SizedBox(height: 16.0),
@@ -280,13 +270,13 @@ class CustomDialog extends StatelessWidget {
                                   ),
                                   const SizedBox(width: 4.0),
                                   Container(
-                                    constraints: new BoxConstraints(
+                                    constraints: BoxConstraints(
                                         maxWidth:
                                             MediaQuery.of(context).size.width -
                                                 30.w),
                                     child: Text(
                                         "Buyer Declined Delivery. Kindly resolve & ask buyer to re-confirm.",
-                                        style: textTheme.subtitle1
+                                        style: textTheme.headline6
                                             ?.copyWith(color: textWhiteColor)),
                                   ),
                                 ],
@@ -301,31 +291,10 @@ class CustomDialog extends StatelessWidget {
                                     width: 15,
                                   ),
                                   const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Buyer Delivery Confirmed",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 16.0),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/icons/verified_user_bedge.svg',
-                                    height: 15,
-                                    width: 15,
-                                    color: iconWhiteColor,
-                                  ),
-                                  const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Transaction Complete",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
-                                  ),
+                                  Text("Buyer Delivery Confirmed",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
                                 ],
                               ),
                               const SizedBox(height: 16.0),
@@ -339,19 +308,32 @@ class CustomDialog extends StatelessWidget {
                                     color: iconWhiteColor,
                                   ),
                                   const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Loby Protection Period - ",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
+                                  Text("Transaction Complete",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
+                                ],
+                              ),
+                              const SizedBox(height: 16.0),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SvgPicture.asset(
+                                    'assets/icons/verified_user_bedge.svg',
+                                    height: 15,
+                                    width: 15,
+                                    color: iconWhiteColor,
                                   ),
+                                  const SizedBox(width: 4.0),
+                                  Text("Loby Protection Period - ",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
                                   Expanded(
-                                    child: Container(
-                                      child: Text("6 Days Remaining",
-                                          overflow: TextOverflow.ellipsis,
-                                          style: textTheme.headline6
-                                              ?.copyWith(color: textLightColor)),
-                                    ),
+                                    child: Text("6 Days Remaining",
+                                        overflow: TextOverflow.ellipsis,
+                                        style: textTheme.headline6?.copyWith(
+                                            color: textLightColor)),
                                   ),
                                 ],
                               ),
@@ -366,12 +348,10 @@ class CustomDialog extends StatelessWidget {
                                     color: iconWhiteColor,
                                   ),
                                   const SizedBox(width: 4.0),
-                                  Container(
-                                    child: Text("Order Completed",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: textTheme.subtitle1
-                                            ?.copyWith(color: textWhiteColor)),
-                                  ),
+                                  Text("Order Completed",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: textTheme.headline6
+                                          ?.copyWith(color: textWhiteColor)),
                                 ],
                               ),
                             ],

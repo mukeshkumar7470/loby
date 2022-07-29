@@ -60,8 +60,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
 
-    final textTheme = Theme.of(context).textTheme;
-
     return TextFormField(
       focusNode: widget.focusNode,
       controller: widget.input,
@@ -73,7 +71,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
       maxLength: widget.length,
       textInputAction: widget.textInputAction,
       inputFormatters: widget.inputFormatters,
-      // maxLengthEnforced: true,
       maxLines: widget.maxLines,
       keyboardType: widget.keyboardType
     );

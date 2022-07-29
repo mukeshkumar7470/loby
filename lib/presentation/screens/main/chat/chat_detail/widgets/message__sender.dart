@@ -47,14 +47,14 @@ class MessageSenderWidget extends StatelessWidget {
                         "Mukesh",
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
-                        style: textTheme.headline2?.copyWith(color: textWhiteColor),
+                        style: textTheme.headline5?.copyWith(color: textWhiteColor),
                       ),
                       SizedBox(
                         width: 6.w,
                       ),
                       Text(
                         time,
-                        style: textTheme.headline3?.copyWith(color: textLightColor),
+                        style: textTheme.headline6?.copyWith(color: textLightColor),
                       ),
                     ],
                   ),
@@ -84,7 +84,7 @@ class MessageSenderWidget extends StatelessWidget {
                       children: [
                         Text(
                           text,
-                          style: textTheme.headline3?.copyWith(color: textLightColor),
+                          style: textTheme.headline6?.copyWith(color: textLightColor),
                         ),
                       ],
                     ),

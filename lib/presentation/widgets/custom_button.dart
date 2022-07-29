@@ -9,17 +9,18 @@ class CustomButton extends StatelessWidget {
   Color? textColor;
   dynamic onTap;
 
-  CustomButton(
-      {Key? key,
-      required this.color,
-      required this.name,
-      required this.onTap,
-      this.textColor})
+  CustomButton({Key? key,
+    required this.color,
+    required this.name,
+    required this.onTap,
+    this.textColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final textTheme = Theme
+        .of(context)
+        .textTheme;
     return SizedBox(
       width: double.infinity,
       child: GestureDetector(
@@ -34,7 +35,7 @@ class CustomButton extends StatelessWidget {
             child: Text(name,
                 textAlign: TextAlign.center,
                 style: textTheme.button
-                    ?.copyWith(color: textColor ?? primaryTextColor)),
+                    ?.copyWith(color: textColor ?? textCharcoalBlueColor)),
           ),
         ),
       ),

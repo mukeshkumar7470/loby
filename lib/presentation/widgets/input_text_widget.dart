@@ -5,8 +5,10 @@ import '../../core/theme/colors.dart';
 
 class InputTextWidget extends StatelessWidget {
   final String hintName;
+  final int? maxLines;
+  final FormFieldValidator<String>? validator;
 
-  const InputTextWidget({Key? key, required this.hintName}) : super(key: key);
+  const InputTextWidget({Key? key, required this.hintName, this.maxLines, this.validator}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,13 @@ class InputTextWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 0.7.h, horizontal: 2.h),
         child: TextFormField(
-          autofocus: false,
-          style: textTheme.subtitle1?.copyWith(color: textWhiteColor),
+          validator: validator,
+          style: textTheme.headline4?.copyWith(color: textWhiteColor),
+          maxLines: maxLines?? 1,
           decoration: InputDecoration(
             border: InputBorder.none,
             hintStyle:
-                textTheme.subtitle1?.copyWith(color: textInputTitleColor),
+                textTheme.headline4?.copyWith(color: textInputTitleColor),
             hintText: hintName,
           ),
         ),

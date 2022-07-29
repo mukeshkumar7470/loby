@@ -3,7 +3,7 @@ import 'package:loby/core/theme/colors.dart';
 
 class NotificationItemWidget extends StatelessWidget {
 
-  NotificationItemWidget(
+  const NotificationItemWidget(
       {Key? key})
       : super(key: key);
 
@@ -34,7 +34,7 @@ class NotificationItemWidget extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     'Sucessfully withdrawn Rs. 12,400 through UPI from Wallet ',
-                    style: textTheme.headline1?.copyWith(color: textWhiteColor),
+                    style: textTheme.headline4?.copyWith(color: textWhiteColor),
                   ),
                   const SizedBox(
                     height: 6,
@@ -43,7 +43,7 @@ class NotificationItemWidget extends StatelessWidget {
                     alignment: Alignment.bottomRight,
                     child: Text(
                       'May 26, 2022 18:23',
-                      style: textTheme.headline3?.copyWith(color: textLightColor),
+                      style: textTheme.headline6?.copyWith(color: textLightColor),
                     ),
                   ),
                 ],

@@ -25,7 +25,7 @@ class MyText extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 2.h, horizontal:4.w),
           child: Text(
             name,
-            style: textTheme.headline1
+            style: textTheme.headline5
                 ?.copyWith(color: textColor),
           ),
         ));

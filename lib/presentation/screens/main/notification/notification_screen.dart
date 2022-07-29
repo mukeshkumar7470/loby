@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:loby/presentation/screens/main/notification/widgets/notification_item_widget.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
 
@@ -15,7 +13,6 @@ class NotificationScreen extends StatefulWidget {
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
         body: body(),
@@ -33,22 +30,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                /*SizedBox(
-                  width: 7.h,
-                  height: 7.h,
-                  child: MaterialButton(
-                    shape: const CircleBorder(),
-                    color: backgroundBalticSeaColor,
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                      FocusScope.of(context).unfocus();
-                    },
-                    child: SvgPicture.asset(
-                      'assets/icons/back_icon.svg',
-                      color: whiteColor,
-                    ),
-                  ),
-                ),*/
                 Expanded(
                   child: Container(
                     alignment: Alignment.center,
@@ -60,7 +41,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         maxLines: 2,
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.ellipsis,
-                        style: textTheme.headlineLarge
+                        style: textTheme.headline2
                             ?.copyWith(color: textWhiteColor),
                       ),
                     ),

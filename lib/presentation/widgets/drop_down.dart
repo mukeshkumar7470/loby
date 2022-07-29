@@ -18,29 +18,32 @@ class _MyDropDownWidgetState extends State<MyDropDownWidget> {
     return Container(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
         decoration: BoxDecoration(
-            color: backgroundBalticSeaColor, borderRadius: BorderRadius.circular(10)),
+            color: textFieldColor, borderRadius: BorderRadius.circular(10)),
 
         // dropdown below..
-        child: DropdownButtonHideUnderline(
-          child: DropdownButton(
-            isExpanded: true,
-            isDense: false,
-            // Reduces the dropdowns height by +/- 50%
-            icon: const Icon(Icons.keyboard_arrow_down),
-            value: selectedValue,
-            dropdownColor: backgroundBalticSeaColor,
-            items: items.map((item) {
-              return DropdownMenuItem(
-                value: item,
-                child: Text(item, style: textTheme.subtitle1
-                    ?.copyWith(fontSize: 18, color: iconTintColor)),
-              );
-            }).toList(),
-            onChanged: (selectedItem) => setState(
-              () => selectedValue = selectedItem.toString(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton(
+              isExpanded: true,
+              isDense: false,
+              // Reduces the dropdowns height by +/- 50%
+              icon: const Icon(Icons.keyboard_arrow_down),
+              value: selectedValue,
+              dropdownColor: backgroundBalticSeaColor,
+              items: items.map((item) {
+                return DropdownMenuItem(
+                  value: item,
+                  child: Text(item,
+                      style:
+                          textTheme.headline4?.copyWith(color: iconTintColor)),
+                );
+              }).toList(),
+              onChanged: (selectedItem) => setState(
+                () => selectedValue = selectedItem.toString(),
+              ),
             ),
           ),
-        )
-    );
+        ));
   }
 }

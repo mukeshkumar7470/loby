@@ -15,7 +15,7 @@ class InputTextTitleWidget extends StatelessWidget {
       width: double.infinity,
       child: Text(
         titleName,
-        style: textTheme.subtitle2?.copyWith(color: titleTextColor),
+        style: textTheme.headline5?.copyWith(color: titleTextColor),
       ),
     );
   }

@@ -52,14 +52,14 @@ class ConversationList extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   name,
-                                  style: textTheme.headline1?.copyWith(color: textWhiteColor),
+                                  style: textTheme.headline4?.copyWith(color: textWhiteColor),
                                 ),
                                 const SizedBox(
                                   height: 6,
                                 ),
                                 Text(
                                   time,
-                                  style: textTheme.headline3?.copyWith(color: textLightColor),
+                                  style: textTheme.headline5?.copyWith(color: textLightColor),
                                 ),
                               ],
                             ),
@@ -84,7 +84,7 @@ class ConversationList extends StatelessWidget {
                           child: Center(
                             // Here you can put whatever content you want inside your Badge
                             child: Text('4',
-                                style: textTheme.headline1
+                                style: textTheme.headline5
                                     ?.copyWith(color: textWhiteColor)),
                           ),
                         ),

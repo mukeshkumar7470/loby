@@ -12,7 +12,7 @@ class Button extends StatelessWidget {
   double? txtPadding;
   double? borderRadius;
 
-  Button({required this.onPress, required this.width, this.height, this.txtColor, this.btnBgColor, required this.btnName, this.txtPadding, this.borderRadius});
+  Button({Key? key, required this.onPress, required this.width, this.height, this.txtColor, this.btnBgColor, required this.btnName, this.txtPadding, this.borderRadius}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

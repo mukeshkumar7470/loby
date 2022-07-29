@@ -11,7 +11,7 @@ import '../../../widgets/input_text_widget.dart';
 class CreateProfileCard extends StatelessWidget {
   final ScrollController controller;
 
-  const CreateProfileCard(this.controller);
+   const CreateProfileCard(this.controller);
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,8 @@ class CreateProfileCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text('Your Profile',
-                          style: textTheme.headlineLarge
-                              ?.copyWith(fontSize: 18, color: textWhiteColor)),
+                          style: textTheme.headline2
+                              ?.copyWith(color: textWhiteColor)),
                       IconButton(
                         icon: const Icon(Icons.close, color: whiteColor),
                         onPressed: () => Navigator.of(context).pop(null),
@@ -40,7 +40,7 @@ class CreateProfileCard extends StatelessWidget {
                     width: double.infinity,
                     height: 2.h,
                   ),
-                  _buildRow(),
+                  _buildRow(textTheme),
                   SizedBox(
                     width: double.infinity,
                     height: 2.h,
@@ -168,13 +168,15 @@ class CreateProfileCard extends StatelessWidget {
       ),
       child: TextField(
         style:
-            textTheme.subtitle1?.copyWith(fontSize: 18, color: textWhiteColor),
+            textTheme.headline4?.copyWith(color: textWhiteColor),
         decoration: InputDecoration(
           prefixIcon: Padding(
-            padding: EdgeInsets.all(3.w),
+            padding: const EdgeInsets.all(16),
             child: SvgPicture.asset(
               'assets/icons/search_icon.svg',
               color: iconWhiteColor,
+              height: 12,
+              width: 12,
             ),
           ),
           border: InputBorder.none,
@@ -185,7 +187,7 @@ class CreateProfileCard extends StatelessWidget {
     );
   }
 
-  Widget _buildRow() {
+  Widget _buildRow(TextTheme textTheme) {
     return Row(
       children: <Widget>[
         const CircleAvatar(
@@ -212,11 +214,10 @@ class CreateProfileCard extends StatelessWidget {
                       onPressed: () {
                         debugPrint("change");
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
                         child: Text("Upload New",
-                            style: TextStyle(
-                                fontSize: 14, color: primaryTextColor)),
+                            style: textTheme.button),
                       )),
                   ElevatedButton(
                       style: ButtonStyle(
@@ -231,11 +232,10 @@ class CreateProfileCard extends StatelessWidget {
                       onPressed: () {
                         debugPrint('clicked');
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
                         child: Text("Delete Avatar",
-                            style:
-                                TextStyle(fontSize: 14, color: textWhiteColor)),
+                            style: textTheme.button?.copyWith(color: whiteColor)),
                       )),
                 ],
               ),
@@ -248,7 +248,6 @@ class CreateProfileCard extends StatelessWidget {
 
   _buildBioNameField(TextTheme textTheme) {
     return Container(
-      height: 100,
       decoration: BoxDecoration(
         color: textFieldColor,
         borderRadius: BorderRadius.circular(10.0),
@@ -256,11 +255,12 @@ class CreateProfileCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
         child: TextFormField(
-          style: textTheme.subtitle1?.copyWith(fontSize: 14, color: whiteColor),
+          style: textTheme.headline4?.copyWith(color: whiteColor),
+          maxLines: 4,
           decoration: InputDecoration(
             border: InputBorder.none,
-            hintStyle: textTheme.subtitle1
-                ?.copyWith(fontSize: 14, color: textInputTitleColor),
+            hintStyle: textTheme.headline4
+                ?.copyWith(color: textInputTitleColor),
             hintText: 'Ex: Jhon Singh',
           ),
         ),

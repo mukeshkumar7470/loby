@@ -49,7 +49,7 @@ class MessagePage extends StatelessWidget {
                           maxLines: 2,
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
-                          style: textTheme.headlineLarge
+                          style: textTheme.headline2
                               ?.copyWith(color: textWhiteColor),
                         ),
                       ),

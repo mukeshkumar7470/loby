@@ -23,22 +23,22 @@ class _SignInScreenState extends State<SignInScreen> {
     return Stack(
       children: [
         const BackgroundImage(),
-        Align(
-          alignment: Alignment.center,
-          child: SizedBox(
-            height: 10.h,
-            child: Image.asset(
-              "assets/icons/app_icon.png",
-              fit: BoxFit.contain,
-            ),
-          ),
-        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
-          children: const <Widget>[
+          children: <Widget>[
             Align(
+              alignment: Alignment.center,
+              child: SizedBox(
+                height: 10.h,
+                child: Image.asset(
+                  "assets/icons/app_icon.png",
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            const Align(
               alignment: Alignment.bottomCenter,
               child: LoginCard(),
             ),

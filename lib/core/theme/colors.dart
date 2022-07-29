@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 // Colors used through out the application
 //primary colors
-const Color aquaGreenColor = Color(0xFF00FF62);
+const Color aquaGreenColor = Color(0xFF00CC4E);
 const Color eucalyptusGreenColor = Color(0xFF178D56);
 const Color orangeColor = Color(0xFFEE7C5E);
 const Color lavaRedColor = Color(0xFFD82F0E);
+const Color carminePinkColor = Color(0xFFE94F31);
 const Color saffronMangoOrangeColor = Color(0xFFFAC663);
 const Color gambogeOrangeColor = Color(0xFFE29509);
 const Color butterflyBlueColor = Color(0xFF33A9FF);
@@ -21,10 +22,12 @@ const Color textFieldColor = Color(0x1AE4E4E4);
 const Color textBlackColor = Color(0xFF000000);
 const Color textWhiteColor = Color(0xFFFFFFFF);
 const Color textLightColor = Color(0xFF808191);
+const Color textCharcoalBlueColor = Color(0xFF33343B);
+const Color textTunaBlueColor = Color(0xFF373A43);
 
 
 MaterialColor primarySwatchColor = MaterialColor(0xFF00B598, color);
-const Color primaryTextColor = Color(0xFF000000);
+const Color primaryTextColor = Color(0xFF33343B);
 const Color secondaryTextColor = Color(0xFF000000);
 const Color bodyTextColor = Color(0xFF000000);
 const Color textInputTitleColor = Color(0xFF808191);

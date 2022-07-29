@@ -40,7 +40,7 @@ class MessageReceiverWidget extends StatelessWidget {
                 children: [
                   Text(
                     text,
-                    style: textTheme.headline3?.copyWith(color: textWhiteColor),
+                    style: textTheme.headline6?.copyWith(color: textWhiteColor),
                   ),
                 ],
               ),

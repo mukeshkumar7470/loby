@@ -34,7 +34,7 @@ class _CustomChipState extends State<CustomChip> {
                   selected: _selectedIndex == index,
                   label: Text(widget.labelName[index].toString(),
                       style:
-                          textTheme.subtitle1?.copyWith(color: textWhiteColor)),
+                          textTheme.headline5?.copyWith(color: textWhiteColor)),
                   elevation: 1,
                   side: BorderSide(
                       color: widget.color ?? orangeColor,

@@ -114,42 +114,24 @@ class _ItemWidget extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           physics: const NeverScrollableScrollPhysics(),
-          child: Container(
-            // width: isSelected ? 12.w : 12.w,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: isSelected? 16.0: 0.0),
-                  child: IconTheme(
-                    data: IconThemeData(
-                      size: iconSize,
-                      color: isSelected
-                          ? item.activeColor
-                          : item.inactiveColor ?? item.activeColor,
-                    ),
-                    child: item.icon,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: isSelected? 16.0: 0.0),
+                child: IconTheme(
+                  data: IconThemeData(
+                    size: iconSize,
+                    color: isSelected
+                        ? item.activeColor
+                        : item.inactiveColor ?? item.activeColor,
                   ),
+                  child: item.icon,
                 ),
-                /*if (isSelected)
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: DefaultTextStyle.merge(
-                        style: TextStyle(
-                          color: item.activeColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        maxLines: 1,
-                        textAlign: item.textAlign,
-                        child: item.title,
-                      ),
-                    ),
-                  ),*/
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

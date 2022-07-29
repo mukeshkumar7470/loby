@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:loby/core/theme/colors.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../main/main_screen.dart';
+import '../../../../services/routing_service/routes_name.dart';
 import 'sign_up_bottom_sheet.dart';
 import '../../../widgets/custom_button.dart';
 
@@ -50,7 +51,7 @@ class _LoginCardState extends State<LoginCard> {
                   width: double.infinity,
                   height: 2.h,
                 ),
-                Text("New User ?", style: textTheme.subtitle2?.copyWith(color: aquaGreenColor)),
+                Text("New User ?", style: textTheme.headline5?.copyWith(color: aquaGreenColor)),
                 SizedBox(
                   width: double.infinity,
                   height: 2.h,
@@ -68,8 +69,9 @@ class _LoginCardState extends State<LoginCard> {
   }
 
   void _goToMainScreen(BuildContext context, TextTheme textTheme) {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const MainScreen()));
+    context.pushNamed(mainPage);
+    /*Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const MainScreen()));*/
   }
 
   void _showDialog(BuildContext context, TextTheme textTheme) {

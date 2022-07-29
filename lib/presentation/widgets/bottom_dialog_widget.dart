@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:loby/services/routing_service/routes_name.dart';
 
 import '../../core/theme/colors.dart';
 import 'custom_button.dart';
@@ -67,7 +69,9 @@ class BottomDialog {
                 width: MediaQuery.of(context).size.width * 0.4,
                 child: CustomButton(
                   onTap: () {
-                    Navigator.pop(context);
+                    Router.neglect(context, () {
+                      context.goNamed(mainPage);
+                    });
                   },
                   color: aquaGreenColor,
                   name: 'OK',
@@ -83,7 +87,7 @@ class BottomDialog {
   Widget _buildCongratulationsText() {
     return Text(
       tileName?? 'Loby',
-      style: textTheme?.headline1?.copyWith(color: titleColor),
+      style: textTheme?.headline2?.copyWith(color: titleColor, fontWeight: FontWeight.w400),
     );
   }
 
@@ -95,14 +99,14 @@ class BottomDialog {
           children: [
             TextSpan(
               text: contentName??'',
-              style: textTheme?.headline3?.copyWith(color: textLightColor),
+              style: textTheme?.headline5?.copyWith(color: textLightColor),
             ),
             TextSpan(
                 text: contentLinkName?? '',
-                style: textTheme?.headline3?.copyWith(color: aquaGreenColor)),
+                style: textTheme?.headline5?.copyWith(color: aquaGreenColor)),
             TextSpan(
               text: contentNameLast??'',
-              style: textTheme?.headline3?.copyWith(color: textLightColor),
+              style: textTheme?.headline5?.copyWith(color: textLightColor),
             ),
           ],
         ),

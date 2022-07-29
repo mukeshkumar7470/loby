@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:loby/presentation/screens/main/profile_screen/profile_screen.dart';
+import 'package:loby/presentation/screens/main/profile/profile_screen.dart';
 
 import '../../../core/theme/colors.dart';
 import '../../widgets/bottom_nav_bar.dart';
 import 'chat/chat_screen.dart';
-import 'create_listing_screen/create_listing_screen.dart';
-import 'home_screen/home_screen.dart';
+import 'create_listing/create_listing_screen.dart';
+import 'home/home_screen.dart';
 import 'notification/notification_screen.dart';
 
 class MainScreen extends StatefulWidget {
