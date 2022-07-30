@@ -3,159 +3,186 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../../../core/utils/helpers.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/input_text_title_widget.dart';
-import '../../main/main_screen.dart';
 import '../../../widgets/input_text_widget.dart';
+import '../../main/main_screen.dart';
 
-class CreateProfileCard extends StatelessWidget {
+class CreateProfileCard extends StatefulWidget {
   final ScrollController controller;
 
-   const CreateProfileCard(this.controller);
+  const CreateProfileCard(this.controller);
 
+  @override
+  State<CreateProfileCard> createState() => _CreateProfileCardState();
+}
+
+class _CreateProfileCardState extends State<CreateProfileCard> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return ListView.builder(
-        controller: controller,
+        controller: widget.controller,
         // assign controller here
         itemCount: 1,
         itemBuilder: (_, index) => Padding(
               padding: EdgeInsets.all(4.h),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('Your Profile',
-                          style: textTheme.headline2
-                              ?.copyWith(color: textWhiteColor)),
-                      IconButton(
-                        icon: const Icon(Icons.close, color: whiteColor),
-                        onPressed: () => Navigator.of(context).pop(null),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  _buildRow(textTheme),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const Divider(
-                    thickness: 1.2,
-                    color: dividerColor,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const InputTextTitleWidget(
-                      titleName: 'Full Name',
-                      titleTextColor: textInputTitleColor),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const InputTextWidget(hintName: 'Ex: Jhon Singh'),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  const InputTextTitleWidget(
-                      titleName: 'Display Name',
-                      titleTextColor: textInputTitleColor),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const InputTextWidget(hintName: 'Ex: Commander'),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  const InputTextTitleWidget(
-                      titleName: 'Country',
-                      titleTextColor: textInputTitleColor),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const InputTextWidget(hintName: 'India (Default)'),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  const InputTextTitleWidget(
-                      titleName: 'City', titleTextColor: textInputTitleColor),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const InputTextWidget(hintName: 'Ex: Bhopal'),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  const InputTextTitleWidget(
-                      titleName: 'Date Of Birth',
-                      titleTextColor: textInputTitleColor),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const InputTextWidget(hintName: '15 July 1999'),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  const InputTextTitleWidget(
-                      titleName: 'Profile Tag',
-                      titleTextColor: textInputTitleColor),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  const InputTextWidget(hintName: 'tag'),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  _buildSearchField(textTheme),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  const InputTextTitleWidget(
-                      titleName: 'Bio', titleTextColor: textInputTitleColor),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 2.h,
-                  ),
-                  _buildBioNameField(textTheme),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                  Padding(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text('Your Profile',
+                            style: textTheme.headline2
+                                ?.copyWith(color: textWhiteColor)),
+                        IconButton(
+                          icon: const Icon(Icons.close, color: whiteColor),
+                          onPressed: () => Navigator.of(context).pop(null),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    _buildRow(textTheme),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    const Divider(
+                      thickness: 1.2,
+                      color: dividerColor,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    const InputTextTitleWidget(
+                        titleName: 'Full Name',
+                        titleTextColor: textInputTitleColor),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    InputTextWidget(
+                      hintName: 'Ex: Jhon Singh',
+                      validator: (value) {
+                        return Helpers.validateField(value!);
+                      },
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    const InputTextTitleWidget(
+                        titleName: 'Display Name',
+                        titleTextColor: textInputTitleColor),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    InputTextWidget(
+                      hintName: 'Ex: Commander',
+                      validator: (value) {
+                        return Helpers.validateField(value!);
+                      },
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    const InputTextTitleWidget(
+                        titleName: 'Country',
+                        titleTextColor: textInputTitleColor),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    const InputTextWidget(hintName: 'India (Default)'),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    const InputTextTitleWidget(
+                        titleName: 'City', titleTextColor: textInputTitleColor),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    const InputTextWidget(hintName: 'Ex: Bhopal'),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    const InputTextTitleWidget(
+                        titleName: 'Date Of Birth',
+                        titleTextColor: textInputTitleColor),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    InputTextWidget(hintName: '15 July 1999',
+                      validator: (value) {
+                        return Helpers.validateField(value!);
+                      },),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    const InputTextTitleWidget(
+                        titleName: 'Profile Tag',
+                        titleTextColor: textInputTitleColor),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    const InputTextWidget(hintName: 'tag'),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    _buildSearchField(textTheme),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    const InputTextTitleWidget(
+                        titleName: 'Bio', titleTextColor: textInputTitleColor),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 2.h,
+                    ),
+                    _buildBioNameField(textTheme),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                    Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: CustomButton(
-                          color: purpleLightIndigoColor,
-                          textColor: textWhiteColor,
-                          name: "Update Profile",
-                          onTap: () {
+                        color: purpleLightIndigoColor,
+                        textColor: textWhiteColor,
+                        name: "Update Profile",
+                        onTap: () {
+                          if (_formKey.currentState!.validate()) {
                             Navigator.pop(context);
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => const MainScreen()));
-                          })),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 4.h,
-                  ),
-                ],
+                          }
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 4.h,
+                    ),
+                  ],
+                ),
               ),
             ));
   }
@@ -167,8 +194,7 @@ class CreateProfileCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: TextField(
-        style:
-            textTheme.headline4?.copyWith(color: textWhiteColor),
+        style: textTheme.headline4?.copyWith(color: textWhiteColor),
         decoration: InputDecoration(
           prefixIcon: Padding(
             padding: const EdgeInsets.all(16),
@@ -180,7 +206,7 @@ class CreateProfileCard extends StatelessWidget {
             ),
           ),
           border: InputBorder.none,
-          hintStyle: textTheme.subtitle1?.copyWith(color: textWhiteColor),
+          hintStyle: textTheme.headline4?.copyWith(color: textWhiteColor),
           hintText: 'Type Tags',
         ),
       ),
@@ -215,9 +241,9 @@ class CreateProfileCard extends StatelessWidget {
                         debugPrint("change");
                       },
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
-                        child: Text("Upload New",
-                            style: textTheme.button),
+                        padding:
+                            const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                        child: Text("Upload New", style: textTheme.button),
                       )),
                   ElevatedButton(
                       style: ButtonStyle(
@@ -233,9 +259,11 @@ class CreateProfileCard extends StatelessWidget {
                         debugPrint('clicked');
                       },
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+                        padding:
+                            const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
                         child: Text("Delete Avatar",
-                            style: textTheme.button?.copyWith(color: whiteColor)),
+                            style:
+                                textTheme.button?.copyWith(color: whiteColor)),
                       )),
                 ],
               ),
@@ -259,8 +287,8 @@ class CreateProfileCard extends StatelessWidget {
           maxLines: 4,
           decoration: InputDecoration(
             border: InputBorder.none,
-            hintStyle: textTheme.headline4
-                ?.copyWith(color: textInputTitleColor),
+            hintStyle:
+                textTheme.headline4?.copyWith(color: textInputTitleColor),
             hintText: 'Ex: Jhon Singh',
           ),
         ),

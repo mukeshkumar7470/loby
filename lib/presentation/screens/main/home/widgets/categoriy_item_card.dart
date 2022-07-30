@@ -19,7 +19,7 @@ class CategoryItemCard extends StatelessWidget {
         /*Navigator.of(context).push(MaterialPageRoute(builder: (context) => GameItemScreen(name: 'Battlegrounds Mobile $index')));*/
       },
       child: Card(
-        color: backgroundBalticSeaColor,
+        color: Colors.transparent,
         elevation: 0.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -44,7 +44,7 @@ class CategoryItemCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

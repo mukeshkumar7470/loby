@@ -18,7 +18,6 @@ class _CategoryItemScreenState extends State<CategoryItemScreen> {
   @override
   Widget build(BuildContext context) {
     debugPrint(widget.name);
-    final textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
         body: body(widget.name),
@@ -97,11 +96,10 @@ class _CategoryItemScreenState extends State<CategoryItemScreen> {
   }
 
   _buildCategories(TextTheme textTheme) {
-    var myDynamicAspectRatio = 1000 / 1;
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        childAspectRatio: 6.0 / 7.5,
+        childAspectRatio: 6.0 / 8.0,
         mainAxisSpacing: 0.1.h,
         crossAxisSpacing: 0.1.h,
       ),

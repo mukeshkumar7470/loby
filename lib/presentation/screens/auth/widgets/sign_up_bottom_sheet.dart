@@ -69,7 +69,10 @@ class _SignUpCardListState extends State<SignUpCardList> {
                       width: double.infinity,
                       height: 2.h,
                     ),
-                    const InputTextWidget(hintName: 'Ex: jhonsingh@gmail.com'),
+                    InputTextWidget(hintName: 'Ex: jhonsingh@gmail.com',
+                      validator: (value) {
+                        return Helpers.validateEmail(value!);
+                      },),
                     SizedBox(
                       width: double.infinity,
                       height: 4.h,
@@ -81,7 +84,10 @@ class _SignUpCardListState extends State<SignUpCardList> {
                       width: double.infinity,
                       height: 2.h,
                     ),
-                    const InputTextWidget(hintName: '******'),
+                    InputTextWidget(hintName: '******',
+                      validator: (value) {
+                        return Helpers.validateField(value!);
+                      },),
                     SizedBox(
                       width: double.infinity,
                       height: 4.h,
